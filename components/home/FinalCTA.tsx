@@ -9,10 +9,7 @@ export default function FinalCTA() {
           <div className="relative border-t border-b border-ink/10 py-20 lg:py-28">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-8">
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-8">
-                  — Hoofdstuk volgend
-                </p>
-                <h2 className="display-hero text-[clamp(2.25rem,5vw,4.5rem)] text-ink leading-[0.95]">
+                <h2 className="display-hero text-[clamp(2.25rem,4.5vw,4rem)] text-ink leading-[0.95]">
                   Wilt u ontdekken hoe digitale innovatie{" "}
                   <em className="italic font-light text-cobalt">
                     uw organisatie
@@ -23,14 +20,14 @@ export default function FinalCTA() {
               <div className="lg:col-span-4 flex justify-start lg:justify-end">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-500"
+                  className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-300"
                 >
                   <span>Plan vrijblijvend gesprek</span>
                   <svg
                     width="18"
                     height="18"
                     viewBox="0 0 18 18"
-                    className="transition-transform duration-500 group-hover:translate-x-1"
+                    className="transition-transform duration-300 group-hover:translate-x-1"
                     aria-hidden
                   >
                     <path

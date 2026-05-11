@@ -1,35 +1,41 @@
 @import "tailwindcss";
 
 /* ============================================================
-   DCF — Design tokens
-   "Editorial Engineering": advocatenkantoor × Silicon Valley
+   DCF — Design tokens (v2)
+   Clean tech + consultancy gravitas.
+   Donkerblauw + antraciet + wit als basis, kobalt als accent.
    ============================================================ */
 
 :root {
-  /* Brand */
-  --ink: #0A1628;          /* deep navy — primary brand */
+  /* Base palette */
+  --ink: #0A1628;          /* donkerblauw — primary brand */
   --ink-soft: #14233A;     /* hover/depth navy */
+  --antraciet: #24272F;    /* tweede basiskleur — donker grijs */
   --paper: #FAFAF7;        /* warm off-white */
   --paper-deep: #F3F1EA;   /* card surface */
-  --charcoal: #1A1A1F;     /* body text on light */
   --mist: #DDE2E8;         /* hairline rule */
   --mist-soft: #EDEFF2;    /* subtle separators */
-  --cobalt: #2D4FE5;       /* electric accent — CTAs/highlights */
-  --cobalt-bright: #4A6BFF;
+
+  /* Text */
+  --text: #1A1D24;         /* body text on light */
   --muted: #6B7280;        /* secondary text */
+
+  /* Accent (Lev's "frisse moderne" — gekozen: kobaltblauw) */
+  --cobalt: #2D4FE5;
+  --cobalt-bright: #4A6BFF;
 
   /* System aliases */
   --background: var(--paper);
-  --foreground: var(--charcoal);
+  --foreground: var(--text);
 }
 
 @theme inline {
-  /* Colors */
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+  --color-antraciet: var(--antraciet);
   --color-paper: var(--paper);
   --color-paper-deep: var(--paper-deep);
-  --color-charcoal: var(--charcoal);
+  --color-text: var(--text);
   --color-mist: var(--mist);
   --color-mist-soft: var(--mist-soft);
   --color-cobalt: var(--cobalt);
@@ -41,7 +47,7 @@
   /* Typography stack */
   --font-display: 'Fraunces', 'Times New Roman', serif;
   --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
 }
 
 /* Reset & base ---------------------------------------------- */
@@ -63,47 +69,45 @@ body {
 }
 
 /* Typography utilities -------------------------------------- */
-.font-display { font-family: var(--font-display); font-feature-settings: "ss01", "ss02"; }
+.font-display { font-family: var(--font-display); font-feature-settings: "ss01"; }
 .font-mono { font-family: var(--font-mono); }
 
+/* Hero display: Fraunces — ONLY for the largest H1 koppen */
 .display-hero {
   font-family: var(--font-display);
   font-weight: 400;
-  font-style: normal;
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
   font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
 }
 
-.display-numeric {
-  font-family: var(--font-display);
-  font-weight: 300;
-  line-height: 0.85;
-  letter-spacing: -0.05em;
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
-  font-feature-settings: "lnum", "tnum";
+/* Section headings: Geist semibold — clean, modern, leesbaar */
+.display-section {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
+/* Data / numeric — Geist bold tabular — sterk en leesbaar */
+.display-numeric {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  font-feature-settings: "tnum", "lnum", "ss01";
+}
+
+/* Small label / eyebrow */
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-/* Decorative ----------------------------------------------- */
-.rule-fade {
-  height: 1px;
-  background: linear-gradient(90deg, var(--mist), transparent);
-}
-
-.duotone-blue {
-  filter: grayscale(0.4) contrast(1.05) brightness(0.95);
-  mix-blend-mode: multiply;
-}
-
-/* Photo treatment: blue-tinted overlay */
+/* Photo treatment ------------------------------------------- */
 .photo-treatment {
   position: relative;
   overflow: hidden;
@@ -112,11 +116,15 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 22, 40, 0.0) 40%, rgba(10, 22, 40, 0.35) 100%);
+  background: linear-gradient(180deg, rgba(10, 22, 40, 0) 50%, rgba(10, 22, 40, 0.3) 100%);
   pointer-events: none;
 }
 
-/* Subtle grain overlay for paper-feel */
+.duotone-blue {
+  filter: contrast(1.04) brightness(0.98);
+}
+
+/* Subtle grain overlay */
 .grain {
   position: relative;
 }
@@ -125,12 +133,12 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   mix-blend-mode: multiply;
 }
 
-/* Underline animation for links ----------------------------- */
+/* Link underline -------------------------------------------- */
 .link-underline {
   position: relative;
   display: inline-block;
@@ -156,28 +164,28 @@ body {
   100% { transform-origin: left; transform: scaleX(1); }
 }
 
-/* Marquee animation ------------------------------------------ */
+/* Marquee --------------------------------------------------- */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .marquee-track {
-  animation: marquee 38s linear infinite;
+  animation: marquee 42s linear infinite;
   will-change: transform;
 }
 
-/* Reveal on scroll ------------------------------------------- */
+/* Reveal on scroll ------------------------------------------ */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1), transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(18px);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Focus rings ------------------------------------------------ */
+/* Focus rings ----------------------------------------------- */
 *:focus-visible {
   outline: 2px solid var(--cobalt);
   outline-offset: 3px;

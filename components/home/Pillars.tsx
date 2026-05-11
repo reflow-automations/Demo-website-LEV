@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ChapterMark from "@/components/ChapterMark";
 import Reveal from "@/components/Reveal";
+import ChapterMark from "@/components/ChapterMark";
 
 const PILLARS = [
   {
@@ -8,11 +8,7 @@ const PILLARS = [
     title: "Talent aantrekken",
     summary:
       "Werkgevers op het netvlies van talent — online én offline zichtbaar via DOOH-netwerken en slimme retargeting.",
-    bullets: [
-      "Employer Branding",
-      "DOOH-campagnes",
-      "Retargeting",
-    ],
+    bullets: ["Employer Branding", "DOOH-campagnes", "Retargeting"],
     href: "/talent-aantrekken",
   },
   {
@@ -20,24 +16,15 @@ const PILLARS = [
     title: "Talent behouden",
     summary:
       "Persoonlijke arbeidsvoorwaarden binnen heldere kaders. Minder verloop, lagere vervangingskosten, sterkere binding.",
-    bullets: [
-      "Maatwerk arbeidsvoorwaarden",
-      "€19.200 besparing p/p",
-      "Schaalbaar & beheersbaar",
-    ],
+    bullets: ["Maatwerk arbeidsvoorwaarden", "€19.200 besparing p/p", "Schaalbaar"],
     href: "/talent-behouden",
-    featured: true,
   },
   {
     no: "03",
-    title: "Ziekteverzuim terugdringen",
+    title: "Ziekteverzuim",
     summary:
-      "Een betaalbare digitale oplossing die medewerkers gemotiveerd houdt — gerichter, lichter en uitvoerbaar voor elke organisatie.",
-    bullets: [
-      "Kortdurend verzuim",
-      "€4.500 — €7.000 p/p p/j",
-      "Direct toepasbaar",
-    ],
+      "Een betaalbare digitale oplossing die medewerkers gemotiveerd houdt — gerichter, lichter en direct uitvoerbaar.",
+    bullets: ["Kortdurend verzuim", "€4.500 — €7.000 p/p p/j", "Direct toepasbaar"],
     href: "/ziekteverzuim",
   },
   {
@@ -45,11 +32,7 @@ const PILLARS = [
     title: "Inkoop",
     summary:
       "Aanbestedingen en contractmanagement overzichtelijker, transparanter en goedkoper — tot 50% kostenreductie.",
-    bullets: [
-      "(Europees) aanbesteden",
-      "Contractmanagement",
-      "Tot 50% besparing",
-    ],
+    bullets: ["(Europees) aanbesteden", "Contractmanagement", "Tot 50% besparing"],
     href: "/inkoop",
   },
   {
@@ -66,26 +49,26 @@ export default function Pillars() {
   return (
     <section id="innovaties" className="relative py-24 lg:py-32 bg-paper-deep">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-          <div className="lg:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+          <div className="lg:col-span-6">
             <Reveal>
               <ChapterMark
-                number="II"
+                number="02"
                 label="Onze innovaties"
                 className="text-muted mb-8"
               />
-              <h2 className="display-hero text-[clamp(2rem,4.5vw,3.75rem)] text-ink">
+              <h2 className="display-section text-[clamp(2rem,4vw,3.25rem)] text-ink">
                 Vijf domeinen, één{" "}
-                <em className="italic font-light text-cobalt">
+                <em className="font-display italic font-light text-cobalt">
                   vaste belofte
                 </em>
                 .
               </h2>
             </Reveal>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-            <Reveal delay={150}>
-              <p className="text-charcoal text-[16px] lg:text-[18px] leading-[1.6] max-w-xl">
+          <div className="lg:col-span-5 lg:col-start-8 flex items-end">
+            <Reveal delay={120}>
+              <p className="text-text text-[16px] leading-[1.6]">
                 Innovaties die organisaties praktisch helpen — geen losse tools
                 of tijdelijke oplossingen, maar digitale verbeteringen met
                 duurzame impact op groei, continuïteit en rendement.
@@ -94,68 +77,53 @@ export default function Pillars() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-mist">
-          {PILLARS.map((p, i) => (
-            <Reveal
-              key={p.no}
-              delay={i * 80}
-              className={`lg:col-span-6 ${
-                p.featured ? "lg:col-span-12 lg:row-span-1" : ""
-              }`}
-            >
-              <Link
-                href={p.href}
-                className={`group relative block h-full p-10 lg:p-12 bg-paper-deep hover:bg-paper transition-colors duration-500 ${
-                  p.featured ? "lg:p-16" : ""
+        {/* 5 cards: row 1 = 3 cards, row 2 = 2 cards (centered) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-px bg-mist">
+          {PILLARS.map((p, i) => {
+            // Row 1: cards 1, 2, 3 → col-span-2 of 6 (each takes 2/6)
+            // Row 2: cards 4, 5 → col-span-3 of 6 (each takes 3/6, but shifted to center)
+            const isRow1 = i < 3;
+            return (
+              <Reveal
+                key={p.no}
+                delay={i * 70}
+                className={`${
+                  isRow1 ? "lg:col-span-2" : "lg:col-span-3"
                 }`}
               >
-                {/* Number */}
-                <div className="flex items-start justify-between mb-12">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
-                    — {p.no}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    Lees meer →
-                  </span>
-                </div>
-
-                <h3
-                  className={`font-display text-ink tracking-tight mb-5 ${
-                    p.featured
-                      ? "text-[clamp(2rem,4vw,3.25rem)]"
-                      : "text-[clamp(1.6rem,2.5vw,2.25rem)]"
-                  } leading-[1]`}
+                <Link
+                  href={p.href}
+                  className="group relative block h-full p-10 lg:p-11 bg-paper hover:bg-paper-deep transition-colors duration-300"
                 >
-                  {p.title}
-                </h3>
+                  <div className="flex items-start justify-between mb-12">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt">
+                      {p.no}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Lees meer →
+                    </span>
+                  </div>
 
-                <p
-                  className={`text-charcoal/80 leading-[1.55] mb-8 ${
-                    p.featured ? "text-[17px] max-w-2xl" : "text-[15px]"
-                  }`}
-                >
-                  {p.summary}
-                </p>
+                  <h3 className="display-section text-[clamp(1.5rem,1.9vw,1.85rem)] text-ink mb-4">
+                    {p.title}
+                  </h3>
 
-                {/* Bullets */}
-                <ul className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-cobalt" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                  <p className="text-text/80 text-[15px] leading-[1.55] mb-8">
+                    {p.summary}
+                  </p>
 
-                {/* Hover arrow */}
-                <div className="absolute bottom-10 right-10 opacity-0 group-hover:opacity-100 translate-x-[-8px] group-hover:translate-x-0 transition-all duration-500">
-                  <svg width="24" height="24" viewBox="0 0 24 24" className="text-cobalt" aria-hidden>
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                  </svg>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+                  <ul className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                    {p.bullets.map((b) => (
+                      <li key={b} className="flex items-center gap-2">
+                        <span className="w-1 h-1 bg-cobalt" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ export default function ContactPage() {
               label="Contact"
               className="text-muted mb-10"
             />
-            <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,7rem)] leading-[0.9] max-w-5xl">
+            <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,6.5rem)] max-w-5xl">
               Een vrijblijvend{" "}
               <em className="italic font-light text-cobalt">gesprek</em> begint
               hier.
@@ -41,7 +41,7 @@ export default function ContactPage() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted block mb-3">
+                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         Naam
                       </label>
                       <input
@@ -51,7 +51,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted block mb-3">
+                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         Organisatie
                       </label>
                       <input
@@ -63,7 +63,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted block mb-3">
+                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         E-mail
                       </label>
                       <input
@@ -73,7 +73,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted block mb-3">
+                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         Telefoon
                       </label>
                       <input
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted block mb-3">
+                    <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                       Waarover wilt u in gesprek?
                     </label>
                     <div className="flex flex-wrap gap-2 mb-5">
@@ -97,19 +97,17 @@ export default function ContactPage() {
                       ].map((t) => (
                         <label
                           key={t}
-                          className="px-4 py-2 border border-mist text-[12px] text-charcoal hover:border-ink cursor-pointer transition-colors"
+                          className="px-4 py-2 border border-mist text-[12px] text-text hover:border-ink cursor-pointer transition-colors"
                         >
                           <input type="checkbox" className="sr-only peer" />
-                          <span className="peer-checked:text-cobalt">
-                            {t}
-                          </span>
+                          <span className="peer-checked:text-cobalt">{t}</span>
                         </label>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <label className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted block mb-3">
+                    <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                       Uw bericht
                     </label>
                     <textarea
@@ -121,13 +119,13 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitted}
-                    className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-500 disabled:bg-cobalt"
+                    className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-300 disabled:bg-cobalt"
                   >
                     {submitted
                       ? "Bedankt — wij nemen binnen 24u contact op"
                       : "Verstuur aanvraag"}
                     {!submitted && (
-                      <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-500 group-hover:translate-x-1" aria-hidden>
+                      <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                         <path d="M1 9h16M11 3l6 6-6 6" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
                       </svg>
                     )}
@@ -140,45 +138,30 @@ export default function ContactPage() {
             <div className="lg:col-span-4 lg:col-start-9 space-y-12">
               <Reveal delay={100}>
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-4">
-                    — Direct
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-4">
+                    Direct
                   </p>
                   <a
                     href="mailto:info@digitalconceptsfactory.nl"
-                    className="block font-display text-[clamp(1.25rem,1.6vw,1.5rem)] text-ink hover:text-cobalt transition-colors leading-tight mb-3"
+                    className="block text-[clamp(1.05rem,1.4vw,1.25rem)] text-ink hover:text-cobalt transition-colors leading-tight"
                   >
                     info@digitalconceptsfactory.nl
-                  </a>
-                  <a
-                    href="tel:+31102000000"
-                    className="block font-display text-[clamp(1.25rem,1.6vw,1.5rem)] text-ink hover:text-cobalt transition-colors"
-                  >
-                    +31 (0)10 200 0000
                   </a>
                 </div>
               </Reveal>
 
-              <Reveal delay={180}>
+              <Reveal delay={160}>
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-4">
-                    — Bezoekadres
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-4">
+                    Bezoekadres
                   </p>
                   <address className="not-italic text-ink text-[15px] leading-relaxed">
                     Digital Concepts Factory B.V.
                     <br />
-                    Stationsplein 45
+                    Rotterdam Centraal
                     <br />
-                    3013 AK Rotterdam
+                    Rotterdam — Nederland
                   </address>
-                </div>
-              </Reveal>
-
-              <Reveal delay={260}>
-                <div className="border-t border-mist pt-8">
-                  <p className="font-display italic text-charcoal text-[16px] leading-relaxed">
-                    &ldquo;Wij ontwikkelen geen losse ideeën, maar oplossingen
-                    die organisaties daadwerkelijk vooruit helpen.&rdquo;
-                  </p>
                 </div>
               </Reveal>
             </div>

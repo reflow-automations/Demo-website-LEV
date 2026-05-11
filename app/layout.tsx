@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DemoBanner from "@/components/DemoBanner";
@@ -18,7 +18,7 @@ const geist = Geist({
   display: "swap",
 });
 
-const jetbrains = JetBrains_Mono({
+const geistMono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${fraunces.variable} ${geist.variable} ${jetbrains.variable}`}
+      className={`${fraunces.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen flex flex-col grain">
         <DemoBanner />

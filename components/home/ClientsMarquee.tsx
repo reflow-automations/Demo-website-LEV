@@ -22,18 +22,12 @@ export default function ClientsMarquee() {
     <section className="py-20 lg:py-24 bg-paper-deep border-y border-mist overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-20 mb-12">
         <Reveal>
-          <div className="flex items-baseline justify-between gap-6 flex-wrap">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
-              — In vertrouwen samengewerkt met
-            </p>
-            <p className="text-charcoal text-[14px] italic font-display">
-              Wij zijn trots op onze samenwerkingen.
-            </p>
-          </div>
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+            Wij zijn trots op onze samenwerkingen
+          </p>
         </Reveal>
       </div>
 
-      {/* Marquee */}
       <div className="relative">
         <div className="flex marquee-track" style={{ width: "fit-content" }}>
           {[...CLIENTS, ...CLIENTS].map((c, i) => (
@@ -41,7 +35,7 @@ export default function ClientsMarquee() {
               key={`${c}-${i}`}
               className="flex items-center gap-12 px-12 shrink-0"
             >
-              <span className="font-display text-[clamp(1.5rem,3vw,2.5rem)] tracking-tight text-ink/85 whitespace-nowrap">
+              <span className="display-section text-[clamp(1.5rem,2.5vw,2.25rem)] text-ink/85 whitespace-nowrap">
                 {c}
               </span>
               <span className="w-1 h-1 bg-cobalt rounded-full shrink-0" />
@@ -49,7 +43,6 @@ export default function ClientsMarquee() {
           ))}
         </div>
 
-        {/* Fade gradients */}
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-paper-deep to-transparent pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-paper-deep to-transparent pointer-events-none" />
       </div>

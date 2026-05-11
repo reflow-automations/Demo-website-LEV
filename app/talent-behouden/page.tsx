@@ -77,7 +77,7 @@ const CALC_ROWS = [
 export default function TalentBehoudenPage() {
   return (
     <>
-      {/* HERO ------------------------------------------------- */}
+      {/* HERO */}
       <section className="relative pt-20 pb-24 lg:pt-28 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
@@ -86,43 +86,29 @@ export default function TalentBehoudenPage() {
               label="Talent behouden"
               className="text-muted mb-10"
             />
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-              <h1 className="lg:col-span-9 display-hero text-ink text-[clamp(2.75rem,7vw,7rem)] leading-[0.9]">
-                Behouden is de{" "}
-                <em className="italic font-light text-cobalt">
-                  nieuwe
-                </em>
-                <br />
-                succesfactor.
-              </h1>
-              <div className="lg:col-span-3 lg:pl-6 lg:border-l lg:border-mist">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-3">
-                  Vol. 02 · DCF — 2026
-                </p>
-                <p className="text-charcoal text-[14px] leading-relaxed">
-                  Eén vertrekkende medewerker kost u al snel{" "}
-                  <strong className="font-display italic">€19.200</strong>.
-                </p>
-              </div>
-            </div>
+            <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,6.5rem)] max-w-5xl">
+              Behouden is de{" "}
+              <em className="italic font-light text-cobalt">nieuwe</em>{" "}
+              succesfactor.
+            </h1>
           </Reveal>
         </div>
       </section>
 
-      {/* INTRO ------------------------------------------------- */}
+      {/* INTRO */}
       <section className="py-20 bg-paper-deep border-y border-mist">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <Reveal className="lg:col-span-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted mb-6">
-                — Het vraagstuk
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-6">
+                Het vraagstuk
               </p>
-              <h2 className="display-hero text-[clamp(1.75rem,3.5vw,3rem)] text-ink leading-[1]">
-                De tijd dat medewerkers jarenlang vanzelfsprekend blijven,{" "}
-                <em className="italic font-light text-cobalt">ligt achter ons</em>.
+              <h2 className="display-section text-[clamp(1.75rem,3vw,2.75rem)] text-ink">
+                De tijd dat medewerkers jarenlang vanzelfsprekend blijven,
+                ligt achter ons.
               </h2>
             </Reveal>
-            <div className="lg:col-span-6 lg:col-start-7 space-y-5 text-charcoal text-[16px] leading-[1.65]">
+            <div className="lg:col-span-6 lg:col-start-7 space-y-5 text-text text-[16px] leading-[1.65]">
               <Reveal delay={100}>
                 <p>
                   Medewerkers bepalen in grote mate het succes van een
@@ -132,7 +118,7 @@ export default function TalentBehoudenPage() {
                   strategische succesfactor.
                 </p>
               </Reveal>
-              <Reveal delay={180}>
+              <Reveal delay={160}>
                 <p>
                   Juist op het moment dat een medewerker volledig is ingewerkt,
                   kennis heeft opgebouwd en maximale waarde toevoegt, gebeurt
@@ -140,8 +126,8 @@ export default function TalentBehoudenPage() {
                   of zelfs een concurrent.
                 </p>
               </Reveal>
-              <Reveal delay={250}>
-                <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-muted pt-4 border-t border-mist">
+              <Reveal delay={220}>
+                <p className="text-[12px] text-muted pt-4 border-t border-mist">
                   Bron — Berenschot, HR-Trendonderzoek 2024-2025
                 </p>
               </Reveal>
@@ -150,9 +136,9 @@ export default function TalentBehoudenPage() {
         </div>
       </section>
 
-      {/* THE BIG NUMBER --------------------------------------- */}
+      {/* THE BIG NUMBER */}
       <section className="py-32 lg:py-40 bg-ink text-paper relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.035] pointer-events-none">
           <svg width="100%" height="100%" aria-hidden>
             <defs>
               <pattern id="grid2" width="64" height="64" patternUnits="userSpaceOnUse">
@@ -165,41 +151,41 @@ export default function TalentBehoudenPage() {
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-20 text-center">
           <Reveal>
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/40 mb-10">
-              — Minimale besparing per behouden medewerker
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-paper/45 mb-10">
+              Minimale besparing per behouden medewerker
             </p>
-            <div className="display-numeric text-paper text-[clamp(6rem,22vw,18rem)] leading-[0.85] mb-10">
-              <em className="not-italic">€19.200</em>
+            <div className="display-numeric text-paper text-[clamp(5rem,16vw,14rem)] mb-10">
+              €19.200
             </div>
-            <p className="font-display italic text-paper/80 text-[clamp(1.1rem,1.8vw,1.5rem)] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-paper/80 text-[clamp(1.05rem,1.5vw,1.35rem)] max-w-3xl mx-auto leading-[1.5]">
               Bij een modaal bruto jaarinkomen van €48.000 en een minimale
               vervangingsimpact van 40%, is dit het bedrag dat u bespaart wanneer u
               één onnodig vertrek voorkomt.
             </p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/40 mt-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mt-10">
               Gallup · Randstad · CPB
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* THE INNOVATION --------------------------------------- */}
+      {/* THE INNOVATION */}
       <section className="py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <Reveal className="lg:col-span-5">
               <ChapterMark
-                number="I"
+                number="01"
                 label="De innovatie"
                 className="text-muted mb-8"
               />
-              <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink leading-[0.95] mb-8">
+              <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink mb-8">
                 Maatwerk in arbeidsvoorwaarden — eindelijk{" "}
-                <em className="italic font-light text-cobalt">
+                <em className="font-display italic font-light text-cobalt">
                   betaalbaar
                 </em>.
               </h2>
-              <p className="text-charcoal text-[16px] leading-[1.65] mb-8">
+              <p className="text-text text-[16px] leading-[1.65] mb-8">
                 Wanneer medewerkers de ruimte krijgen om hun arbeidsvoorwaarden
                 zelf samen te stellen, ontstaat er echte betrokkenheid. Mensen
                 kiezen wat bij hen past en voelen zich gezien. Dat vertaalt
@@ -210,18 +196,18 @@ export default function TalentBehoudenPage() {
               </CTA>
             </Reveal>
 
-            <div className="lg:col-span-6 lg:col-start-7 space-y-8 text-[16px] leading-[1.65] text-charcoal">
-              <Reveal delay={100}>
+            <div className="lg:col-span-6 lg:col-start-7 space-y-8 text-[16px] leading-[1.65] text-text">
+              <Reveal delay={80}>
                 <div className="bg-paper-deep p-8 lg:p-10 border-l-2 border-cobalt">
-                  <p className="font-display italic text-[clamp(1.25rem,1.8vw,1.5rem)] text-ink leading-[1.4]">
-                    &ldquo;Wij draaien het uitgangspunt om: niet de werkgever
-                    bepaalt welke extra&apos;s worden aangeboden, maar de
-                    medewerker kiest zelf wat voor hem of haar waardevol is —
-                    binnen duidelijke kaders.&rdquo;
+                  <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] text-ink leading-[1.5]">
+                    Wij draaien het uitgangspunt om: niet de werkgever bepaalt
+                    welke extra&apos;s worden aangeboden, maar de medewerker
+                    kiest zelf wat voor hem of haar waardevol is — binnen
+                    duidelijke kaders.
                   </p>
                 </div>
               </Reveal>
-              <Reveal delay={180}>
+              <Reveal delay={160}>
                 <p>
                   Voor veel organisaties voelde maatwerk lang als iets dat in
                   theorie aantrekkelijk klinkt, maar in de praktijk onhaalbaar
@@ -240,25 +226,23 @@ export default function TalentBehoudenPage() {
         </div>
       </section>
 
-      {/* TEN COST BUCKETS ------------------------------------- */}
+      {/* TEN COST BUCKETS */}
       <section className="py-28 lg:py-36 bg-paper-deep">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
             <Reveal className="lg:col-span-7">
               <ChapterMark
-                number="II"
+                number="02"
                 label="Waar bestaan vervangingskosten uit?"
                 className="text-muted mb-8"
               />
-              <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink leading-[0.95]">
-                Eén vertrek,{" "}
-                <em className="italic font-light text-cobalt">tien soorten</em>{" "}
-                kosten.
+              <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink">
+                Eén vertrek, tien soorten kosten.
               </h2>
             </Reveal>
             <div className="lg:col-span-5 flex items-end">
-              <Reveal delay={150}>
-                <p className="text-charcoal text-[15px] leading-[1.6]">
+              <Reveal delay={120}>
+                <p className="text-text text-[15px] leading-[1.6]">
                   De grootste kostenposten van een vertrekkende medewerker zijn
                   vaak onzichtbaar. Onderzoek laat zien dat de werkelijke kosten
                   kunnen oplopen van 40% tot 200% van het bruto jaarsalaris.
@@ -269,16 +253,16 @@ export default function TalentBehoudenPage() {
 
           <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {COST_ITEMS.map((c, i) => (
-              <Reveal key={c.n} delay={(i % 4) * 80}>
+              <Reveal key={c.n} delay={(i % 4) * 60}>
                 <li className="grid grid-cols-12 gap-5 border-t border-mist pt-6">
-                  <span className="col-span-2 font-mono text-[11px] uppercase tracking-[0.22em] text-cobalt pt-1">
-                    — {c.n}
+                  <span className="col-span-2 font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt pt-1">
+                    {c.n}
                   </span>
                   <div className="col-span-10">
-                    <h3 className="font-display text-[1.2rem] text-ink mb-2 leading-tight">
+                    <h3 className="display-section text-[1.1rem] text-ink mb-2">
                       {c.title}
                     </h3>
-                    <p className="text-charcoal/80 text-[14px] leading-[1.55]">
+                    <p className="text-text/80 text-[14px] leading-[1.55]">
                       {c.text}
                     </p>
                   </div>
@@ -288,48 +272,47 @@ export default function TalentBehoudenPage() {
           </ol>
 
           <Reveal delay={200}>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mt-12 pt-6 border-t border-mist">
+            <p className="text-[12px] text-muted mt-12 pt-6 border-t border-mist">
               Bron — Gallup · 42% of Employee Turnover Is Preventable but Often Ignored
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* CALCULATOR TABLE ------------------------------------- */}
+      {/* CALCULATOR TABLE */}
       <section className="py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark
-              number="III"
+              number="03"
               label="Bereken vervangingskosten"
               className="text-muted mb-8"
             />
-            <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink leading-[0.95] mb-6 max-w-3xl">
-              Wat kost personeelsverloop{" "}
-              <em className="italic font-light text-cobalt">u</em> precies?
+            <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink mb-6 max-w-3xl">
+              Wat kost personeelsverloop u precies?
             </h2>
-            <p className="text-charcoal text-[16px] leading-[1.6] max-w-2xl mb-14">
+            <p className="text-text text-[16px] leading-[1.6] max-w-2xl mb-14">
               De vervangingskosten lopen op van 40% (frontline) tot 200%
               (leiders/managers) van het bruto jaarsalaris. Onderstaande
               tabel toont de impact bij gangbare salarissen.
             </p>
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal delay={80}>
             <div className="border border-mist overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-paper-deep">
                   <tr>
-                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                       Bruto jaarsalaris
                     </th>
-                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                       Frontline · 40%
                     </th>
-                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                       Professional · 80%
                     </th>
-                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                    <th className="text-left p-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                       Manager · 200%
                     </th>
                   </tr>
@@ -342,21 +325,21 @@ export default function TalentBehoudenPage() {
                         r.salary === "€ 48.000" ? "bg-cobalt/[0.04]" : ""
                       }`}
                     >
-                      <td className="p-5 font-display text-[1.1rem] text-ink">
+                      <td className="p-5 display-numeric text-[1.1rem] text-ink">
                         {r.salary}
                         {r.salary === "€ 48.000" && (
-                          <span className="ml-3 font-mono text-[9px] uppercase tracking-[0.22em] text-cobalt">
+                          <span className="ml-3 font-mono text-[9px] uppercase tracking-[0.14em] text-cobalt font-medium">
                             ← modaal
                           </span>
                         )}
                       </td>
-                      <td className="p-5 font-display text-[1.1rem] text-charcoal">
+                      <td className="p-5 display-numeric text-[1.1rem] text-text">
                         {r.low}
                       </td>
-                      <td className="p-5 font-display text-[1.1rem] text-charcoal">
+                      <td className="p-5 display-numeric text-[1.1rem] text-text">
                         {r.mid}
                       </td>
-                      <td className="p-5 font-display text-[1.1rem] text-charcoal">
+                      <td className="p-5 display-numeric text-[1.1rem] text-text">
                         {r.high}
                       </td>
                     </tr>
@@ -364,20 +347,20 @@ export default function TalentBehoudenPage() {
                 </tbody>
               </table>
             </div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mt-5">
+            <p className="text-[12px] text-muted mt-5">
               Bron — Gallup · CPB Kerngegevens MEV 2026
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* CLOSING CTA ------------------------------------------ */}
+      {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="border-t border-b border-ink/10 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-8">
-                <h2 className="display-hero text-[clamp(2rem,4.5vw,3.75rem)] text-ink leading-[0.95]">
+                <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink">
                   Talent langer behouden{" "}
                   <em className="italic font-light text-cobalt">én</em> €19.200
                   per medewerker besparen?
@@ -386,10 +369,10 @@ export default function TalentBehoudenPage() {
               <div className="lg:col-span-4 flex justify-start lg:justify-end">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-500"
+                  className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-300"
                 >
                   <span>Plan een vrijblijvend gesprek</span>
-                  <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-500 group-hover:translate-x-1" aria-hidden>
+                  <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                     <path d="M1 9h16M11 3l6 6-6 6" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
                   </svg>
                 </Link>

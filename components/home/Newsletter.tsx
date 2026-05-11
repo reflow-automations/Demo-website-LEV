@@ -13,21 +13,21 @@ export default function Newsletter() {
       <div className="mx-auto max-w-5xl px-6">
         <Reveal>
           <ChapterMark
-            number="V"
+            number="05"
             label="Nieuwsbrief"
             className="text-muted mb-10 justify-center"
           />
-          <h2 className="display-hero text-[clamp(2rem,4.5vw,3.75rem)] text-ink text-center max-w-3xl mx-auto leading-[1] mb-6">
+          <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink text-center max-w-3xl mx-auto mb-6">
             Ontvang als eerste de innovaties die het{" "}
             <em className="italic font-light text-cobalt">verschil maken</em>.
           </h2>
-          <p className="text-charcoal text-[16px] leading-[1.6] text-center max-w-xl mx-auto mb-12">
-            Geen ruis, geen marketing-praat. Alleen de digitale innovaties die de
+          <p className="text-text text-[16px] leading-[1.6] text-center max-w-xl mx-auto mb-12">
+            Eén editie per maand, met de nieuwste digitale innovaties die de
             verbindende schakel vormen tussen de oude en de nieuwe wereld.
           </p>
         </Reveal>
 
-        <Reveal delay={150}>
+        <Reveal delay={120}>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -41,18 +41,18 @@ export default function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="naam@organisatie.nl"
-              className="flex-1 px-5 py-4 bg-paper-deep border border-mist text-charcoal placeholder-muted text-[15px] focus:outline-none focus:border-ink transition-colors"
+              className="flex-1 px-5 py-4 bg-paper-deep border border-mist text-text placeholder-muted text-[15px] focus:outline-none focus:border-ink transition-colors"
             />
             <button
               type="submit"
               disabled={submitted}
-              className="px-7 py-4 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-500 disabled:bg-cobalt"
+              className="px-7 py-4 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300 disabled:bg-cobalt"
             >
               {submitted ? "Bedankt — u staat op de lijst" : "Aanmelden"}
             </button>
           </form>
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted text-center mt-6">
-            — Eén editie per maand · uitschrijven altijd mogelijk
+          <p className="text-[12px] text-muted text-center mt-6">
+            Uitschrijven altijd mogelijk.
           </p>
         </Reveal>
       </div>

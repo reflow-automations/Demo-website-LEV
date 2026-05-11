@@ -42,19 +42,11 @@ export default function Header() {
             aria-hidden
           >
             <rect x="0" y="0" width="32" height="32" fill="currentColor" />
-            <path
-              d="M9 9h6a7 7 0 0 1 0 14H9V9z"
-              fill="#FAFAF7"
-            />
+            <path d="M9 9h6a7 7 0 0 1 0 14H9V9z" fill="#FAFAF7" />
             <circle cx="22" cy="22" r="2.2" fill="#2D4FE5" />
           </svg>
-          <div className="leading-tight">
-            <div className="font-display text-[15px] tracking-tight text-ink">
-              Digital Concepts Factory
-            </div>
-            <div className="font-mono text-[9px] uppercase tracking-[0.22em] text-muted">
-              Est. 2018 · Rotterdam
-            </div>
+          <div className="font-sans text-[14px] font-medium tracking-tight text-ink">
+            Digital Concepts Factory
           </div>
         </Link>
 
@@ -64,7 +56,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[13px] tracking-tight text-charcoal hover:text-ink transition-colors link-underline"
+              className="text-[13px] tracking-tight text-text hover:text-ink transition-colors link-underline"
             >
               {item.label}
             </Link>
@@ -75,7 +67,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             href="/contact"
-            className="px-5 py-2.5 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-500"
+            className="px-5 py-2.5 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300"
           >
             Plan gesprek
           </Link>
@@ -93,7 +85,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile nav */}
       {open && (
         <div className="lg:hidden border-t border-mist bg-paper">
           <nav className="px-6 py-6 flex flex-col gap-4">
@@ -102,7 +93,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-[15px] text-charcoal py-2"
+                className="text-[15px] text-text py-2"
               >
                 {item.label}
               </Link>
