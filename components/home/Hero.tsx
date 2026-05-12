@@ -12,30 +12,73 @@ export default function Hero() {
           <span>Digitale innovatie · HR · Inkoop · Marketing</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left — photo */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative aspect-[4/5] lg:aspect-[4/5] w-full overflow-hidden bg-ink">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Left — photo, refined treatment */}
+          <div className="lg:col-span-5 order-2 lg:order-1 relative">
+            {/* Soft halo behind the image — subtle cobalt atmosphere */}
+            <div
+              aria-hidden
+              className="absolute -inset-8 lg:-inset-12 -z-10 opacity-60"
+              style={{
+                background:
+                  "radial-gradient(60% 50% at 50% 50%, rgba(45,79,229,0.08), transparent 70%)",
+              }}
+            />
+
+            {/* Photo frame */}
+            <div className="relative aspect-[5/6] w-full overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(10,22,40,0.32),0_8px_24px_-12px_rgba(45,79,229,0.18)] ring-1 ring-ink/5">
               <Image
                 src="/photos/home-domains.png"
                 alt="Team aan het werk met HR, Inkoop en Marketing dashboards"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "78% center" }}
+                style={{ objectPosition: "70% 38%" }}
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
-              {/* Subtle bottom gradient for editorial finish */}
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
+
+              {/* Bottom-left dark gradient for caption legibility */}
+              <div
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-2/5 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.55) 100%)",
+                }}
+              />
+
               {/* Caption */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-paper/80">
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
+                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/90">
                   HR · Inkoop · Marketing
                 </span>
-                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-paper/50">
+                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/60">
                   Rotterdam
                 </span>
               </div>
+
+              {/* Top-right subtle corner bracket — Silicon-Valley-style tech mark */}
+              <svg
+                aria-hidden
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                className="absolute top-4 right-4 text-paper/70"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              >
+                <path d="M5 1h-4v4" />
+                <path d="M15 1h4v4" />
+                <path d="M5 19h-4v-4" />
+                <path d="M15 19h4v-4" />
+              </svg>
+            </div>
+
+            {/* Decorative annotation — small tech-mark beside the photo */}
+            <div className="hidden lg:flex absolute -bottom-4 -right-2 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted bg-paper px-3 py-1.5 rounded-full border border-mist">
+              <span className="w-1.5 h-1.5 rounded-full bg-cobalt animate-pulse" />
+              <span>Live · 2026</span>
             </div>
           </div>
 
@@ -59,7 +102,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 px-6 py-3.5 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300"
+                className="group inline-flex items-center gap-3 px-6 py-3.5 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300 rounded-full"
               >
                 <span>Plan een vrijblijvend gesprek</span>
                 <svg
@@ -80,7 +123,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="#innovaties"
-                className="inline-flex items-center gap-3 px-6 py-3.5 border border-ink/15 text-ink text-[13px] tracking-tight hover:bg-ink hover:text-paper transition-colors duration-300"
+                className="inline-flex items-center gap-3 px-6 py-3.5 border border-ink/15 text-ink text-[13px] tracking-tight hover:bg-ink hover:text-paper transition-colors duration-300 rounded-full"
               >
                 Bekijk innovaties
               </Link>
