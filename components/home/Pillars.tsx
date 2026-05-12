@@ -16,7 +16,7 @@ const PILLARS = [
     title: "Talent behouden",
     summary:
       "Persoonlijke arbeidsvoorwaarden binnen heldere kaders. Minder verloop, lagere vervangingskosten, sterkere binding.",
-    bullets: ["Maatwerk arbeidsvoorwaarden", "€19.200 besparing p/p", "Schaalbaar"],
+    bullets: ["Maatwerk", "€19.200 p/p besparing", "Schaalbaar"],
     href: "/talent-behouden",
   },
   {
@@ -24,7 +24,7 @@ const PILLARS = [
     title: "Ziekteverzuim",
     summary:
       "Een betaalbare digitale oplossing die medewerkers gemotiveerd houdt — gerichter, lichter en direct uitvoerbaar.",
-    bullets: ["Kortdurend verzuim", "€4.500 — €7.000 p/p p/j", "Direct toepasbaar"],
+    bullets: ["Kortdurend verzuim", "€4.5K — €7K p/p p/j", "Direct toepasbaar"],
     href: "/ziekteverzuim",
   },
   {
@@ -77,31 +77,48 @@ export default function Pillars() {
           </div>
         </div>
 
-        {/* 5 cards: row 1 = 3 cards, row 2 = 2 cards (centered) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-px bg-mist">
           {PILLARS.map((p, i) => {
-            // Row 1: cards 1, 2, 3 → col-span-2 of 6 (each takes 2/6)
-            // Row 2: cards 4, 5 → col-span-3 of 6 (each takes 3/6, but shifted to center)
             const isRow1 = i < 3;
             return (
               <Reveal
                 key={p.no}
                 delay={i * 70}
-                className={`${
-                  isRow1 ? "lg:col-span-2" : "lg:col-span-3"
-                }`}
+                className={isRow1 ? "lg:col-span-2" : "lg:col-span-3"}
               >
                 <Link
                   href={p.href}
-                  className="group relative block h-full p-10 lg:p-11 bg-paper hover:bg-paper-deep transition-colors duration-300"
+                  className="group relative block h-full p-10 lg:p-11 bg-paper hover:bg-paper-deep transition-colors duration-300 overflow-hidden"
                 >
+                  {/* Cobalt corner accent — slides in on hover */}
+                  <div
+                    aria-hidden
+                    className="absolute top-0 left-0 w-0 h-px bg-cobalt transition-all duration-500 group-hover:w-full"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute top-0 left-0 w-px h-0 bg-cobalt transition-all duration-500 group-hover:h-full"
+                  />
+
                   <div className="flex items-start justify-between mb-12">
                     <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt">
                       {p.no}
                     </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Lees meer →
-                    </span>
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      className="text-cobalt opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                      aria-hidden
+                    >
+                      <path
+                        d="M1 9h16M11 3l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                        fill="none"
+                        strokeLinecap="square"
+                      />
+                    </svg>
                   </div>
 
                   <h3 className="display-section text-[clamp(1.5rem,1.9vw,1.85rem)] text-ink mb-4">
