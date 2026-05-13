@@ -22,7 +22,7 @@ const COST_ITEMS = [
     n: "03",
     title: "Selectie, screening en assessment",
     text:
-      "Extra kosten voor screening, referentiechecks, assessments en administratieve verwerking — zeker bij verantwoordelijke functies.",
+      "Extra kosten voor screening, referentiechecks, assessments en administratieve verwerking, zeker bij verantwoordelijke functies.",
   },
   {
     n: "04",
@@ -143,13 +143,13 @@ export default function TalentBehoudenPage() {
                 <p>
                   Juist op het moment dat een medewerker volledig is ingewerkt,
                   kennis heeft opgebouwd en maximale waarde toevoegt, gebeurt
-                  het regelmatig dat deze overstapt — naar een andere werkgever
+                  het regelmatig dat deze overstapt, naar een andere werkgever
                   of zelfs een concurrent.
                 </p>
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-[12px] text-muted pt-4 border-t border-mist">
-                  Bron — Berenschot, HR-Trendonderzoek 2024-2025
+                  Bron: Berenschot, HR-Trendonderzoek 2024-2025
                 </p>
               </Reveal>
             </div>
@@ -201,7 +201,7 @@ export default function TalentBehoudenPage() {
                 className="text-muted mb-8"
               />
               <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink mb-8">
-                Maatwerk in arbeidsvoorwaarden — eindelijk{" "}
+                Maatwerk in arbeidsvoorwaarden, eindelijk{" "}
                 <em className="font-display italic font-light text-cobalt">
                   betaalbaar
                 </em>.
@@ -223,7 +223,7 @@ export default function TalentBehoudenPage() {
                   <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] text-ink leading-[1.5]">
                     Wij draaien het uitgangspunt om: niet de werkgever bepaalt
                     welke extra&apos;s worden aangeboden, maar de medewerker
-                    kiest zelf wat voor hem of haar waardevol is — binnen
+                    kiest zelf wat voor hem of haar waardevol is, binnen
                     duidelijke kaders.
                   </p>
                 </div>
@@ -237,7 +237,7 @@ export default function TalentBehoudenPage() {
                 </p>
                 <p className="mt-4">
                   Met onze digitale innovatie is dat fundamenteel veranderd.
-                  Zonder complexiteit, zonder oncontroleerbare kosten — wél met
+                  Zonder complexiteit, zonder oncontroleerbare kosten, wél met
                   ruimte voor de individuele medewerker en strakke kaders voor
                   de organisatie.
                 </p>
@@ -294,13 +294,13 @@ export default function TalentBehoudenPage() {
 
           <Reveal delay={200}>
             <p className="text-[12px] text-muted mt-12 pt-6 border-t border-mist">
-              Bron — Gallup · 42% of Employee Turnover Is Preventable but Often Ignored
+              Bron: Gallup · 42% of Employee Turnover Is Preventable but Often Ignored
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* CALCULATOR — interactive widget */}
+      {/* CALCULATOR, interactive widget */}
       <section id="bereken" className="py-28 lg:py-36 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
@@ -315,7 +315,7 @@ export default function TalentBehoudenPage() {
               precies?
             </h2>
             <p className="text-text text-[16px] leading-[1.6] max-w-2xl mb-14">
-              Vul uw eigen situatie in — salaris, type functie en jaarlijks
+              Vul uw eigen situatie in, salaris, type functie en jaarlijks
               aantal vertrekkers. U ziet direct uw vervangingskosten én het
               besparingspotentieel met DCF.
             </p>
@@ -334,12 +334,12 @@ export default function TalentBehoudenPage() {
         </div>
       </section>
 
-      {/* REFERENCE TABLE — quick glance */}
+      {/* REFERENCE TABLE, quick glance */}
       <section className="pb-28 lg:pb-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-6">
-              Referentie — kosten per medewerker
+              Referentie, kosten per medewerker
             </p>
           </Reveal>
 
@@ -393,7 +393,7 @@ export default function TalentBehoudenPage() {
               </table>
             </div>
             <p className="text-[12px] text-muted mt-5">
-              Bron — Gallup · CPB Kerngegevens MEV 2026
+              Bron: Gallup · CPB Kerngegevens MEV 2026
             </p>
           </Reveal>
         </div>

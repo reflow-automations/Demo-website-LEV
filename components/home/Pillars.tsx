@@ -7,7 +7,7 @@ const PILLARS = [
     no: "01",
     title: "Talent aantrekken",
     summary:
-      "Werkgevers op het netvlies van talent — online én offline zichtbaar via DOOH-netwerken en slimme retargeting.",
+      "Werkgevers op het netvlies van talent, online én offline zichtbaar via DOOH-netwerken en slimme retargeting.",
     bullets: ["Employer Branding", "DOOH-campagnes", "Retargeting"],
     href: "/talent-aantrekken",
   },
@@ -23,15 +23,15 @@ const PILLARS = [
     no: "03",
     title: "Ziekteverzuim",
     summary:
-      "Een betaalbare digitale oplossing die medewerkers gemotiveerd houdt — gerichter, lichter en direct uitvoerbaar.",
-    bullets: ["Kortdurend verzuim", "€4.5K — €7K p/p p/j", "Direct toepasbaar"],
+      "Een betaalbare digitale oplossing die medewerkers gemotiveerd houdt, gerichter, lichter en direct uitvoerbaar.",
+    bullets: ["Kortdurend verzuim", "€4.5K, €7K p/p p/j", "Direct toepasbaar"],
     href: "/ziekteverzuim",
   },
   {
     no: "04",
     title: "Inkoop",
     summary:
-      "Aanbestedingen en contractmanagement overzichtelijker, transparanter en goedkoper — tot 50% kostenreductie.",
+      "Aanbestedingen en contractmanagement overzichtelijker, transparanter en goedkoper, tot 50% kostenreductie.",
     bullets: ["(Europees) aanbesteden", "Contractmanagement", "Tot 50% besparing"],
     href: "/inkoop",
   },
@@ -69,7 +69,7 @@ export default function Pillars() {
           <div className="lg:col-span-5 lg:col-start-8 flex items-end">
             <Reveal delay={120}>
               <p className="text-text text-[16px] leading-[1.6]">
-                Innovaties die organisaties praktisch helpen — geen losse tools
+                Innovaties die organisaties praktisch helpen, geen losse tools
                 of tijdelijke oplossingen, maar digitale verbeteringen met
                 duurzame impact op groei, continuïteit en rendement.
               </p>

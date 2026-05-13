@@ -15,7 +15,7 @@ const PRINCIPLES = [
     n: "02",
     title: "Online én offline waar het verschil wordt gemaakt",
     text:
-      "Waar veel marketingpartijen zich vooral richten op online zichtbaarheid, kijken wij bewust breder. De echte kracht zit vaak in de combinatie — meer bereik, meer herkenning, meer onderscheidend vermogen.",
+      "Waar veel marketingpartijen zich vooral richten op online zichtbaarheid, kijken wij bewust breder. De echte kracht zit vaak in de combinatie, meer bereik, meer herkenning, meer onderscheidend vermogen.",
   },
   {
     n: "03",
@@ -27,13 +27,13 @@ const PRINCIPLES = [
     n: "04",
     title: "Van sterk concept tot volledige uitvoering",
     text:
-      "Onze kracht zit niet alleen in het bedenken van onderscheidende ideeën, maar ook in het realiseren ervan — van strategie en conceptontwikkeling tot uitvoering, opvolging en evaluatie.",
+      "Onze kracht zit niet alleen in het bedenken van onderscheidende ideeën, maar ook in het realiseren ervan, van strategie en conceptontwikkeling tot uitvoering, opvolging en evaluatie.",
   },
   {
     n: "05",
     title: "Marketing moet iets opleveren",
     text:
-      "Uiteindelijk draait marketing om resultaat. Meer zichtbaarheid, een sterker merk, meer klanten. Geen campagnes om aanwezig te zijn — concepten die organisaties echt vooruithelpen.",
+      "Uiteindelijk draait marketing om resultaat. Meer zichtbaarheid, een sterker merk, meer klanten. Geen campagnes om aanwezig te zijn, concepten die organisaties echt vooruithelpen.",
   },
 ];
 
@@ -106,7 +106,7 @@ export default function MarketingPage() {
                 <p>
                   Precies daar maken wij het verschil. Wij ontwikkelen
                   marketingconcepten die niet saai, veilig of inwisselbaar zijn,
-                  maar juist verrassend, slim en onderscheidend — concepten die
+                  maar juist verrassend, slim en onderscheidend, concepten die
                   doelgroepen echt in beweging krijgen.
                 </p>
               </Reveal>
@@ -120,7 +120,7 @@ export default function MarketingPage() {
         </div>
       </section>
 
-      {/* THE INNOVATION — Marketing manifesto */}
+      {/* THE INNOVATION, Marketing manifesto */}
       <section className="py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -179,7 +179,7 @@ export default function MarketingPage() {
           <div className="relative aspect-[21/9] lg:aspect-[24/8] w-full overflow-hidden bg-ink">
             <Image
               src="/photos/marketing-secondary.png"
-              alt="Stadion DOOH — marketing met impact"
+              alt="Stadion DOOH, marketing met impact"
               fill
               className="object-cover"
               sizes="100vw"
@@ -211,7 +211,7 @@ export default function MarketingPage() {
                 className="text-paper/50 mb-8"
               />
               <h2 className="display-hero text-paper text-[clamp(2rem,4vw,3.5rem)] leading-[0.95] mb-6">
-                Online én offline — voor{" "}
+                Online én offline, voor{" "}
                 <em className="italic font-light text-cobalt-bright">
                   maximale impact
                 </em>
@@ -227,23 +227,23 @@ export default function MarketingPage() {
             <Reveal delay={140} className="lg:col-span-5 lg:pl-10 lg:border-l lg:border-paper/15">
               <ul className="space-y-5 text-paper/85 text-[15px] leading-[1.55]">
                 <li className="flex items-start gap-4">
-                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">—</span>
+                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">·</span>
                   <span>Slimme online activaties</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">—</span>
+                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">·</span>
                   <span>Sterke offline toepassingen</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">—</span>
+                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">·</span>
                   <span>Onverwachte combinaties van beide</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">—</span>
+                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">·</span>
                   <span>Maatwerk per organisatie, doelgroep en markt</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">—</span>
+                  <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">·</span>
                   <span>Strategie, concept én uitvoering</span>
                 </li>
               </ul>

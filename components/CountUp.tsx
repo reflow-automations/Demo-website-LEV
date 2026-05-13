@@ -13,9 +13,9 @@ interface CountUpProps {
   duration?: number;
   /** Format with Dutch thousands separator (1.234). */
   thousands?: boolean;
-  /** Optional dash separator for ranges — pass when value is "low — high". */
+  /** Optional dash separator for ranges, pass when value is "low, high". */
   separator?: string;
-  /** Optional second value, for ranges like 4.500 — 7.000 */
+  /** Optional second value, for ranges like 4.500, 7.000 */
   secondValue?: number;
   /** Format with `tot ` prefix word. */
   word?: string;

@@ -9,13 +9,13 @@ const DOOH_POINTS = [
     n: "01",
     title: "Bereik tot 2 miljoen kandidaten per maand",
     text:
-      "Afhankelijk van locaties en campagne-opzet kan het bereik oplopen van 250.000 tot 2 miljoen kandidaten per maand — vooral in de Randstad.",
+      "Afhankelijk van locaties en campagne-opzet kan het bereik oplopen van 250.000 tot 2 miljoen kandidaten per maand, vooral in de Randstad.",
   },
   {
     n: "02",
     title: "Missie, visie en cultuur worden zichtbaar",
     text:
-      "DOOH is meer dan een scherm met een boodschap. Werkgevers laten ook hun missie, visie en cultuur zien — persoonlijker en geloofwaardiger.",
+      "DOOH is meer dan een scherm met een boodschap. Werkgevers laten ook hun missie, visie en cultuur zien, persoonlijker en geloofwaardiger.",
   },
   {
     n: "03",
@@ -45,13 +45,13 @@ const DOOH_POINTS = [
     n: "07",
     title: "Werkgevers vallen op buiten de online massa",
     text:
-      "Op social media en vacaturebanken vallen organisaties nauwelijks nog op. Met DOOH gebeurt juist het tegenovergestelde — zichtbaar in het straatbeeld.",
+      "Op social media en vacaturebanken vallen organisaties nauwelijks nog op. Met DOOH gebeurt juist het tegenovergestelde, zichtbaar in het straatbeeld.",
   },
   {
     n: "08",
     title: "DOOH maakt directe conversie mogelijk",
     text:
-      "Door slimme koppelingen met digitale technologie wordt target advertising en directe conversie mogelijk — van branding naar resultaat.",
+      "Door slimme koppelingen met digitale technologie wordt target advertising en directe conversie mogelijk, van branding naar resultaat.",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function TalentAantrekkenPage() {
                 className="text-muted mb-8"
               />
               <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink mb-8">
-                Talent in het hart raken — online{" "}
+                Talent in het hart raken, online{" "}
                 <em className="font-display italic font-light text-cobalt">
                   én offline
                 </em>
@@ -183,7 +183,7 @@ export default function TalentAantrekkenPage() {
               <Reveal delay={160}>
                 <p>
                   Met onze Employer Branding-campagnes komen werkgevers in
-                  contact met de juiste kandidaten — sneller, met meer
+                  contact met de juiste kandidaten, sneller, met meer
                   herkenning en met sterkere conversie. Naast online kanalen
                   zetten wij <strong>Digital Out of Home</strong> in om
                   werkgevers extra zichtbaar te maken op locaties waar hun
@@ -200,7 +200,7 @@ export default function TalentAantrekkenPage() {
         </div>
       </section>
 
-      {/* SECONDARY IMAGE — full-width band */}
+      {/* SECONDARY IMAGE, full-width band */}
       <section className="py-0">
         <Reveal>
           <div className="relative aspect-[21/9] lg:aspect-[24/8] w-full overflow-hidden bg-ink">
@@ -216,7 +216,7 @@ export default function TalentAantrekkenPage() {
         </Reveal>
       </section>
 
-      {/* DOOH-EFFECTIEF — 8 redenen */}
+      {/* DOOH-EFFECTIEF, 8 redenen */}
       <section className="py-28 lg:py-36 bg-paper-deep">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
@@ -263,7 +263,7 @@ export default function TalentAantrekkenPage() {
           <Reveal delay={200}>
             <div className="mt-12 pt-6 border-t border-mist flex flex-wrap items-center justify-between gap-4">
               <p className="text-[12px] text-muted">
-                Bronnen — DCF onderzoek · NL DOOH-netwerk
+                Bronnen: DCF onderzoek · NL DOOH-netwerk
               </p>
               <CTA href="/contact" variant="underline">
                 Ontdek wat DOOH voor u kan betekenen

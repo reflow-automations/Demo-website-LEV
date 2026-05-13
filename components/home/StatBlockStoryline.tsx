@@ -2,7 +2,7 @@
 
 /**
  * Scroll-driven storytelling alternative to StatBlock.tsx.
- * Each stat is dramatically revealed as you scroll — sticky layout
+ * Each stat is dramatically revealed as you scroll, sticky layout
  * with cross-fading panels, plus count-up animation on activation.
  *
  * To revert to the grid version, change the import in app/page.tsx:
@@ -24,7 +24,7 @@ interface Stat {
   marker: StatMarker;
   // Numeric value for count-up animation
   value: number;
-  /** Optional second value (for ranges like €4.500 — €7.000) */
+  /** Optional second value (for ranges like €4.500, €7.000) */
   secondValue?: number;
   prefix?: string;
   suffix?: string;
@@ -57,14 +57,14 @@ const STATS: Stat[] = [
   {
     label: "Verzuimkosten per medewerker per jaar",
     detail:
-      "Gemiddelde kosten van ziekteverzuim in Nederland — exclusief de indirecte gevolgen voor productiviteit, teams en continuïteit.",
+      "Gemiddelde kosten van ziekteverzuim in Nederland, exclusief de indirecte gevolgen voor productiviteit, teams en continuïteit.",
     source: "TNO · ArboNed",
     marker: "wave",
     value: 4500,
     secondValue: 7000,
     prefix: "€",
     thousands: true,
-    separator: "—",
+    separator: "tot",
   },
   {
     label: "Bereik DOOH-netwerk per maand",
@@ -176,7 +176,7 @@ export default function StatBlockStoryline() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [progress, setProgress] = useState(0); // 0..1 within section
   const [inView, setInView] = useState(false);
-  // Trigger counter for each panel — increments when panel becomes active
+  // Trigger counter for each panel, increments when panel becomes active
   const [triggers, setTriggers] = useState<number[]>(() =>
     STATS.map(() => 0),
   );
@@ -246,7 +246,7 @@ export default function StatBlockStoryline() {
           </svg>
         </div>
 
-        {/* Header — pinned top */}
+        {/* Header, pinned top */}
         <div className="relative pt-16 lg:pt-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-20">
             <ChapterMark

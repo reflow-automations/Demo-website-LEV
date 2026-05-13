@@ -12,7 +12,7 @@ const POINTS = [
     n: "02",
     title: "Praktisch en betaalbaar",
     text:
-      "Innovatie moet werken in de dagelijkse praktijk — niet alleen indrukwekkend zijn op papier. Daarom blijven onze oplossingen toegankelijk en uitvoerbaar.",
+      "Innovatie moet werken in de dagelijkse praktijk, niet alleen indrukwekkend zijn op papier. Daarom blijven onze oplossingen toegankelijk en uitvoerbaar.",
   },
   {
     n: "03",
@@ -27,7 +27,7 @@ export default function Manifesto() {
     <section className="relative py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Left column — title */}
+          {/* Left column, title */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
             <Reveal>
               <ChapterMark
@@ -49,7 +49,7 @@ export default function Manifesto() {
             </Reveal>
           </div>
 
-          {/* Right column — points */}
+          {/* Right column, points */}
           <div className="lg:col-span-6 lg:col-start-7">
             <ol className="space-y-12">
               {POINTS.map((p, i) => (

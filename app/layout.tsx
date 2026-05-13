@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Concepts Factory — Grip op groei begint met digitale innovatie",
+  title: "Digital Concepts Factory, Grip op groei begint met digitale innovatie",
   description:
     "Digital Concepts Factory ontwikkelt digitale innovaties voor HR, Inkoop en Marketing. Sneller talent vinden, langer behouden, ziekteverzuim verlagen, inkoop slimmer organiseren.",
   metadataBase: new URL("https://dcf-demo.vercel.app"),

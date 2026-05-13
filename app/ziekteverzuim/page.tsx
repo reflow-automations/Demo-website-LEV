@@ -93,7 +93,7 @@ export default function ZiekteverzuimPage() {
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-[12px] text-muted pt-4 border-t border-mist">
-                  Bron — TNO, Arbobalans 2024 · ArboNed
+                  Bron: TNO, Arbobalans 2024 · ArboNed
                 </p>
               </Reveal>
             </div>
@@ -125,13 +125,13 @@ export default function ZiekteverzuimPage() {
                 secondValue={7000}
                 prefix="€"
                 thousands
-                separator="—"
+                separator="tot"
               />
             </div>
             <p className="text-paper/80 text-[clamp(1.05rem,1.5vw,1.35rem)] max-w-3xl mx-auto leading-[1.5]">
               In 2023 ging het in totaal om{" "}
               <strong className="text-paper">€8,3 miljard</strong> aan
-              loondoorbetalingskosten over verzuimde werkdagen — meer dan de
+              loondoorbetalingskosten over verzuimde werkdagen, meer dan de
               helft daarvan komt voort uit psychosociale arbeidsbelasting.
             </p>
             <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mt-10">
@@ -175,7 +175,7 @@ export default function ZiekteverzuimPage() {
                   <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] text-ink leading-[1.5]">
                     Digital Concepts Factory ontwikkelde een betaalbare digitale
                     oplossing waarmee organisaties medewerkers gemotiveerd
-                    houden om zich niet onnodig ziek te melden — zonder
+                    houden om zich niet onnodig ziek te melden, zonder
                     ingewikkelde trajecten of hoge drempels.
                   </p>
                 </div>
@@ -216,7 +216,7 @@ export default function ZiekteverzuimPage() {
         </Reveal>
       </section>
 
-      {/* CONSEQUENCES — financial + team */}
+      {/* CONSEQUENCES, financial + team */}
       <section className="py-28 lg:py-36 bg-paper-deep">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
@@ -233,7 +233,7 @@ export default function ZiekteverzuimPage() {
             <div className="lg:col-span-5 flex items-end">
               <Reveal delay={120}>
                 <p className="text-text text-[15px] leading-[1.6]">
-                  De gevolgen zijn zowel financieel als organisatorisch groot —
+                  De gevolgen zijn zowel financieel als organisatorisch groot,
                   in euro's én in werkdruk en motivatie.
                 </p>
               </Reveal>
@@ -283,7 +283,7 @@ export default function ZiekteverzuimPage() {
             <div className="mt-12 pt-6 border-t border-mist flex flex-wrap items-center justify-between gap-4">
               <p className="text-[12px] text-muted leading-[1.5] max-w-xl">
                 TNO: psychosociale arbeidsbelasting is verantwoordelijk voor
-                meer dan de helft van de werkgerelateerde verzuimkosten — €4,9
+                meer dan de helft van de werkgerelateerde verzuimkosten, €4,9
                 miljard van €8,3 miljard in 2023.
               </p>
               <CTA href="/contact" variant="underline">

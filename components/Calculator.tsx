@@ -30,7 +30,7 @@ export default function Calculator() {
 
   return (
     <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-      {/* LEFT — controls */}
+      {/* LEFT, controls */}
       <div className="lg:col-span-7">
         {/* Salaris slider */}
         <div className="mb-10">
@@ -136,7 +136,7 @@ export default function Calculator() {
         </p>
       </div>
 
-      {/* RIGHT — output */}
+      {/* RIGHT, output */}
       <div className="lg:col-span-5 bg-ink text-paper p-8 lg:p-10 flex flex-col justify-between rounded-3xl shadow-[0_28px_60px_-20px_rgba(45,31,20,0.32)]">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mb-3">
@@ -146,13 +146,13 @@ export default function Calculator() {
             {fmtEUR(perPersoon)}
           </div>
           <p className="text-paper/65 text-[12px] leading-[1.5] mb-10">
-            vervangingskosten — {Math.round(pct * 100)}% van {fmtEUR(salary)}
+            vervangingskosten, {Math.round(pct * 100)}% van {fmtEUR(salary)}
           </p>
 
           <div className="h-px bg-paper/15 mb-8" />
 
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mb-3">
-            Totaal per jaar — uw situatie
+            Totaal per jaar, uw situatie
           </p>
           <div className="display-numeric text-paper text-[clamp(2.5rem,5vw,4rem)] mb-1 leading-none">
             {fmtEUR(totaalKosten)}
@@ -175,7 +175,7 @@ export default function Calculator() {
         </div>
       </div>
 
-      {/* Slider track styling — minimal browser override */}
+      {/* Slider track styling, minimal browser override */}
       <style jsx>{`
         input[type="range"] {
           -webkit-appearance: none;

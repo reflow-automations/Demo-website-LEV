@@ -20,7 +20,7 @@ const VALUES = [
     n: "03",
     title: "Eerst begrijpen, dan ontwikkelen",
     text:
-      "Elke organisatie is anders. Wij doorgronden de organisatie, markt en uitdaging zorgvuldig — pas daarna ontwikkelen wij een oplossing.",
+      "Elke organisatie is anders. Wij doorgronden de organisatie, markt en uitdaging zorgvuldig, pas daarna ontwikkelen wij een oplossing.",
   },
   {
     n: "04",
@@ -107,7 +107,7 @@ export default function OverOnsPage() {
               <Reveal delay={100}>
                 <p>
                   Wij ontwikkelen digitale innovaties die organisaties helpen
-                  slimmer, sterker en toekomstbestendiger te opereren — met
+                  slimmer, sterker en toekomstbestendiger te opereren, met
                   focus op drie domeinen waar vandaag de dag veel winst valt
                   te behalen: HR, Inkoop en Marketing.
                 </p>
@@ -202,7 +202,7 @@ export default function OverOnsPage() {
                 <p className="text-paper/70 text-[16px] leading-[1.6] max-w-md">
                   Een veelzijdig team van software developers, UX-designers en
                   strategen. Echte digitale innovatie ontstaat niet door alleen
-                  naar techniek of strategie te kijken — maar wanneer alles
+                  naar techniek of strategie te kijken, maar wanneer alles
                   samenkomt.
                 </p>
               </Reveal>

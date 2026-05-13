@@ -16,7 +16,7 @@ const SUBPAGES = [
     no: "5b",
     title: "(Europees) aanbesteden",
     summary:
-      "Aanbestedingstrajecten overzichtelijker, transparanter en goedkoper — tot 50% kostenreductie.",
+      "Aanbestedingstrajecten overzichtelijker, transparanter en goedkoper, tot 50% kostenreductie.",
     href: "/inkoop/aanbesteden",
   },
   {
@@ -63,7 +63,7 @@ export default function InkoopPage() {
             <div className="photo-treatment aspect-[16/9] lg:aspect-[7/3] relative overflow-hidden bg-ink">
               <Image
                 src="/photos/inkoop-meeting.png"
-                alt="Inkoop & aanbesteden — werksessie"
+                alt="Inkoop & aanbesteden, werksessie"
                 fill
                 className="object-cover duotone-blue"
                 priority
@@ -105,7 +105,7 @@ export default function InkoopPage() {
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-[12px] text-muted pt-4 border-t border-mist">
-                  Bron — PIANOo · European Commission · Deloitte CPO Survey 2025
+                  Bron: PIANOo · European Commission · Deloitte CPO Survey 2025
                 </p>
               </Reveal>
             </div>
@@ -149,7 +149,7 @@ export default function InkoopPage() {
                     className="flex items-start gap-4 text-paper/85 text-[15px] leading-[1.55]"
                   >
                     <span className="font-mono text-cobalt-bright text-[12px] pt-1 shrink-0">
-                      —
+                      ·
                     </span>
                     <span>{b}</span>
                   </li>

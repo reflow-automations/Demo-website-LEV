@@ -29,7 +29,7 @@ export default function ContactPage() {
       <section className="py-20 border-t border-mist">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            {/* Left — form */}
+            {/* Left, form */}
             <div className="lg:col-span-7">
               <Reveal>
                 <form
@@ -122,7 +122,7 @@ export default function ContactPage() {
                     className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:bg-cobalt"
                   >
                     {submitted
-                      ? "Bedankt — wij nemen binnen 24u contact op"
+                      ? "Bedankt, wij nemen binnen 24u contact op"
                       : "Verstuur aanvraag"}
                     {!submitted && (
                       <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
@@ -134,7 +134,7 @@ export default function ContactPage() {
               </Reveal>
             </div>
 
-            {/* Right — info */}
+            {/* Right, info */}
             <div className="lg:col-span-4 lg:col-start-9 space-y-12">
               <Reveal delay={100}>
                 <div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                     <br />
                     Rotterdam Centraal
                     <br />
-                    Rotterdam — Nederland
+                    Rotterdam, Nederland
                   </address>
                 </div>
               </Reveal>

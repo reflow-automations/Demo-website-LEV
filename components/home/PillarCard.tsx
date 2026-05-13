@@ -81,7 +81,7 @@ export default function PillarCard({
         }}
       />
 
-      {/* Cobalt corner accents — slide in on hover */}
+      {/* Cobalt corner accents, slide in on hover */}
       <div
         aria-hidden
         className="absolute top-0 left-0 w-0 h-px bg-cobalt transition-all duration-500 group-hover:w-full"

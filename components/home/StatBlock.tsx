@@ -113,7 +113,7 @@ const STATS: Stat[] = [
   {
     label: "Verzuimkosten per medewerker per jaar",
     detail:
-      "Gemiddelde kosten van ziekteverzuim in Nederland — exclusief de indirecte gevolgen voor productiviteit, teams en continuïteit.",
+      "Gemiddelde kosten van ziekteverzuim in Nederland, exclusief de indirecte gevolgen voor productiviteit, teams en continuïteit.",
     source: "TNO · ArboNed",
     marker: "wave",
     value: (
@@ -122,7 +122,7 @@ const STATS: Stat[] = [
         secondValue={7000}
         prefix="€"
         thousands
-        separator="—"
+        separator="tot"
       />
     ),
   },
@@ -215,7 +215,7 @@ export default function StatBlock() {
           ))}
         </div>
 
-        {/* Subtle outbound CTA after the stats — link to deeper page */}
+        {/* Subtle outbound CTA after the stats, link to deeper page */}
         <Reveal delay={200}>
           <div className="mt-14 pt-8 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4">
             <p className="text-paper/60 text-[14px] leading-[1.5] max-w-xl">

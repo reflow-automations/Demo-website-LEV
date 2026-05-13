@@ -37,7 +37,7 @@ export default function DemoPlaceholder({
             <p>
               Deze pagina is in de demo van{" "}
               <strong>Reflow Automations × Digital Concepts Factory</strong>{" "}
-              bewust niet uitgewerkt — om jullie tijd te besparen bij de
+              bewust niet uitgewerkt, om jullie tijd te besparen bij de
               evaluatie van de designrichting.
             </p>
             <p>

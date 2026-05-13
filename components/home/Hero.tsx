@@ -13,9 +13,9 @@ export default function Hero() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Left — photo, refined treatment */}
+          {/* Left, photo, refined treatment */}
           <div className="lg:col-span-5 order-2 lg:order-1 relative">
-            {/* Soft halo behind the image — subtle cobalt atmosphere */}
+            {/* Soft halo behind the image, subtle cobalt atmosphere */}
             <div
               aria-hidden
               className="absolute -inset-8 lg:-inset-12 -z-10 opacity-60"
@@ -29,7 +29,7 @@ export default function Hero() {
             <div className="relative aspect-[5/6] w-full overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28),0_8px_24px_-12px_rgba(21,95,125,0.18)] ring-1 ring-ink/5">
               <Image
                 src="/photos/home-hero.png"
-                alt="Strategische sessie — drie professionals bij een digitale groei-grafiek met HR, Inkoop en Marketing"
+                alt="Strategische sessie, drie professionals bij een digitale groei-grafiek met HR, Inkoop en Marketing"
                 fill
                 className="object-cover"
                 style={{ objectPosition: "75% 50%" }}
@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — headline + lead + CTAs */}
+          {/* Right, headline + lead + CTAs */}
           <div className="lg:col-span-7 order-1 lg:order-2">
             <h1 className="display-hero text-ink mb-10 text-[clamp(2.5rem,6vw,5.75rem)]">
               Grip op groei begint met{" "}
@@ -52,7 +52,7 @@ export default function Hero() {
 
             <p className="text-text text-[17px] lg:text-[18px] leading-[1.55] max-w-xl mb-10">
               Digital Concepts Factory ontwikkelt innovatieve technologie waarmee
-              organisaties hun grootste uitdagingen doelgericht aanpakken — van
+              organisaties hun grootste uitdagingen doelgericht aanpakken, van
               talent vinden en behouden tot inkoop slimmer organiseren en
               marketing onderscheidend inzetten.
             </p>

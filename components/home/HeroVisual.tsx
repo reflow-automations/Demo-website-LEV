@@ -6,7 +6,7 @@
  * Three domain nodes (HR · Inkoop · Marketing) connected via converging
  * lines that pulse along cobalt paths to a single focal point.
  *
- * Pure SVG + CSS animations — no Motion/JS overhead.
+ * Pure SVG + CSS animations, no Motion/JS overhead.
  */
 export default function HeroVisual() {
   return (
@@ -38,7 +38,7 @@ export default function HeroVisual() {
         {/* Central glow */}
         <circle cx="240" cy="240" r="180" fill="url(#hv-glow)" />
 
-        {/* Three domain nodes — corners of triangle pointing down */}
+        {/* Three domain nodes, corners of triangle pointing down */}
         {/* HR top-left */}
         <g transform="translate(80,100)">
           <rect x="0" y="0" width="100" height="40" stroke="#2D1F14" strokeWidth="1" fill="#F6F0E5" />
