@@ -77,8 +77,11 @@ const STATS: Stat[] = [
   },
 ];
 
-// Each panel covers this many viewport heights of scroll. Lower = faster.
-const VH_PER_PANEL = 80;
+// Section height is set via Tailwind classes on the <section> below so we can
+// give mobile (smaller viewport) more scroll-room than desktop:
+//   mobile:  h-[540vh]   → ~110vh of scroll per panel
+//   desktop: h-[320vh]   → ~55vh of scroll per panel
+// To re-tune: edit the className on the <section>.
 
 function MarkerBar() {
   return (
@@ -228,8 +231,7 @@ export default function StatBlockStoryline() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-ink text-paper"
-      style={{ height: `${STATS.length * VH_PER_PANEL}vh` }}
+      className="relative bg-ink text-paper h-[540vh] lg:h-[320vh]"
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Grid backdrop */}
