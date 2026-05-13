@@ -102,7 +102,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 px-6 py-3.5 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300 rounded-full"
+                className="group inline-flex items-center gap-3 px-6 py-3.5 bg-cobalt text-paper text-[13px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 rounded-full"
               >
                 <span>Plan een vrijblijvend gesprek</span>
                 <svg

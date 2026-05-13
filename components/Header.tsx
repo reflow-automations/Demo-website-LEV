@@ -65,7 +65,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             href="/contact"
-            className="px-5 py-2.5 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300"
+            className="px-5 py-2.5 bg-cobalt text-paper text-[13px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300"
           >
             Plan gesprek
           </Link>

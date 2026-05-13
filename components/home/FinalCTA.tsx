@@ -20,7 +20,7 @@ export default function FinalCTA() {
               <div className="lg:col-span-4 flex justify-start lg:justify-end">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-300"
+                  className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300"
                 >
                   <span>Plan vrijblijvend gesprek</span>
                   <svg

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CountUp from "@/components/CountUp";
@@ -213,6 +214,24 @@ export default function StatBlock() {
             </Reveal>
           ))}
         </div>
+
+        {/* Subtle outbound CTA after the stats — link to deeper page */}
+        <Reveal delay={200}>
+          <div className="mt-14 pt-8 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-paper/60 text-[14px] leading-[1.5] max-w-xl">
+              Cijfers vertalen naar uw eigen situatie? Wij rekenen het graag voor u door.
+            </p>
+            <Link
+              href="/talent-behouden"
+              className="group inline-flex items-center gap-3 text-[13px] tracking-tight text-paper hover:text-cobalt-bright transition-colors"
+            >
+              <span className="link-underline">Bereken uw besparingspotentieel</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
+              </svg>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

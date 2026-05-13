@@ -46,7 +46,7 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={submitted}
-              className="px-7 py-4 bg-ink text-paper text-[13px] tracking-tight hover:bg-cobalt transition-colors duration-300 disabled:bg-cobalt"
+              className="px-7 py-4 bg-cobalt text-paper text-[13px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:bg-cobalt"
             >
               {submitted ? "Bedankt — u staat op de lijst" : "Aanmelden"}
             </button>

@@ -6,7 +6,9 @@ const PAGES = [
   { slug: "talent-behouden", path: "/talent-behouden" },
   { slug: "inkoop", path: "/inkoop" },
   { slug: "over-ons", path: "/over-ons" },
-  { slug: "talent-aantrekken-placeholder", path: "/talent-aantrekken" },
+  { slug: "talent-aantrekken", path: "/talent-aantrekken" },
+  { slug: "ziekteverzuim", path: "/ziekteverzuim" },
+  { slug: "marketing", path: "/marketing" },
   { slug: "contact", path: "/contact" },
 ];
 
@@ -26,7 +28,7 @@ for (const vp of VIEWPORTS) {
     const url = BASE + p.path;
     console.log(`→ ${vp.name} ${p.slug}`);
     try {
-      await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
+      await page.goto(url, { waitUntil: "load", timeout: 30000 });
 
       // Above-the-fold screenshot before triggering reveals
       await page.screenshot({

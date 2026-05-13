@@ -119,7 +119,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitted}
-                    className="group inline-flex items-center gap-4 px-8 py-5 bg-ink text-paper text-[14px] tracking-tight hover:bg-cobalt transition-colors duration-300 disabled:bg-cobalt"
+                    className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:bg-cobalt"
                   >
                     {submitted
                       ? "Bedankt — wij nemen binnen 24u contact op"
