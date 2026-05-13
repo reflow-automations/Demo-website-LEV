@@ -160,7 +160,7 @@ export default function ContactPage() {
                     <br />
                     Rotterdam Centraal
                     <br />
-                    Rotterdam, Nederland
+                    Rotterdam — Nederland
                   </address>
                 </div>
               </Reveal>

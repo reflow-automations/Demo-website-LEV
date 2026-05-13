@@ -125,7 +125,7 @@ export default function ZiekteverzuimPage() {
                 secondValue={7000}
                 prefix="€"
                 thousands
-                separator="tot"
+                separator="—"
               />
             </div>
             <p className="text-paper/80 text-[clamp(1.05rem,1.5vw,1.35rem)] max-w-3xl mx-auto leading-[1.5]">

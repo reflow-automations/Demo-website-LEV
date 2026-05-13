@@ -54,7 +54,7 @@ export default function Footer() {
             <address className="not-italic text-paper/80 leading-relaxed">
               Rotterdam Centraal
               <br />
-              Rotterdam, Nederland
+              Rotterdam — Nederland
             </address>
           </div>
 

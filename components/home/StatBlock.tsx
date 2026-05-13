@@ -122,7 +122,7 @@ const STATS: Stat[] = [
         secondValue={7000}
         prefix="€"
         thousands
-        separator="tot"
+        separator="—"
       />
     ),
   },

@@ -64,7 +64,7 @@ const STATS: Stat[] = [
     secondValue: 7000,
     prefix: "€",
     thousands: true,
-    separator: "tot",
+    separator: "—",
   },
   {
     label: "Bereik DOOH-netwerk per maand",
