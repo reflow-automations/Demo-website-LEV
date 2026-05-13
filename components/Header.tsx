@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -34,17 +35,14 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 h-[68px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            className="text-ink"
-            aria-hidden
-          >
-            <rect x="0" y="0" width="32" height="32" fill="currentColor" />
-            <path d="M9 9h6a7 7 0 0 1 0 14H9V9z" fill="#FAFAF7" />
-            <circle cx="22" cy="22" r="2.2" fill="#2D4FE5" />
-          </svg>
+          <Image
+            src="/logo.png"
+            alt="Digital Concepts Factory"
+            width={36}
+            height={36}
+            className="shrink-0"
+            priority
+          />
           <div className="font-sans text-[14px] font-medium tracking-tight text-ink">
             Digital Concepts Factory
           </div>

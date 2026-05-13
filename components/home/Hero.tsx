@@ -28,11 +28,11 @@ export default function Hero() {
             {/* Photo frame */}
             <div className="relative aspect-[5/6] w-full overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(10,22,40,0.32),0_8px_24px_-12px_rgba(45,79,229,0.18)] ring-1 ring-ink/5">
               <Image
-                src="/photos/home-domains.png"
-                alt="Team aan het werk met HR, Inkoop en Marketing dashboards"
+                src="/photos/home-hero.png"
+                alt="Strategische sessie — drie professionals bij een digitale groei-grafiek met HR, Inkoop en Marketing"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "70% 38%" }}
+                style={{ objectPosition: "75% 50%" }}
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
