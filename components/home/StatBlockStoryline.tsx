@@ -78,7 +78,7 @@ const STATS: Stat[] = [
 ];
 
 // Each panel covers this many viewport heights of scroll. Lower = faster.
-const VH_PER_PANEL = 60;
+const VH_PER_PANEL = 80;
 
 function MarkerBar() {
   return (
@@ -125,7 +125,7 @@ function renderMarker(m: StatMarker) {
 }
 
 // Inline count-up that animates when `trigger` increments.
-function useCountUp(target: number, trigger: number, duration = 1100) {
+function useCountUp(target: number, trigger: number, duration = 650) {
   const [current, setCurrent] = useState(0);
   useEffect(() => {
     if (trigger === 0) {
@@ -172,10 +172,28 @@ export default function StatBlockStoryline() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [progress, setProgress] = useState(0); // 0..1 within section
+  const [inView, setInView] = useState(false);
   // Trigger counter for each panel — increments when panel becomes active
   const [triggers, setTriggers] = useState<number[]>(() =>
     STATS.map(() => 0),
   );
+
+  // Watch when the section actually enters the viewport, so the first
+  // count-up doesn't fire before the user can see it.
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+        }
+      },
+      { threshold: 0.15 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -195,14 +213,17 @@ export default function StatBlockStoryline() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // When activeIdx changes, increment trigger of new active panel
+  // When activeIdx changes (and section is in view), increment trigger.
+  // This ensures the first panel's count-up fires when the user actually
+  // scrolls into the section, not on initial page load.
   useEffect(() => {
+    if (!inView) return;
     setTriggers((prev) => {
       const next = [...prev];
       next[activeIdx] = next[activeIdx] + 1;
       return next;
     });
-  }, [activeIdx]);
+  }, [activeIdx, inView]);
 
   return (
     <section
