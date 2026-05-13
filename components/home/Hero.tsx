@@ -21,12 +21,12 @@ export default function Hero() {
               className="absolute -inset-8 lg:-inset-12 -z-10 opacity-60"
               style={{
                 background:
-                  "radial-gradient(60% 50% at 50% 50%, rgba(45,79,229,0.08), transparent 70%)",
+                  "radial-gradient(60% 50% at 50% 50%, rgba(21,95,125,0.10), transparent 70%)",
               }}
             />
 
             {/* Photo frame */}
-            <div className="relative aspect-[5/6] w-full overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(10,22,40,0.32),0_8px_24px_-12px_rgba(45,79,229,0.18)] ring-1 ring-ink/5">
+            <div className="relative aspect-[5/6] w-full overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28),0_8px_24px_-12px_rgba(21,95,125,0.18)] ring-1 ring-ink/5">
               <Image
                 src="/photos/home-hero.png"
                 alt="Strategische sessie — drie professionals bij een digitale groei-grafiek met HR, Inkoop en Marketing"
@@ -43,7 +43,7 @@ export default function Hero() {
                 className="absolute inset-x-0 bottom-0 h-2/5 pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.55) 100%)",
+                    "linear-gradient(180deg, rgba(45,31,20,0) 0%, rgba(45,31,20,0.55) 100%)",
                 }}
               />
 
