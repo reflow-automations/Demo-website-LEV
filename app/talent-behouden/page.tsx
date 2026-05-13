@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
@@ -78,19 +79,43 @@ export default function TalentBehoudenPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark
-              number="02"
+              number="03"
               label="Talent behouden"
               className="text-muted mb-10"
             />
-            <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,6.5rem)] max-w-5xl">
+            <h1 className="display-hero text-ink text-[clamp(2.75rem,6.5vw,6rem)] max-w-5xl">
               Behouden is de{" "}
               <em className="italic font-light text-cobalt">nieuwe</em>{" "}
               succesfactor.
             </h1>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* HERO IMAGE */}
+      <section className="relative pb-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-20">
+          <Reveal>
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[21/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
+              <Image
+                src="/photos/talent-behouden-celebration.png"
+                alt="Drie collega's juichend bij een resultaat-dashboard"
+                fill
+                className="object-cover"
+                style={{ objectPosition: "center 35%" }}
+                sizes="100vw"
+                priority
+              />
+              <div className="absolute bottom-5 left-5 right-5">
+                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/85">
+                  Lagere vervangingskosten · Hogere productiviteit · Hoger rendement
+                </span>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
@@ -54,7 +55,7 @@ export default function OverOnsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark
@@ -62,11 +63,35 @@ export default function OverOnsPage() {
               label="Over ons"
               className="text-muted mb-10"
             />
-            <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,6.5rem)] max-w-5xl">
+            <h1 className="display-hero text-ink text-[clamp(2.75rem,6.5vw,6rem)] max-w-5xl">
               Digitale innovatie die organisaties{" "}
               <em className="italic font-light text-cobalt">écht</em> verder
               helpt.
             </h1>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* HERO IMAGE */}
+      <section className="relative pb-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-20">
+          <Reveal>
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[21/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
+              <Image
+                src="/photos/over-ons-hero.png"
+                alt="Team rond laptop met HR, Inkoop en Marketing dashboards"
+                fill
+                className="object-cover"
+                style={{ objectPosition: "78% center" }}
+                sizes="100vw"
+                priority
+              />
+              <div className="absolute bottom-5 left-5 right-5">
+                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/85">
+                  Het team — techniek, business en gebruiker verbonden
+                </span>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
