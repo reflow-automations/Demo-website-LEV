@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV = [
+  { label: "Home", href: "/" },
   { label: "Talent aantrekken", href: "/talent-aantrekken" },
   { label: "Talent behouden", href: "/talent-behouden" },
   { label: "Ziekteverzuim", href: "/ziekteverzuim" },

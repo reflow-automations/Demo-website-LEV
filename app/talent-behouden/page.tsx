@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
+import Calculator from "@/components/Calculator";
 
 const COST_ITEMS = [
   {
@@ -100,7 +101,7 @@ export default function TalentBehoudenPage() {
       <section className="relative pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
-            <div className="photo-treatment aspect-[16/9] lg:aspect-[21/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[24/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
               <Image
                 src="/photos/talent-behouden-celebration.png"
                 alt="Drie collega's juichend bij een resultaat-dashboard"
@@ -304,22 +305,46 @@ export default function TalentBehoudenPage() {
         </div>
       </section>
 
-      {/* CALCULATOR TABLE */}
+      {/* CALCULATOR — interactive widget */}
       <section className="py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark
               number="03"
-              label="Bereken vervangingskosten"
+              label="Bereken uw vervangingskosten"
               className="text-muted mb-8"
             />
             <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink mb-6 max-w-3xl">
-              Wat kost personeelsverloop u precies?
+              Wat kost personeelsverloop{" "}
+              <em className="font-display italic font-light text-cobalt">u</em>{" "}
+              precies?
             </h2>
             <p className="text-text text-[16px] leading-[1.6] max-w-2xl mb-14">
-              De vervangingskosten lopen op van 40% (frontline) tot 200%
-              (leiders/managers) van het bruto jaarsalaris. Onderstaande
-              tabel toont de impact bij gangbare salarissen.
+              Vul uw eigen situatie in — salaris, type functie en jaarlijks
+              aantal vertrekkers. U ziet direct uw vervangingskosten én het
+              besparingspotentieel met DCF.
+            </p>
+          </Reveal>
+
+          <Reveal delay={80}>
+            <Calculator />
+          </Reveal>
+
+          <Reveal delay={140}>
+            <p className="text-[12px] text-muted mt-14 pt-6 border-t border-mist">
+              Berekening volgens Gallup-vuistregels (40%/80%/200% van bruto
+              jaarsalaris). Modaal NL: €48.000 (CPB 2026).
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* REFERENCE TABLE — quick glance */}
+      <section className="pb-28 lg:pb-36">
+        <div className="mx-auto max-w-7xl px-6 lg:px-20">
+          <Reveal>
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-6">
+              Referentie — kosten per medewerker
             </p>
           </Reveal>
 

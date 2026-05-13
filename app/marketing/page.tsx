@@ -61,7 +61,7 @@ export default function MarketingPage() {
       <section className="relative pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
-            <div className="photo-treatment aspect-[16/9] lg:aspect-[21/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[24/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
               <Image
                 src="/photos/marketing-hero.png"
                 alt="Drukke stadsstraat met menigte — opvallen in de massa"

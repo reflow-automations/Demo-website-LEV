@@ -60,7 +60,7 @@ export default function InkoopPage() {
       <section className="relative -mt-4 mb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
-            <div className="photo-treatment aspect-[16/9] lg:aspect-[21/9] relative overflow-hidden bg-ink">
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[24/9] relative overflow-hidden bg-ink">
               <Image
                 src="/photos/inkoop-meeting.png"
                 alt="Inkoop & aanbesteden — werksessie"
