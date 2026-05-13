@@ -216,9 +216,9 @@ export default function MarketingPage() {
                 className="text-paper/50 mb-8"
               />
               <h2 className="display-hero text-paper text-[clamp(2rem,4vw,3.5rem)] leading-[0.95] mb-6">
-                Marketing die niet alleen opvalt,{" "}
+                Online én offline — voor{" "}
                 <em className="italic font-light text-cobalt-bright">
-                  maar ook oplevert
+                  maximale impact
                 </em>
                 .
               </h2>

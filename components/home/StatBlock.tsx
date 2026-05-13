@@ -222,7 +222,7 @@ export default function StatBlock() {
               Cijfers vertalen naar uw eigen situatie? Wij rekenen het graag voor u door.
             </p>
             <Link
-              href="/talent-behouden"
+              href="/talent-behouden#bereken"
               className="group inline-flex items-center gap-3 text-[13px] tracking-tight text-paper hover:text-cobalt-bright transition-colors"
             >
               <span className="link-underline">Bereken uw besparingspotentieel</span>

@@ -306,7 +306,7 @@ export default function TalentBehoudenPage() {
       </section>
 
       {/* CALCULATOR — interactive widget */}
-      <section className="py-28 lg:py-36">
+      <section id="bereken" className="py-28 lg:py-36 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark

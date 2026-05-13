@@ -349,7 +349,7 @@ export default function StatBlockStoryline() {
                 />
               </div>
               <Link
-                href="/talent-behouden"
+                href="/talent-behouden#bereken"
                 className="group inline-flex items-center gap-3 text-[13px] tracking-tight text-paper hover:text-cobalt-bright transition-colors shrink-0"
               >
                 <span className="link-underline">Bereken uw besparingspotentieel</span>
