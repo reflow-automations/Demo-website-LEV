@@ -46,7 +46,7 @@ export default function InkoopPage() {
             <ChapterMark
               number="05"
               label="Inkoop"
-              className="text-muted mb-10"
+              className="text-muted mb-6"
             />
             <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,6.5rem)] max-w-5xl">
               Aanbesteden is complexer dan ooit en vraagt om{" "}
@@ -60,7 +60,7 @@ export default function InkoopPage() {
       <section className="relative -mt-4 mb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
-            <div className="photo-treatment aspect-[16/9] lg:aspect-[24/9] relative overflow-hidden bg-ink">
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[7/3] relative overflow-hidden bg-ink">
               <Image
                 src="/photos/inkoop-meeting.png"
                 alt="Inkoop & aanbesteden — werksessie"

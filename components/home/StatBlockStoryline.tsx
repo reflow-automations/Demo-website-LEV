@@ -3,7 +3,7 @@
 /**
  * Scroll-driven storytelling alternative to StatBlock.tsx.
  * Each stat is dramatically revealed as you scroll — sticky layout
- * with cross-fading panels.
+ * with cross-fading panels, plus count-up animation on activation.
  *
  * To revert to the grid version, change the import in app/page.tsx:
  *   import StatBlock from "@/components/home/StatBlock";
@@ -19,46 +19,66 @@ type StatMarker = "bar" | "arc" | "dots" | "wave";
 
 interface Stat {
   label: string;
-  value: string;
   detail: string;
   source: string;
   marker: StatMarker;
+  // Numeric value for count-up animation
+  value: number;
+  /** Optional second value (for ranges like €4.500 — €7.000) */
+  secondValue?: number;
+  prefix?: string;
+  suffix?: string;
+  word?: string;
+  thousands?: boolean;
+  separator?: string;
 }
 
 const STATS: Stat[] = [
   {
     label: "Minimale besparing per behouden medewerker",
-    value: "€19.200",
     detail:
       "Vervangingskosten bedragen 40% tot 200% van het bruto jaarsalaris. Bij modaal inkomen (€48.000) ligt de ondergrens al op €19.200 per medewerker.",
     source: "Gallup · Randstad",
     marker: "bar",
+    value: 19200,
+    prefix: "€",
+    thousands: true,
   },
   {
     label: "Reductie aanbestedingskosten",
-    value: "tot 50%",
     detail:
       "Met onze digitale innovatie voor (Europees) aanbesteden kunnen interne kosten en doorlooptijden met de helft worden teruggebracht.",
     source: "DCF onderzoek",
     marker: "arc",
+    value: 50,
+    word: "tot",
+    suffix: "%",
   },
   {
     label: "Verzuimkosten per medewerker per jaar",
-    value: "€4.500 — €7.000",
     detail:
       "Gemiddelde kosten van ziekteverzuim in Nederland — exclusief de indirecte gevolgen voor productiviteit, teams en continuïteit.",
     source: "TNO · ArboNed",
     marker: "wave",
+    value: 4500,
+    secondValue: 7000,
+    prefix: "€",
+    thousands: true,
+    separator: "—",
   },
   {
     label: "Bereik DOOH-netwerk per maand",
-    value: "2 mln+",
     detail:
       "Afhankelijk van locaties en campagne-opzet bereiken onze DOOH-schermen 250.000 tot 2 miljoen kandidaten per maand, vooral in de Randstad.",
     source: "DCF netwerk",
     marker: "dots",
+    value: 2,
+    suffix: " mln+",
   },
 ];
+
+// Each panel covers this many viewport heights of scroll. Lower = faster.
+const VH_PER_PANEL = 60;
 
 function MarkerBar() {
   return (
@@ -104,10 +124,58 @@ function renderMarker(m: StatMarker) {
   return m === "bar" ? <MarkerBar /> : m === "arc" ? <MarkerArc /> : m === "dots" ? <MarkerDots /> : <MarkerWave />;
 }
 
+// Inline count-up that animates when `trigger` increments.
+function useCountUp(target: number, trigger: number, duration = 1100) {
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    if (trigger === 0) {
+      setCurrent(0);
+      return;
+    }
+    const start = performance.now();
+    let raf = 0;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      setCurrent(target * eased);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, trigger, duration]);
+  return current;
+}
+
+function StatValue({ stat, trigger }: { stat: Stat; trigger: number }) {
+  const v1 = useCountUp(stat.value, trigger);
+  const v2 = useCountUp(stat.secondValue ?? 0, trigger);
+
+  const fmt = (n: number) => {
+    const rounded = Math.round(n);
+    return stat.thousands ? rounded.toLocaleString("nl-NL") : String(rounded);
+  };
+
+  return (
+    <span>
+      {stat.word ? `${stat.word} ` : ""}
+      {stat.prefix ?? ""}
+      {fmt(v1)}
+      {stat.secondValue !== undefined && stat.separator
+        ? ` ${stat.separator} ${stat.prefix ?? ""}${fmt(v2)}`
+        : ""}
+      {stat.suffix ?? ""}
+    </span>
+  );
+}
+
 export default function StatBlockStoryline() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [progress, setProgress] = useState(0); // 0..1 within section
+  // Trigger counter for each panel — increments when panel becomes active
+  const [triggers, setTriggers] = useState<number[]>(() =>
+    STATS.map(() => 0),
+  );
 
   useEffect(() => {
     const onScroll = () => {
@@ -116,11 +184,9 @@ export default function StatBlockStoryline() {
       const rect = el.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
       if (total <= 0) return;
-      // How far through the section we have scrolled (0 → 1)
       const raw = -rect.top / total;
       const clamped = Math.max(0, Math.min(1, raw));
       setProgress(clamped);
-      // Active panel = clamped * STATS.length, clamped to last index
       const idx = Math.min(STATS.length - 1, Math.floor(clamped * STATS.length));
       setActiveIdx(idx);
     };
@@ -129,14 +195,23 @@ export default function StatBlockStoryline() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // When activeIdx changes, increment trigger of new active panel
+  useEffect(() => {
+    setTriggers((prev) => {
+      const next = [...prev];
+      next[activeIdx] = next[activeIdx] + 1;
+      return next;
+    });
+  }, [activeIdx]);
+
   return (
     <section
       ref={sectionRef}
       className="relative bg-ink text-paper"
-      style={{ height: `${STATS.length * 100}vh` }}
+      style={{ height: `${STATS.length * VH_PER_PANEL}vh` }}
     >
-      {/* Grid backdrop */}
       <div className="sticky top-0 h-screen overflow-hidden">
+        {/* Grid backdrop */}
         <div className="absolute inset-0 opacity-[0.035] pointer-events-none">
           <svg width="100%" height="100%" aria-hidden>
             <defs>
@@ -166,7 +241,7 @@ export default function StatBlockStoryline() {
           </div>
         </div>
 
-        {/* Stacked panels — only one visible at a time */}
+        {/* Stacked panels */}
         <div className="absolute inset-0 flex items-center justify-center px-6 lg:px-20">
           <div className="mx-auto max-w-7xl w-full">
             {STATS.map((s, i) => {
@@ -174,7 +249,7 @@ export default function StatBlockStoryline() {
               return (
                 <div
                   key={s.label}
-                  className="absolute inset-0 flex items-center justify-center transition-opacity duration-700 ease-out"
+                  className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 ease-out"
                   style={{
                     opacity: isActive ? 1 : 0,
                     pointerEvents: isActive ? "auto" : "none",
@@ -183,7 +258,6 @@ export default function StatBlockStoryline() {
                 >
                   <div className="mx-auto max-w-7xl w-full px-6 lg:px-20">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                      {/* Left — big number + marker */}
                       <div className="lg:col-span-8">
                         <div className="flex items-baseline gap-4 mb-6">
                           <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45">
@@ -197,13 +271,9 @@ export default function StatBlockStoryline() {
                         <div className="flex items-end gap-6 mb-8">
                           <div
                             className="display-numeric text-paper leading-none"
-                            style={{
-                              fontSize: "clamp(3.5rem, 9vw, 8rem)",
-                              transform: isActive ? "translateY(0)" : "translateY(20px)",
-                              transition: "transform 800ms cubic-bezier(0.16,1,0.3,1)",
-                            }}
+                            style={{ fontSize: "clamp(3.5rem, 9vw, 8rem)" }}
                           >
-                            {s.value}
+                            <StatValue stat={s} trigger={triggers[i]} />
                           </div>
                           <div className="shrink-0 pb-3">{renderMarker(s.marker)}</div>
                         </div>
@@ -216,7 +286,7 @@ export default function StatBlockStoryline() {
                         </p>
                       </div>
 
-                      {/* Right — panel navigation */}
+                      {/* Panel navigation rail */}
                       <div className="lg:col-span-3 lg:col-start-10 hidden lg:block">
                         <ol className="space-y-3">
                           {STATS.map((p, j) => (
@@ -245,13 +315,13 @@ export default function StatBlockStoryline() {
           </div>
         </div>
 
-        {/* Bottom rail — scroll progress + outbound */}
+        {/* Bottom rail */}
         <div className="absolute bottom-0 inset-x-0 pb-8 pt-6">
           <div className="mx-auto max-w-7xl px-6 lg:px-20">
             <div className="flex items-center justify-between gap-6">
               <div className="flex-1 h-px bg-paper/15 relative">
                 <div
-                  className="absolute left-0 top-0 h-px bg-cobalt-bright"
+                  className="absolute left-0 top-0 h-px bg-cobalt-bright transition-[width] duration-200"
                   style={{ width: `${progress * 100}%` }}
                 />
               </div>

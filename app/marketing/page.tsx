@@ -41,13 +41,13 @@ export default function MarketingPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-24">
+      <section className="relative pt-10 pb-10 lg:pt-12 lg:pb-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark
               number="06"
               label="Marketing"
-              className="text-muted mb-10"
+              className="text-muted mb-6"
             />
             <h1 className="display-hero text-ink text-[clamp(2.75rem,6.5vw,6rem)] max-w-5xl">
               Als iedereen zichtbaar is, moet u{" "}
@@ -58,10 +58,10 @@ export default function MarketingPage() {
       </section>
 
       {/* HERO IMAGE */}
-      <section className="relative pb-20">
+      <section className="relative pb-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
-            <div className="photo-treatment aspect-[16/9] lg:aspect-[24/9] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
+            <div className="photo-treatment aspect-[16/9] lg:aspect-[7/3] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
               <Image
                 src="/photos/marketing-hero.png"
                 alt="Drukke stadsstraat met menigte — opvallen in de massa"
