@@ -57,11 +57,6 @@ export default function ZiekteverzuimPage() {
                 sizes="100vw"
                 priority
               />
-              <div className="absolute bottom-5 left-5 right-5">
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/85">
-                  Verzuimkosten — een onzichtbare kostenpost
-                </span>
-              </div>
             </div>
           </Reveal>
         </div>

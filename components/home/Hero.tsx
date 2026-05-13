@@ -37,48 +37,6 @@ export default function Hero() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
 
-              {/* Bottom-left dark gradient for caption legibility */}
-              <div
-                aria-hidden
-                className="absolute inset-x-0 bottom-0 h-2/5 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(45,31,20,0) 0%, rgba(45,31,20,0.55) 100%)",
-                }}
-              />
-
-              {/* Caption */}
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/90">
-                  HR · Inkoop · Marketing
-                </span>
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/60">
-                  Rotterdam
-                </span>
-              </div>
-
-              {/* Top-right subtle corner bracket — Silicon-Valley-style tech mark */}
-              <svg
-                aria-hidden
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                className="absolute top-4 right-4 text-paper/70"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-              >
-                <path d="M5 1h-4v4" />
-                <path d="M15 1h4v4" />
-                <path d="M5 19h-4v-4" />
-                <path d="M15 19h4v-4" />
-              </svg>
-            </div>
-
-            {/* Decorative annotation — small tech-mark beside the photo */}
-            <div className="hidden lg:flex absolute -bottom-4 -right-2 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted bg-paper px-3 py-1.5 rounded-full border border-mist">
-              <span className="w-1.5 h-1.5 rounded-full bg-cobalt animate-pulse" />
-              <span>Live · 2026</span>
             </div>
           </div>
 

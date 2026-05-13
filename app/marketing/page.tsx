@@ -63,18 +63,13 @@ export default function MarketingPage() {
           <Reveal>
             <div className="photo-treatment aspect-[16/9] lg:aspect-[7/3] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
               <Image
-                src="/photos/marketing-hero.png"
-                alt="Drukke stadsstraat met menigte — opvallen in de massa"
+                src="/photos/marketing-hero-v2.png"
+                alt="Laptop met campagne-resultaten dashboard en marketing-checklist"
                 fill
                 className="object-cover"
                 sizes="100vw"
                 priority
               />
-              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/85">
-                  Opvallen in de massa — stadsdrukte
-                </span>
-              </div>
             </div>
           </Reveal>
         </div>

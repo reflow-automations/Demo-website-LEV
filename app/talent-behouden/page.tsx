@@ -111,11 +111,6 @@ export default function TalentBehoudenPage() {
                 sizes="100vw"
                 priority
               />
-              <div className="absolute bottom-5 left-5 right-5">
-                <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper/85">
-                  Lagere vervangingskosten · Hogere productiviteit · Hoger rendement
-                </span>
-              </div>
             </div>
           </Reveal>
         </div>
