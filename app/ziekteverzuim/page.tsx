@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
 import CountUp from "@/components/CountUp";
+import SubpagesNav from "@/components/SubpagesNav";
 
 const FINANCIAL_IMPACTS = [
   "Loondoorbetaling bij ziekte",
@@ -293,6 +294,24 @@ export default function ZiekteverzuimPage() {
           </Reveal>
         </div>
       </section>
+
+      <SubpagesNav
+        chapter="03"
+        items={[
+          {
+            no: "4a",
+            title: "Innovatie ziekteverzuim",
+            summary: "Betaalbare digitale oplossing om onnodige ziekmeldingen te voorkomen.",
+            href: "/ziekteverzuim/innovatie",
+          },
+          {
+            no: "4b",
+            title: "Gevolgen van verzuim",
+            summary: "Geldelijke én niet-geldelijke impact — €8,3 miljard per jaar in NL.",
+            href: "/ziekteverzuim/gevolgen",
+          },
+        ]}
+      />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">

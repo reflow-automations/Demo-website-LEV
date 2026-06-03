@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
+import SubpagesNav from "@/components/SubpagesNav";
 
 const PRINCIPLES = [
   {
@@ -251,6 +252,18 @@ export default function MarketingPage() {
           </div>
         </div>
       </section>
+
+      <SubpagesNav
+        chapter="03"
+        items={[
+          {
+            no: "6a",
+            title: "Innovatie Marketing",
+            summary: "Wij bewandelen verrassende paden — online en offline samen.",
+            href: "/marketing/innovatie",
+          },
+        ]}
+      />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">

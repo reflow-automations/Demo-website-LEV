@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
+import SubpagesNav from "@/components/SubpagesNav";
 
 const VALUES = [
   {
@@ -228,6 +229,24 @@ export default function OverOnsPage() {
           </div>
         </div>
       </section>
+
+      <SubpagesNav
+        chapter="03"
+        items={[
+          {
+            no: "7a",
+            title: "Visie en kernwaarden",
+            summary: "Vijf principes die aan elke opdracht ten grondslag liggen.",
+            href: "/over-ons/visie",
+          },
+          {
+            no: "7b",
+            title: "Het team",
+            summary: "Developers, designers en strategen — techniek + business + gebruiker.",
+            href: "/over-ons/team",
+          },
+        ]}
+      />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">

@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
 import Calculator from "@/components/Calculator";
+import SubpagesNav from "@/components/SubpagesNav";
 
 const COST_ITEMS = [
   {
@@ -398,6 +399,36 @@ export default function TalentBehoudenPage() {
           </Reveal>
         </div>
       </section>
+
+      <SubpagesNav
+        chapter="04"
+        items={[
+          {
+            no: "3a",
+            title: "Innovatie voor talentbehoud",
+            summary: "Maatwerk in arbeidsvoorwaarden, eindelijk schaalbaar en betaalbaar.",
+            href: "/talent-behouden/innovatie",
+          },
+          {
+            no: "3b",
+            title: "Standaard verleden tijd",
+            summary: "Waarom één pakket niet meer past — en wat in de plaats moet.",
+            href: "/talent-behouden/arbeidsvoorwaarden",
+          },
+          {
+            no: "3c",
+            title: "Vervangingskosten uitgesplitst",
+            summary: "Tien soorten kosten — vaak onzichtbaar, samen fors.",
+            href: "/talent-behouden/vervangingskosten",
+          },
+          {
+            no: "3d",
+            title: "Bereken zelf",
+            summary: "Interactieve calculator met uw eigen salaris en aantal vertrekkers.",
+            href: "/talent-behouden/bereken",
+          },
+        ]}
+      />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">

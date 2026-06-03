@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
+import SubpagesNav from "@/components/SubpagesNav";
 
 const DOOH_POINTS = [
   {
@@ -272,6 +273,36 @@ export default function TalentAantrekkenPage() {
           </Reveal>
         </div>
       </section>
+
+      <SubpagesNav
+        chapter="03"
+        items={[
+          {
+            no: "2a",
+            title: "Innovatie talent aantrekken",
+            summary: "Hoe wij online én offline het juiste moment bij talent raken.",
+            href: "/talent-aantrekken/innovatie",
+          },
+          {
+            no: "2b",
+            title: "Employer Branding",
+            summary: "Onderscheidende campagnes die werkgevers voorkeurspositie geven.",
+            href: "/talent-aantrekken/employer-branding",
+          },
+          {
+            no: "2c",
+            title: "Waarom werkgevers kiezen",
+            summary: "Online én offline: van branding tot conversie via retargeting.",
+            href: "/talent-aantrekken/waarom-werkgevers",
+          },
+          {
+            no: "2d",
+            title: "Waarom DOOH effectief is",
+            summary: "Acht concrete redenen waarom DOOH werkt in 2026.",
+            href: "/talent-aantrekken/dooh-effectief",
+          },
+        ]}
+      />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">
