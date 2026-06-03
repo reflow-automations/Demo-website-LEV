@@ -3,21 +3,22 @@
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
+import CalEmbed from "@/components/CalEmbed";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
-      <section className="relative pt-20 pb-20 lg:pt-28">
+      <section className="relative pt-10 pb-10 lg:pt-12 lg:pb-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <Reveal>
             <ChapterMark
               number="08"
               label="Contact"
-              className="text-muted mb-10"
+              className="text-muted mb-6"
             />
-            <h1 className="display-hero text-ink text-[clamp(2.75rem,7vw,6.5rem)] max-w-5xl">
+            <h1 className="display-hero text-ink text-[clamp(2.75rem,6.5vw,6rem)] max-w-5xl">
               Een vrijblijvend{" "}
               <em className="italic font-light text-cobalt">gesprek</em> begint
               hier.
@@ -26,7 +27,30 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 border-t border-mist">
+      {/* PRIMARY — direct booking via cal.com */}
+      <section className="pb-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-20">
+          <Reveal>
+            <CalEmbed />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* DIVIDER */}
+      <section className="py-12">
+        <div className="mx-auto max-w-7xl px-6 lg:px-20">
+          <div className="flex items-center gap-6">
+            <div className="flex-1 h-px bg-mist" />
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+              Of laat een bericht achter
+            </span>
+            <div className="flex-1 h-px bg-mist" />
+          </div>
+        </div>
+      </section>
+
+      {/* SECONDARY — form */}
+      <section className="pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             {/* Left, form */}

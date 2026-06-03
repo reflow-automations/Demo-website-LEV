@@ -73,7 +73,9 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-paper/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] font-mono uppercase tracking-[0.14em] text-paper/40">
           <div>© 2026 Digital Concepts Factory B.V.</div>
           <div className="flex gap-6">
-            <span className="opacity-60">Privacy · Cookies · Voorwaarden, demo</span>
+            <a href="#" className="hover:text-paper">Privacy</a>
+            <a href="#" className="hover:text-paper">Cookies</a>
+            <a href="#" className="hover:text-paper">Voorwaarden</a>
           </div>
         </div>
       </div>

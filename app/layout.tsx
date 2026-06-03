@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import DemoBanner from "@/components/DemoBanner";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   title: "Digital Concepts Factory — Grip op groei begint met digitale innovatie",
   description:
     "Digital Concepts Factory ontwikkelt digitale innovaties voor HR, Inkoop en Marketing. Sneller talent vinden, langer behouden, ziekteverzuim verlagen, inkoop slimmer organiseren.",
-  metadataBase: new URL("https://dcf-demo.vercel.app"),
+  metadataBase: new URL("https://digitalconceptsfactory.nl"),
 };
 
 export default function RootLayout({
@@ -40,7 +39,6 @@ export default function RootLayout({
       className={`${fraunces.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen flex flex-col grain">
-        <DemoBanner />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
