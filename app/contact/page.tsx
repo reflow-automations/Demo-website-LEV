@@ -4,9 +4,11 @@ import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CalEmbed from "@/components/CalEmbed";
+import ReCaptcha from "@/components/ReCaptcha";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   return (
     <>
@@ -140,15 +142,21 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  <div className="pt-2">
+                    <ReCaptcha onToken={setCaptchaToken} />
+                  </div>
+
                   <button
                     type="submit"
-                    disabled={submitted}
-                    className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:bg-cobalt"
+                    disabled={submitted || !captchaToken}
+                    className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {submitted
                       ? "Bedankt, wij nemen binnen 24u contact op"
-                      : "Verstuur aanvraag"}
-                    {!submitted && (
+                      : !captchaToken
+                        ? "Bevestig eerst de reCAPTCHA"
+                        : "Verstuur aanvraag"}
+                    {!submitted && captchaToken && (
                       <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                         <path d="M1 9h16M11 3l6 6-6 6" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
                       </svg>
