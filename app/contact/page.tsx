@@ -6,9 +6,61 @@ import ChapterMark from "@/components/ChapterMark";
 import CalEmbed from "@/components/CalEmbed";
 import ReCaptcha from "@/components/ReCaptcha";
 
+const TOPICS = [
+  "Talent aantrekken",
+  "Talent behouden",
+  "Ziekteverzuim",
+  "Inkoop",
+  "Marketing",
+];
+
+type Status = "idle" | "submitting" | "success" | "error";
+
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const [form, setForm] = useState({
+    name: "",
+    organisation: "",
+    email: "",
+    phone: "",
+    topics: [] as string[],
+    message: "",
+  });
+
+  const toggleTopic = (t: string) =>
+    setForm((f) => ({
+      ...f,
+      topics: f.topics.includes(t)
+        ? f.topics.filter((x) => x !== t)
+        : [...f.topics, t],
+    }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!captchaToken) return;
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, captchaToken }),
+      });
+      const data = (await res.json()) as { ok?: boolean; error?: string };
+      if (res.ok && data.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+        setErrorMsg(data.error || "Er ging iets mis. Probeer het opnieuw.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Verbinding mislukt. Probeer het opnieuw.");
+    }
+  };
 
   return (
     <>
@@ -58,30 +110,30 @@ export default function ContactPage() {
             {/* Left, form */}
             <div className="lg:col-span-7">
               <Reveal>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                  className="space-y-8"
-                >
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
+                      <label htmlFor="f-name" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         Naam
                       </label>
                       <input
+                        id="f-name"
                         type="text"
                         required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="w-full bg-transparent border-b border-mist py-3 text-ink text-[16px] focus:outline-none focus:border-ink transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
+                      <label htmlFor="f-org" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         Organisatie
                       </label>
                       <input
+                        id="f-org"
                         type="text"
+                        value={form.organisation}
+                        onChange={(e) => setForm({ ...form, organisation: e.target.value })}
                         className="w-full bg-transparent border-b border-mist py-3 text-ink text-[16px] focus:outline-none focus:border-ink transition-colors"
                       />
                     </div>
@@ -89,21 +141,27 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
+                      <label htmlFor="f-email" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         E-mail
                       </label>
                       <input
+                        id="f-email"
                         type="email"
                         required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-full bg-transparent border-b border-mist py-3 text-ink text-[16px] focus:outline-none focus:border-ink transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
+                      <label htmlFor="f-phone" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                         Telefoon
                       </label>
                       <input
+                        id="f-phone"
                         type="tel"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         className="w-full bg-transparent border-b border-mist py-3 text-ink text-[16px] focus:outline-none focus:border-ink transition-colors"
                       />
                     </div>
@@ -114,30 +172,35 @@ export default function ContactPage() {
                       Waarover wilt u in gesprek?
                     </label>
                     <div className="flex flex-wrap gap-2 mb-5">
-                      {[
-                        "Talent aantrekken",
-                        "Talent behouden",
-                        "Ziekteverzuim",
-                        "Inkoop",
-                        "Marketing",
-                      ].map((t) => (
-                        <label
-                          key={t}
-                          className="px-4 py-2 border border-mist text-[12px] text-text hover:border-ink cursor-pointer transition-colors"
-                        >
-                          <input type="checkbox" className="sr-only peer" />
-                          <span className="peer-checked:text-cobalt">{t}</span>
-                        </label>
-                      ))}
+                      {TOPICS.map((t) => {
+                        const active = form.topics.includes(t);
+                        return (
+                          <button
+                            key={t}
+                            type="button"
+                            onClick={() => toggleTopic(t)}
+                            className={`px-4 py-2 border text-[12px] transition-colors ${
+                              active
+                                ? "border-cobalt bg-cobalt/[0.06] text-cobalt"
+                                : "border-mist text-text hover:border-ink"
+                            }`}
+                          >
+                            {t}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
                   <div>
-                    <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
+                    <label htmlFor="f-msg" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
                       Uw bericht
                     </label>
                     <textarea
+                      id="f-msg"
                       rows={4}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full bg-transparent border-b border-mist py-3 text-ink text-[16px] focus:outline-none focus:border-ink transition-colors resize-none"
                     />
                   </div>
@@ -146,19 +209,43 @@ export default function ContactPage() {
                     <ReCaptcha onToken={setCaptchaToken} />
                   </div>
 
+                  {status === "error" && (
+                    <p className="text-[13px] text-cobalt bg-cobalt/[0.08] border border-cobalt/30 px-4 py-3">
+                      {errorMsg}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    disabled={submitted || !captchaToken}
+                    disabled={
+                      status === "submitting" ||
+                      status === "success" ||
+                      !captchaToken
+                    }
                     className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {submitted
+                    {status === "success"
                       ? "Bedankt, wij nemen binnen 24u contact op"
-                      : !captchaToken
-                        ? "Bevestig eerst de reCAPTCHA"
-                        : "Verstuur aanvraag"}
-                    {!submitted && captchaToken && (
-                      <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
-                        <path d="M1 9h16M11 3l6 6-6 6" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
+                      : status === "submitting"
+                        ? "Versturen…"
+                        : !captchaToken
+                          ? "Bevestig eerst de reCAPTCHA"
+                          : "Verstuur aanvraag"}
+                    {status === "idle" && captchaToken && (
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden
+                      >
+                        <path
+                          d="M1 9h16M11 3l6 6-6 6"
+                          stroke="currentColor"
+                          strokeWidth="1.4"
+                          fill="none"
+                          strokeLinecap="square"
+                        />
                       </svg>
                     )}
                   </button>
