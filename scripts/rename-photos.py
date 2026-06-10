@@ -14,7 +14,7 @@ import re
 import shutil
 from pathlib import Path
 
-PROJECT = Path(r"D:\Reflow automations\Reflow ai coding folder\projects\Demo websites\demo website DCF")
+PROJECT = Path(r"D:\Reflow automations\Reflow ai coding folder\projects\Demo websites\website DCF")
 SRC = PROJECT / "assets" / "source-archive" / "Website Digital Concepts Factory BV"
 DST = PROJECT / "assets" / "photos"
 REPORTS = DST / "reports"  # already moved here
