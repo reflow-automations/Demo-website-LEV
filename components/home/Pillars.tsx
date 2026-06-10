@@ -1,51 +1,23 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import PillarCard from "@/components/home/PillarCard";
-
-const PILLARS = [
-  {
-    no: "01",
-    title: "Talent aantrekken",
-    summary:
-      "Werkgevers op het netvlies van talent, online én offline zichtbaar via DOOH-netwerken en slimme retargeting.",
-    bullets: ["Employer Branding", "DOOH-campagnes", "Retargeting"],
-    href: "/talent-aantrekken",
-  },
-  {
-    no: "02",
-    title: "Talent behouden",
-    summary:
-      "Persoonlijke arbeidsvoorwaarden binnen heldere kaders. Minder verloop, lagere vervangingskosten, sterkere binding.",
-    bullets: ["Maatwerk", "€19.200 p/p besparing", "Schaalbaar"],
-    href: "/talent-behouden",
-  },
-  {
-    no: "03",
-    title: "Ziekteverzuim",
-    summary:
-      "Een betaalbare digitale oplossing die medewerkers gemotiveerd houdt, gerichter, lichter en direct uitvoerbaar.",
-    bullets: ["Kortdurend verzuim", "€4.5K, €7K p/p p/j", "Direct toepasbaar"],
-    href: "/ziekteverzuim",
-  },
-  {
-    no: "04",
-    title: "Inkoop",
-    summary:
-      "Aanbestedingen en contractmanagement overzichtelijker, transparanter en goedkoper, tot 50% kostenreductie.",
-    bullets: ["(Europees) aanbesteden", "Contractmanagement", "Tot 50% besparing"],
-    href: "/inkoop",
-  },
-  {
-    no: "05",
-    title: "Marketing",
-    summary:
-      "Geen campagnes voor zichtbaarheid alleen, maar concepten die online en offline samenbrengen voor maximale impact.",
-    bullets: ["Onderscheidende concepten", "Online + offline", "Resultaatgericht"],
-    href: "/marketing",
-  },
-];
+import Accent from "@/components/Accent";
+import { useLang, usePick } from "@/lib/i18n/provider";
+import { PILLAR_LINKS } from "@/content/ui";
+import { home } from "@/content/home";
 
 export default function Pillars() {
+  const lang = useLang();
+  const t = usePick(home).pillars;
+  const PILLARS = PILLAR_LINKS.map((link, i) => ({
+    no: String(i + 1).padStart(2, "0"),
+    title: link.label[lang],
+    href: link.href,
+    summary: t.items[i].summary,
+    bullets: t.items[i].bullets,
+  }));
   return (
     <section id="innovaties" className="relative py-24 lg:py-32 bg-paper-deep">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
@@ -54,25 +26,21 @@ export default function Pillars() {
             <Reveal>
               <ChapterMark
                 number="02"
-                label="Onze innovaties"
+                label={t.chapter}
                 className="text-muted mb-8"
               />
               <h2 className="display-section text-[clamp(2rem,4vw,3.25rem)] text-ink">
-                Vijf domeinen, één{" "}
-                <em className="font-display italic font-light text-cobalt">
-                  vaste belofte
-                </em>
-                .
+                <Accent
+                  text={t.heading}
+                  accent={t.headingAccent}
+                  className="font-display italic font-light text-cobalt"
+                />
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:col-start-8 flex items-end">
             <Reveal delay={120}>
-              <p className="text-text text-[16px] leading-[1.6]">
-                Innovaties die organisaties praktisch helpen, geen losse tools
-                of tijdelijke oplossingen, maar digitale verbeteringen met
-                duurzame impact op groei, continuïteit en rendement.
-              </p>
+              <p className="text-text text-[16px] leading-[1.6]">{t.intro}</p>
             </Reveal>
           </div>
         </div>

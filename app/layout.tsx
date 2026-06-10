@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/lib/i18n/provider";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -36,12 +37,15 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
+      suppressHydrationWarning
       className={`${fraunces.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen flex flex-col grain">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

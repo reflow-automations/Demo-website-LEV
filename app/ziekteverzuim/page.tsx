@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
@@ -5,24 +7,15 @@ import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
 import CountUp from "@/components/CountUp";
 import SubpagesNav from "@/components/SubpagesNav";
-
-const FINANCIAL_IMPACTS = [
-  "Loondoorbetaling bij ziekte",
-  "Kosten voor vervanging of herverdeling van werk",
-  "Verlies aan productiviteit",
-  "Extra administratieve en begeleidingskosten",
-  "Mogelijke omzet- of kwaliteitsverliezen",
-];
-
-const TEAM_IMPACTS = [
-  "Hogere werkdruk bij collega's",
-  "Onrust en verminderde motivatie in teams",
-  "Vertraging van projecten en processen",
-  "Lagere klanttevredenheid",
-  "Druk op leidinggevenden en continuïteit",
-];
+import Accent from "@/components/Accent";
+import { usePick } from "@/lib/i18n/provider";
+import { cta } from "@/content/ui";
+import { ziekteverzuim } from "@/content/ziekteverzuim";
 
 export default function ZiekteverzuimPage() {
+  const t = usePick(ziekteverzuim);
+  const ctaLong = usePick(cta.long);
+
   return (
     <>
       {/* HERO */}
@@ -31,15 +24,15 @@ export default function ZiekteverzuimPage() {
           <Reveal>
             <ChapterMark
               number="04"
-              label="Ziekteverzuim terugdringen"
+              label={t.hero.chapter}
               className="text-muted mb-6"
             />
             <h1 className="display-hero text-ink text-[clamp(2.75rem,6.5vw,6rem)] max-w-5xl">
-              Verzuim raakt direct uw{" "}
-              <em className="italic font-light text-cobalt">
-                kosten en continuïteit
-              </em>
-              .
+              <Accent
+                text={t.hero.h1}
+                accent={t.hero.h1Accent}
+                className="italic font-light text-cobalt"
+              />
             </h1>
           </Reveal>
         </div>
@@ -52,7 +45,7 @@ export default function ZiekteverzuimPage() {
             <div className="photo-treatment aspect-[16/9] lg:aspect-[7/3] relative overflow-hidden rounded-3xl bg-ink shadow-[0_28px_60px_-20px_rgba(45,31,20,0.28)]">
               <Image
                 src="/photos/ziekteverzuim-hero.png"
-                alt="Zieke medewerker thuis met laptop en kosten-indicatie"
+                alt={t.hero.imageAlt}
                 fill
                 className="object-cover"
                 sizes="100vw"
@@ -69,32 +62,21 @@ export default function ZiekteverzuimPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <Reveal className="lg:col-span-5">
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-6">
-                Een hardnekkig probleem
+                {t.intro.eyebrow}
               </p>
               <h2 className="display-section text-[clamp(1.75rem,3vw,2.75rem)] text-ink">
-                Vooral kortdurend verzuim blijft een terugkerend probleem.
+                {t.intro.heading}
               </h2>
             </Reveal>
             <div className="lg:col-span-6 lg:col-start-7 space-y-5 text-text text-[16px] leading-[1.65]">
-              <Reveal delay={100}>
-                <p>
-                  Ziekteverzuim is voor veel organisaties al jaren een forse
-                  kostenpost. De gemiddelde kosten in Nederland liggen tussen
-                  €4.500 en €7.000 per medewerker per jaar, afhankelijk van
-                  sector, functie en verzuimduur.
-                </p>
-              </Reveal>
-              <Reveal delay={160}>
-                <p>
-                  Vooral kortstondig ziekteverzuim is voor veel werkgevers een
-                  doorn in het oog. Juist omdat het onverwacht komt, lastig te
-                  plannen is en direct leidt tot verstoring van roosters,
-                  bezetting en dienstverlening.
-                </p>
-              </Reveal>
+              {t.intro.paragraphs.map((para, i) => (
+                <Reveal key={i} delay={100 + i * 60}>
+                  <p>{para}</p>
+                </Reveal>
+              ))}
               <Reveal delay={220}>
                 <p className="text-[12px] text-muted pt-4 border-t border-mist">
-                  Bron: TNO, Arbobalans 2024 · ArboNed
+                  {t.intro.source}
                 </p>
               </Reveal>
             </div>
@@ -118,7 +100,7 @@ export default function ZiekteverzuimPage() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-20 text-center">
           <Reveal>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-paper/45 mb-10">
-              Verzuimkosten per medewerker per jaar
+              {t.bigNumber.eyebrow}
             </p>
             <div className="display-numeric text-paper text-[clamp(4rem,12vw,10rem)] mb-10">
               <CountUp
@@ -130,13 +112,12 @@ export default function ZiekteverzuimPage() {
               />
             </div>
             <p className="text-paper/80 text-[clamp(1.05rem,1.5vw,1.35rem)] max-w-3xl mx-auto leading-[1.5]">
-              In 2023 ging het in totaal om{" "}
-              <strong className="text-paper">€8,3 miljard</strong> aan
-              loondoorbetalingskosten over verzuimde werkdagen, meer dan de
-              helft daarvan komt voort uit psychosociale arbeidsbelasting.
+              {t.bigNumber.detailPre}
+              <strong className="text-paper">{t.bigNumber.detailStrong}</strong>
+              {t.bigNumber.detailPost}
             </p>
             <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mt-10">
-              TNO · Arbobalans 2024 · ArboNed · AWVN
+              {t.bigNumber.source}
             </p>
           </Reveal>
         </div>
@@ -149,24 +130,21 @@ export default function ZiekteverzuimPage() {
             <Reveal className="lg:col-span-5">
               <ChapterMark
                 number="01"
-                label="De innovatie"
+                label={t.innovation.chapter}
                 className="text-muted mb-8"
               />
               <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink mb-8">
-                Eindelijk een oplossing die werkt{" "}
-                <em className="font-display italic font-light text-cobalt">
-                  én betaalbaar is
-                </em>
-                .
+                <Accent
+                  text={t.innovation.heading}
+                  accent={t.innovation.headingAccent}
+                  className="font-display italic font-light text-cobalt"
+                />
               </h2>
               <p className="text-text text-[16px] leading-[1.65] mb-8">
-                Veel werkgevers willen ziekteverzuim terugdringen, maar lopen in
-                de praktijk tegen dezelfde uitdaging aan: hoe beïnvloed je
-                gedrag op een positieve manier, zonder dat het ingewikkeld, duur
-                of moeilijk uitvoerbaar wordt?
+                {t.innovation.lead}
               </p>
               <CTA href="/contact" variant="primary">
-                Plan gesprek
+                {t.innovation.cta}
               </CTA>
             </Reveal>
 
@@ -174,26 +152,18 @@ export default function ZiekteverzuimPage() {
               <Reveal delay={80}>
                 <div className="bg-paper-deep p-8 lg:p-10 border-l-2 border-cobalt">
                   <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] text-ink leading-[1.5]">
-                    Digital Concepts Factory ontwikkelde een betaalbare digitale
-                    oplossing waarmee organisaties medewerkers gemotiveerd
-                    houden om zich niet onnodig ziek te melden, zonder
-                    ingewikkelde trajecten of hoge drempels.
+                    {t.innovation.quote}
                   </p>
                 </div>
               </Reveal>
               <Reveal delay={160}>
-                <p>
-                  Minder onnodige ziekmeldingen betekent direct meer grip op
-                  kosten, meer rust in teams, minder druk op collega's en meer
-                  continuïteit in de dagelijkse operatie.
-                </p>
+                <p>{t.innovation.body1}</p>
                 <p className="mt-4">
-                  De kracht zit in de combinatie van{" "}
-                  <strong>betaalbaarheid</strong>,{" "}
-                  <strong>toegankelijkheid</strong> en{" "}
-                  <strong>praktische toepasbaarheid</strong>. Haalbaar voor
-                  grote organisaties én voor werkgevers die op zoek zijn naar
-                  een oplossing die financieel verantwoord is.
+                  <Accent
+                    text={t.innovation.body2}
+                    accent={t.innovation.body2Strong}
+                    className="not-italic font-semibold text-ink"
+                  />
                 </p>
               </Reveal>
             </div>
@@ -207,7 +177,7 @@ export default function ZiekteverzuimPage() {
           <div className="relative aspect-[21/9] lg:aspect-[24/8] w-full overflow-hidden bg-ink">
             <Image
               src="/photos/ziekteverzuim-secondary.png"
-              alt="Kettingreactie van ziekmelding op het team"
+              alt={t.secondaryImageAlt}
               fill
               className="object-cover"
               sizes="100vw"
@@ -217,25 +187,24 @@ export default function ZiekteverzuimPage() {
         </Reveal>
       </section>
 
-      {/* CONSEQUENCES, financial + team */}
+      {/* CONSEQUENCES */}
       <section className="py-28 lg:py-36 bg-paper-deep">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
             <Reveal className="lg:col-span-7">
               <ChapterMark
                 number="02"
-                label="Gevolgen van ziekteverzuim"
+                label={t.consequences.chapter}
                 className="text-muted mb-8"
               />
               <h2 className="display-section text-[clamp(1.85rem,3vw,2.75rem)] text-ink">
-                Achter elke ziekmelding schuilt een kettingreactie.
+                {t.consequences.heading}
               </h2>
             </Reveal>
             <div className="lg:col-span-5 flex items-end">
               <Reveal delay={120}>
                 <p className="text-text text-[15px] leading-[1.6]">
-                  De gevolgen zijn zowel financieel als organisatorisch groot,
-                  in euro's én in werkdruk en motivatie.
+                  {t.consequences.intro}
                 </p>
               </Reveal>
             </div>
@@ -245,10 +214,10 @@ export default function ZiekteverzuimPage() {
             <Reveal>
               <div className="bg-paper p-10 h-full">
                 <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt mb-6">
-                  Geldelijke gevolgen
+                  {t.consequences.financialTitle}
                 </p>
                 <ul className="space-y-3">
-                  {FINANCIAL_IMPACTS.map((item) => (
+                  {t.consequences.financialItems.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-text text-[15px] leading-[1.55]"
@@ -263,10 +232,10 @@ export default function ZiekteverzuimPage() {
             <Reveal delay={120}>
               <div className="bg-paper p-10 h-full">
                 <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-cobalt mb-6">
-                  Niet-geldelijke gevolgen
+                  {t.consequences.teamTitle}
                 </p>
                 <ul className="space-y-3">
-                  {TEAM_IMPACTS.map((item) => (
+                  {t.consequences.teamItems.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-text text-[15px] leading-[1.55]"
@@ -283,35 +252,17 @@ export default function ZiekteverzuimPage() {
           <Reveal delay={200}>
             <div className="mt-12 pt-6 border-t border-mist flex flex-wrap items-center justify-between gap-4">
               <p className="text-[12px] text-muted leading-[1.5] max-w-xl">
-                TNO: psychosociale arbeidsbelasting is verantwoordelijk voor
-                meer dan de helft van de werkgerelateerde verzuimkosten, €4,9
-                miljard van €8,3 miljard in 2023.
+                {t.consequences.sourceNote}
               </p>
               <CTA href="/contact" variant="underline">
-                Bespreek uw verzuimvraagstuk
+                {t.consequences.cta}
               </CTA>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <SubpagesNav
-        chapter="03"
-        items={[
-          {
-            no: "4a",
-            title: "Innovatie ziekteverzuim",
-            summary: "Betaalbare digitale oplossing om onnodige ziekmeldingen te voorkomen.",
-            href: "/ziekteverzuim/innovatie",
-          },
-          {
-            no: "4b",
-            title: "Gevolgen van verzuim",
-            summary: "Geldelijke én niet-geldelijke impact — €8,3 miljard per jaar in NL.",
-            href: "/ziekteverzuim/gevolgen",
-          },
-        ]}
-      />
+      <SubpagesNav chapter="03" items={t.subpages} />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">
@@ -320,9 +271,11 @@ export default function ZiekteverzuimPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-8">
                 <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink">
-                  Verzuim structureel verlagen{" "}
-                  <em className="italic font-light text-cobalt">én</em> grip op
-                  uw kosten?
+                  <Accent
+                    text={t.closing.heading}
+                    accent={t.closing.headingAccent}
+                    className="italic font-light text-cobalt"
+                  />
                 </h2>
               </div>
               <div className="lg:col-span-4 flex justify-start lg:justify-end">
@@ -330,7 +283,7 @@ export default function ZiekteverzuimPage() {
                   href="/contact"
                   className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 rounded-full"
                 >
-                  <span>Plan een vrijblijvend gesprek</span>
+                  <span>{ctaLong}</span>
                   <svg width="18" height="18" viewBox="0 0 18 18" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                     <path d="M1 9h16M11 3l6 6-6 6" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
                   </svg>

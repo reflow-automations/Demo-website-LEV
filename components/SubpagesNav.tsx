@@ -1,29 +1,34 @@
+"use client";
+
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
+import { useLang } from "@/lib/i18n/provider";
+import { ui } from "@/content/ui";
 
 interface SubpagesNavProps {
   chapter: string;       // e.g. "II"
-  label?: string;        // default "Verdieping"
+  label?: string;        // overrides the default "Verdieping" / "Further reading"
   items: { no: string; title: string; summary: string; href: string }[];
 }
 
 export default function SubpagesNav({
   chapter,
-  label = "Verdieping",
+  label,
   items,
 }: SubpagesNavProps) {
+  const t = ui[useLang()].subpagesNav;
   return (
     <section className="py-24 lg:py-32 bg-paper-deep">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
         <Reveal>
           <ChapterMark
             number={chapter}
-            label={label}
+            label={label ?? t.label}
             className="text-muted mb-8"
           />
           <h2 className="display-section text-[clamp(1.75rem,2.75vw,2.5rem)] text-ink mb-14 max-w-3xl">
-            Lees verder over dit onderwerp.
+            {t.heading}
           </h2>
         </Reveal>
 

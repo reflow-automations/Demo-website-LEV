@@ -3,18 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const NAV = [
-  { label: "Home", href: "/" },
-  { label: "Talent aantrekken", href: "/talent-aantrekken" },
-  { label: "Talent behouden", href: "/talent-behouden" },
-  { label: "Ziekteverzuim", href: "/ziekteverzuim" },
-  { label: "Inkoop", href: "/inkoop" },
-  { label: "Marketing", href: "/marketing" },
-  { label: "Over ons", href: "/over-ons" },
-];
+import { useLang } from "@/lib/i18n/provider";
+import { NAV_ITEMS, cta, ui } from "@/content/ui";
+import LangToggle from "@/components/LangToggle";
 
 export default function Header() {
+  const lang = useLang();
+  const t = ui[lang];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -51,50 +46,54 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          {NAV.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className="text-[13px] tracking-tight text-text hover:text-ink transition-colors link-underline"
             >
-              {item.label}
+              {item.label[lang]}
             </Link>
           ))}
         </nav>
 
-        {/* CTA */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* CTA + language */}
+        <div className="hidden lg:flex items-center gap-5">
+          <LangToggle />
           <Link
             href="/contact"
             className="px-5 py-2.5 bg-cobalt text-paper text-[13px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300"
           >
-            Plan gesprek
+            {cta.short[lang]}
           </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="lg:hidden p-2 -mr-2"
-          aria-label="Menu"
-        >
-          <div className="w-6 h-[1px] bg-ink mb-1.5" />
-          <div className="w-6 h-[1px] bg-ink mb-1.5" />
-          <div className="w-4 h-[1px] bg-ink ml-auto" />
-        </button>
+        {/* Mobile language + menu button */}
+        <div className="lg:hidden flex items-center gap-4">
+          <LangToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 -mr-2"
+            aria-label={t.header.menu}
+          >
+            <div className="w-6 h-[1px] bg-ink mb-1.5" />
+            <div className="w-6 h-[1px] bg-ink mb-1.5" />
+            <div className="w-4 h-[1px] bg-ink ml-auto" />
+          </button>
+        </div>
       </div>
 
       {open && (
         <div className="lg:hidden border-t border-mist bg-paper">
           <nav className="px-6 py-6 flex flex-col gap-4">
-            {NAV.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="text-[15px] text-text py-2"
               >
-                {item.label}
+                {item.label[lang]}
               </Link>
             ))}
             <Link
@@ -102,7 +101,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="mt-2 px-5 py-3 bg-ink text-paper text-center text-[14px]"
             >
-              Plan een vrijblijvend gesprek
+              {cta.long[lang]}
             </Link>
           </nav>
         </div>

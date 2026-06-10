@@ -3,8 +3,12 @@
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
+import Accent from "@/components/Accent";
+import { usePick } from "@/lib/i18n/provider";
+import { home } from "@/content/home";
 
 export default function Newsletter() {
+  const t = usePick(home).newsletter;
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -14,16 +18,18 @@ export default function Newsletter() {
         <Reveal>
           <ChapterMark
             number="05"
-            label="Nieuwsbrief"
+            label={t.chapter}
             className="text-muted mb-10 justify-center"
           />
           <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink text-center max-w-3xl mx-auto mb-6">
-            Ontvang als eerste de innovaties die het{" "}
-            <em className="italic font-light text-cobalt">verschil maken</em>.
+            <Accent
+              text={t.heading}
+              accent={t.headingAccent}
+              className="italic font-light text-cobalt"
+            />
           </h2>
           <p className="text-text text-[16px] leading-[1.6] text-center max-w-xl mx-auto mb-12">
-            Eén editie per maand, met de nieuwste digitale innovaties die de
-            verbindende schakel vormen tussen de oude en de nieuwe wereld.
+            {t.intro}
           </p>
         </Reveal>
 
@@ -40,7 +46,7 @@ export default function Newsletter() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="naam@organisatie.nl"
+              placeholder={t.placeholder}
               className="flex-1 px-5 py-4 bg-paper-deep border border-mist text-text placeholder-muted text-[15px] focus:outline-none focus:border-ink transition-colors"
             />
             <button
@@ -48,11 +54,11 @@ export default function Newsletter() {
               disabled={submitted}
               className="px-7 py-4 bg-cobalt text-paper text-[13px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:bg-cobalt"
             >
-              {submitted ? "Bedankt, u staat op de lijst" : "Aanmelden"}
+              {submitted ? t.submitted : t.submit}
             </button>
           </form>
           <p className="text-[12px] text-muted text-center mt-6">
-            Uitschrijven altijd mogelijk.
+            {t.fineprint}
           </p>
         </Reveal>
       </div>

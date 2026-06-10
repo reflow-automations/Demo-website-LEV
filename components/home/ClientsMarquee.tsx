@@ -1,4 +1,8 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
+import { usePick } from "@/lib/i18n/provider";
+import { home } from "@/content/home";
 
 const CLIENTS = [
   "Coolblue",
@@ -18,12 +22,13 @@ const CLIENTS = [
 ];
 
 export default function ClientsMarquee() {
+  const t = usePick(home).clients;
   return (
     <section className="py-20 lg:py-24 bg-paper-deep border-y border-mist overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-20 mb-12">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
-            Wij zijn trots op onze samenwerkingen
+            {t.eyebrow}
           </p>
         </Reveal>
       </div>

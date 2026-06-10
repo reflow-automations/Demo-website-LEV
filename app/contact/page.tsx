@@ -5,18 +5,14 @@ import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CalEmbed from "@/components/CalEmbed";
 import ReCaptcha from "@/components/ReCaptcha";
-
-const TOPICS = [
-  "Talent aantrekken",
-  "Talent behouden",
-  "Ziekteverzuim",
-  "Inkoop",
-  "Marketing",
-];
+import Accent from "@/components/Accent";
+import { usePick } from "@/lib/i18n/provider";
+import { contact } from "@/content/contact";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
+  const t = usePick(contact);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -30,12 +26,12 @@ export default function ContactPage() {
     message: "",
   });
 
-  const toggleTopic = (t: string) =>
+  const toggleTopic = (topic: string) =>
     setForm((f) => ({
       ...f,
-      topics: f.topics.includes(t)
-        ? f.topics.filter((x) => x !== t)
-        : [...f.topics, t],
+      topics: f.topics.includes(topic)
+        ? f.topics.filter((x) => x !== topic)
+        : [...f.topics, topic],
     }));
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -54,11 +50,11 @@ export default function ContactPage() {
         setStatus("success");
       } else {
         setStatus("error");
-        setErrorMsg(data.error || "Er ging iets mis. Probeer het opnieuw.");
+        setErrorMsg(data.error || t.form.errorFallback);
       }
     } catch {
       setStatus("error");
-      setErrorMsg("Verbinding mislukt. Probeer het opnieuw.");
+      setErrorMsg(t.form.connectionError);
     }
   };
 
@@ -69,13 +65,15 @@ export default function ContactPage() {
           <Reveal>
             <ChapterMark
               number="08"
-              label="Contact"
+              label={t.hero.chapter}
               className="text-muted mb-6"
             />
             <h1 className="display-hero text-ink text-[clamp(2.75rem,6.5vw,6rem)] max-w-5xl">
-              Een vrijblijvend{" "}
-              <em className="italic font-light text-cobalt">gesprek</em> begint
-              hier.
+              <Accent
+                text={t.hero.h1}
+                accent={t.hero.h1Accent}
+                className="italic font-light text-cobalt"
+              />
             </h1>
           </Reveal>
         </div>
@@ -96,7 +94,7 @@ export default function ContactPage() {
           <div className="flex items-center gap-6">
             <div className="flex-1 h-px bg-mist" />
             <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
-              Of laat een bericht achter
+              {t.divider}
             </span>
             <div className="flex-1 h-px bg-mist" />
           </div>
@@ -114,7 +112,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <label htmlFor="f-name" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
-                        Naam
+                        {t.form.name}
                       </label>
                       <input
                         id="f-name"
@@ -127,7 +125,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label htmlFor="f-org" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
-                        Organisatie
+                        {t.form.organisation}
                       </label>
                       <input
                         id="f-org"
@@ -142,7 +140,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <label htmlFor="f-email" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
-                        E-mail
+                        {t.form.email}
                       </label>
                       <input
                         id="f-email"
@@ -155,7 +153,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label htmlFor="f-phone" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
-                        Telefoon
+                        {t.form.phone}
                       </label>
                       <input
                         id="f-phone"
@@ -169,23 +167,23 @@ export default function ContactPage() {
 
                   <div>
                     <label className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
-                      Waarover wilt u in gesprek?
+                      {t.form.topicsLabel}
                     </label>
                     <div className="flex flex-wrap gap-2 mb-5">
-                      {TOPICS.map((t) => {
-                        const active = form.topics.includes(t);
+                      {t.topics.map((topic) => {
+                        const active = form.topics.includes(topic);
                         return (
                           <button
-                            key={t}
+                            key={topic}
                             type="button"
-                            onClick={() => toggleTopic(t)}
+                            onClick={() => toggleTopic(topic)}
                             className={`px-4 py-2 border text-[12px] transition-colors ${
                               active
                                 ? "border-cobalt bg-cobalt/[0.06] text-cobalt"
                                 : "border-mist text-text hover:border-ink"
                             }`}
                           >
-                            {t}
+                            {topic}
                           </button>
                         );
                       })}
@@ -194,7 +192,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="f-msg" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
-                      Uw bericht
+                      {t.form.messageLabel}
                     </label>
                     <textarea
                       id="f-msg"
@@ -225,12 +223,12 @@ export default function ContactPage() {
                     className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {status === "success"
-                      ? "Bedankt, wij nemen binnen 24u contact op"
+                      ? t.form.success
                       : status === "submitting"
-                        ? "Versturen…"
+                        ? t.form.submitting
                         : !captchaToken
-                          ? "Bevestig eerst de reCAPTCHA"
-                          : "Verstuur aanvraag"}
+                          ? t.form.captcha
+                          : t.form.submit}
                     {status === "idle" && captchaToken && (
                       <svg
                         width="18"
@@ -258,7 +256,7 @@ export default function ContactPage() {
               <Reveal delay={100}>
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-4">
-                    Direct
+                    {t.sidebar.directLabel}
                   </p>
                   <a
                     href="mailto:info@digitalconceptsfactory.nl"
@@ -272,7 +270,7 @@ export default function ContactPage() {
               <Reveal delay={160}>
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-4">
-                    Bezoekadres
+                    {t.sidebar.addressLabel}
                   </p>
                   <address className="not-italic text-ink text-[15px] leading-relaxed">
                     Digital Concepts Factory B.V.

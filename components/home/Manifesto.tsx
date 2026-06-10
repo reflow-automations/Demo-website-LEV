@@ -1,28 +1,17 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
-
-const POINTS = [
-  {
-    n: "01",
-    title: "Eerst begrijpen, dan bouwen",
-    text:
-      "Achter iedere organisatie zit een eigen verhaal. Wij nemen de tijd om klanten goed te leren kennen, voordat we ook maar een regel code schrijven.",
-  },
-  {
-    n: "02",
-    title: "Praktisch en betaalbaar",
-    text:
-      "Innovatie moet werken in de dagelijkse praktijk, niet alleen indrukwekkend zijn op papier. Daarom blijven onze oplossingen toegankelijk en uitvoerbaar.",
-  },
-  {
-    n: "03",
-    title: "Resultaat is altijd het einddoel",
-    text:
-      "Meer grip. Minder kosten. Sterkere positionering. Betere processen. Concrete uitkomsten waaraan onze klanten ons mogen afrekenen.",
-  },
-];
+import Accent from "@/components/Accent";
+import { usePick } from "@/lib/i18n/provider";
+import { home } from "@/content/home";
 
 export default function Manifesto() {
+  const t = usePick(home).manifesto;
+  const POINTS = t.points.map((p, i) => ({
+    n: String(i + 1).padStart(2, "0"),
+    ...p,
+  }));
   return (
     <section className="relative py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-20">
@@ -32,19 +21,18 @@ export default function Manifesto() {
             <Reveal>
               <ChapterMark
                 number="04"
-                label="Onze overtuiging"
+                label={t.chapter}
                 className="text-muted mb-8"
               />
               <h2 className="display-hero text-[clamp(2rem,4vw,3.5rem)] text-ink mb-8">
-                De brug tussen{" "}
-                <em className="italic font-light text-cobalt">
-                  traditionele organisaties
-                </em>{" "}
-                en de digitale toekomst.
+                <Accent
+                  text={t.heading}
+                  accent={t.headingAccent}
+                  className="italic font-light text-cobalt"
+                />
               </h2>
               <p className="text-text text-[16px] leading-[1.6] max-w-md">
-                Degelijk waar het moet, vernieuwend waar het kan. Drie principes
-                die aan elke opdracht ten grondslag liggen.
+                {t.intro}
               </p>
             </Reveal>
           </div>

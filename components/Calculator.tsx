@@ -1,27 +1,77 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLang } from "@/lib/i18n/provider";
 
 type Functietype = "frontline" | "professional" | "manager";
 
-const FUNCTIE_OPTIONS: { value: Functietype; label: string; pct: number; hint: string }[] = [
-  { value: "frontline", label: "Frontline", pct: 0.4, hint: "40% vuistregel" },
-  { value: "professional", label: "Professional", pct: 0.8, hint: "80% vuistregel" },
-  { value: "manager", label: "Manager / leider", pct: 2.0, hint: "tot 200%" },
-];
+const LABELS = {
+  nl: {
+    salary: "Bruto jaarsalaris",
+    salaryMin: "€ 30K",
+    salaryMid: "€ 48K modaal",
+    salaryMax: "€ 150K",
+    roleLabel: "Type functie",
+    leaversLabel: "Vrijwillige vertrekkers per jaar",
+    gallupNote: "Vuistregels van",
+    gallupFrontline: "40% bij frontline-rollen, 80% bij professionele functies en tot 200% bij leiders/managers.",
+    perPerson: "Per vertrekkende medewerker",
+    replacementCosts: "vervangingskosten",
+    of: "van",
+    totalLabel: "Totaal per jaar, uw situatie",
+    employee: "medewerker",
+    employees: "medewerkers",
+    savingLabel: "Besparingspotentieel met DCF",
+    savingNote: "Bij voorkomen van 50% van vrijwillig vertrek",
+    roles: [
+      { value: "frontline" as Functietype, label: "Frontline", pct: 0.4, hint: "40% vuistregel" },
+      { value: "professional" as Functietype, label: "Professional", pct: 0.8, hint: "80% vuistregel" },
+      { value: "manager" as Functietype, label: "Manager / leider", pct: 2.0, hint: "tot 200%" },
+    ],
+  },
+  en: {
+    salary: "Gross annual salary",
+    salaryMin: "€ 30K",
+    salaryMid: "€ 48K average",
+    salaryMax: "€ 150K",
+    roleLabel: "Role type",
+    leaversLabel: "Voluntary leavers per year",
+    gallupNote: "Rules of thumb from",
+    gallupFrontline: "40% for frontline roles, 80% for professional roles and up to 200% for leaders/managers.",
+    perPerson: "Per departing employee",
+    replacementCosts: "replacement costs",
+    of: "of",
+    totalLabel: "Total per year, your situation",
+    employee: "employee",
+    employees: "employees",
+    savingLabel: "Savings potential with DCF",
+    savingNote: "By preventing 50% of voluntary departures",
+    roles: [
+      { value: "frontline" as Functietype, label: "Frontline", pct: 0.4, hint: "40% rule of thumb" },
+      { value: "professional" as Functietype, label: "Professional", pct: 0.8, hint: "80% rule of thumb" },
+      { value: "manager" as Functietype, label: "Manager / leader", pct: 2.0, hint: "up to 200%" },
+    ],
+  },
+};
 
-const fmtEUR = (n: number) =>
-  "€ " +
-  Math.round(n).toLocaleString("nl-NL", { maximumFractionDigits: 0 });
+const fmtEUR = (n: number, lang: "nl" | "en") => {
+  if (lang === "en") {
+    return "€ " + Math.round(n).toLocaleString("en-GB", { maximumFractionDigits: 0 });
+  }
+  return "€ " + Math.round(n).toLocaleString("nl-NL", { maximumFractionDigits: 0 });
+};
 
 export default function Calculator() {
+  const lang = useLang();
+  const L = LABELS[lang];
+
   const [salary, setSalary] = useState(48000);
   const [functie, setFunctie] = useState<Functietype>("professional");
   const [vertrekkers, setVertrekkers] = useState(5);
 
   const pct = useMemo(
-    () => FUNCTIE_OPTIONS.find((o) => o.value === functie)?.pct ?? 0.8,
-    [functie],
+    () => L.roles.find((o) => o.value === functie)?.pct ?? 0.8,
+    [functie, L.roles],
   );
 
   const perPersoon = salary * pct;
@@ -32,7 +82,7 @@ export default function Calculator() {
     <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
       {/* LEFT, controls */}
       <div className="lg:col-span-7">
-        {/* Salaris slider */}
+        {/* Salary slider */}
         <div className="mb-10">
           <div className="flex items-baseline justify-between mb-4">
             <label
@@ -40,10 +90,10 @@ export default function Calculator() {
               className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
             >
               <span className="text-cobalt mr-2">01</span>
-              Bruto jaarsalaris
+              {L.salary}
             </label>
             <span className="display-numeric text-ink text-[1.5rem]">
-              {fmtEUR(salary)}
+              {fmtEUR(salary, lang)}
             </span>
           </div>
           <input
@@ -57,20 +107,20 @@ export default function Calculator() {
             className="w-full accent-cobalt"
           />
           <div className="flex justify-between mt-2 text-[10px] font-mono uppercase tracking-[0.14em] text-muted">
-            <span>€ 30K</span>
-            <span>€ 48K modaal</span>
-            <span>€ 150K</span>
+            <span>{L.salaryMin}</span>
+            <span>{L.salaryMid}</span>
+            <span>{L.salaryMax}</span>
           </div>
         </div>
 
-        {/* Functietype */}
+        {/* Role type */}
         <div className="mb-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted mb-4">
             <span className="text-cobalt mr-2">02</span>
-            Type functie
+            {L.roleLabel}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {FUNCTIE_OPTIONS.map((o) => {
+            {L.roles.map((o) => {
               const active = functie === o.value;
               return (
                 <button
@@ -99,7 +149,7 @@ export default function Calculator() {
           </div>
         </div>
 
-        {/* Vertrekkers */}
+        {/* Leavers */}
         <div className="mb-10">
           <div className="flex items-baseline justify-between mb-4">
             <label
@@ -107,7 +157,7 @@ export default function Calculator() {
               className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted"
             >
               <span className="text-cobalt mr-2">03</span>
-              Vrijwillige vertrekkers per jaar
+              {L.leaversLabel}
             </label>
             <span className="display-numeric text-ink text-[1.5rem]">
               {vertrekkers}
@@ -131,8 +181,7 @@ export default function Calculator() {
         </div>
 
         <p className="text-[11px] text-muted leading-[1.5] max-w-md">
-          Vuistregels van <strong>Gallup</strong>: 40% bij frontline-rollen, 80%
-          bij professionele functies en tot 200% bij leiders/managers.
+          {L.gallupNote} <strong>Gallup</strong>: {L.gallupFrontline}
         </p>
       </div>
 
@@ -140,42 +189,42 @@ export default function Calculator() {
       <div className="lg:col-span-5 bg-ink text-paper p-8 lg:p-10 flex flex-col justify-between rounded-3xl shadow-[0_28px_60px_-20px_rgba(45,31,20,0.32)]">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mb-3">
-            Per vertrekkende medewerker
+            {L.perPerson}
           </p>
           <div className="display-numeric text-paper text-[clamp(2rem,4vw,3.25rem)] mb-1 leading-none">
-            {fmtEUR(perPersoon)}
+            {fmtEUR(perPersoon, lang)}
           </div>
           <p className="text-paper/65 text-[12px] leading-[1.5] mb-10">
-            vervangingskosten, {Math.round(pct * 100)}% van {fmtEUR(salary)}
+            {L.replacementCosts}, {Math.round(pct * 100)}% {L.of} {fmtEUR(salary, lang)}
           </p>
 
           <div className="h-px bg-paper/15 mb-8" />
 
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/45 mb-3">
-            Totaal per jaar, uw situatie
+            {L.totalLabel}
           </p>
           <div className="display-numeric text-paper text-[clamp(2.5rem,5vw,4rem)] mb-1 leading-none">
-            {fmtEUR(totaalKosten)}
+            {fmtEUR(totaalKosten, lang)}
           </div>
           <p className="text-paper/65 text-[12px] leading-[1.5]">
-            {vertrekkers} medewerker{vertrekkers === 1 ? "" : "s"} × {fmtEUR(perPersoon)}
+            {vertrekkers} {vertrekkers === 1 ? L.employee : L.employees} × {fmtEUR(perPersoon, lang)}
           </p>
         </div>
 
         <div className="mt-10 pt-8 border-t border-cobalt/30">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-cobalt-bright mb-3">
-            Besparingspotentieel met DCF
+            {L.savingLabel}
           </p>
           <div className="display-numeric text-cobalt-bright text-[clamp(2rem,4vw,3.25rem)] mb-2 leading-none">
-            {fmtEUR(besparing50)}
+            {fmtEUR(besparing50, lang)}
           </div>
           <p className="text-paper/65 text-[12px] leading-[1.5]">
-            Bij voorkomen van 50% van vrijwillig vertrek
+            {L.savingNote}
           </p>
         </div>
       </div>
 
-      {/* Slider track styling, minimal browser override */}
+      {/* Slider track styling */}
       <style jsx>{`
         input[type="range"] {
           -webkit-appearance: none;

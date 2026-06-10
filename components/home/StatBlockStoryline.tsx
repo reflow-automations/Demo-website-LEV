@@ -14,6 +14,9 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import ChapterMark from "@/components/ChapterMark";
+import Accent from "@/components/Accent";
+import { useLang, usePick } from "@/lib/i18n/provider";
+import { home } from "@/content/home";
 
 type StatMarker = "bar" | "arc" | "dots" | "wave";
 
@@ -33,48 +36,17 @@ interface Stat {
   separator?: string;
 }
 
-const STATS: Stat[] = [
-  {
-    label: "Minimale besparing per behouden medewerker",
-    detail:
-      "Vervangingskosten bedragen 40% tot 200% van het bruto jaarsalaris. Bij modaal inkomen (€48.000) ligt de ondergrens al op €19.200 per medewerker.",
-    source: "Gallup · Randstad",
-    marker: "bar",
-    value: 19200,
-    prefix: "€",
-    thousands: true,
-  },
-  {
-    label: "Reductie aanbestedingskosten",
-    detail:
-      "Met onze digitale innovatie voor (Europees) aanbesteden kunnen interne kosten en doorlooptijden met de helft worden teruggebracht.",
-    source: "DCF onderzoek",
-    marker: "arc",
-    value: 50,
-    word: "tot",
-    suffix: "%",
-  },
-  {
-    label: "Verzuimkosten per medewerker per jaar",
-    detail:
-      "Gemiddelde kosten van ziekteverzuim in Nederland, exclusief de indirecte gevolgen voor productiviteit, teams en continuïteit.",
-    source: "TNO · ArboNed",
-    marker: "wave",
-    value: 4500,
-    secondValue: 7000,
-    prefix: "€",
-    thousands: true,
-    separator: "—",
-  },
-  {
-    label: "Bereik DOOH-netwerk per maand",
-    detail:
-      "Afhankelijk van locaties en campagne-opzet bereiken onze DOOH-schermen 250.000 tot 2 miljoen kandidaten per maand, vooral in de Randstad.",
-    source: "DCF netwerk",
-    marker: "dots",
-    value: 2,
-    suffix: " mln+",
-  },
+// Visual / numeric structure, language-neutral. Text (label, detail, source)
+// plus the symbol fields (prefix/suffix/word) come from the translated content
+// and are merged in by index inside the component.
+const STAT_STRUCT: Pick<
+  Stat,
+  "marker" | "value" | "secondValue" | "thousands" | "separator"
+>[] = [
+  { marker: "bar", value: 19200, thousands: true },
+  { marker: "arc", value: 50 },
+  { marker: "wave", value: 4500, secondValue: 7000, thousands: true, separator: "—" },
+  { marker: "dots", value: 2 },
 ];
 
 // Section height is set via Tailwind classes on the <section> below so we can
@@ -150,12 +122,15 @@ function useCountUp(target: number, trigger: number, duration = 650) {
 }
 
 function StatValue({ stat, trigger }: { stat: Stat; trigger: number }) {
+  const lang = useLang();
   const v1 = useCountUp(stat.value, trigger);
   const v2 = useCountUp(stat.secondValue ?? 0, trigger);
 
   const fmt = (n: number) => {
     const rounded = Math.round(n);
-    return stat.thousands ? rounded.toLocaleString("nl-NL") : String(rounded);
+    return stat.thousands
+      ? rounded.toLocaleString(lang === "nl" ? "nl-NL" : "en-US")
+      : String(rounded);
   };
 
   return (
@@ -172,13 +147,18 @@ function StatValue({ stat, trigger }: { stat: Stat; trigger: number }) {
 }
 
 export default function StatBlockStoryline() {
+  const t = usePick(home).stats;
+  const STATS: Stat[] = STAT_STRUCT.map((s, i) => ({
+    ...s,
+    ...t.items[i],
+  }));
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [progress, setProgress] = useState(0); // 0..1 within section
   const [inView, setInView] = useState(false);
   // Trigger counter for each panel, increments when panel becomes active
   const [triggers, setTriggers] = useState<number[]>(() =>
-    STATS.map(() => 0),
+    STAT_STRUCT.map(() => 0),
   );
 
   // Watch when the section actually enters the viewport, so the first
@@ -208,7 +188,10 @@ export default function StatBlockStoryline() {
       const raw = -rect.top / total;
       const clamped = Math.max(0, Math.min(1, raw));
       setProgress(clamped);
-      const idx = Math.min(STATS.length - 1, Math.floor(clamped * STATS.length));
+      const idx = Math.min(
+        STAT_STRUCT.length - 1,
+        Math.floor(clamped * STAT_STRUCT.length),
+      );
       setActiveIdx(idx);
     };
     onScroll();
@@ -251,15 +234,15 @@ export default function StatBlockStoryline() {
           <div className="mx-auto max-w-7xl px-6 lg:px-20">
             <ChapterMark
               number="03"
-              label="De cijfers"
+              label={t.chapter}
               className="text-paper/50 mb-6"
             />
             <h2 className="display-section text-[clamp(1.85rem,3.5vw,3rem)] text-paper">
-              Innovatie die{" "}
-              <em className="font-display italic font-light text-cobalt-bright">
-                rekent
-              </em>
-              .
+              <Accent
+                text={t.heading}
+                accent={t.headingAccent}
+                className="font-display italic font-light text-cobalt-bright"
+              />
             </h2>
           </div>
         </div>
@@ -352,7 +335,7 @@ export default function StatBlockStoryline() {
                 href="/talent-behouden#bereken"
                 className="group inline-flex items-center gap-3 text-[13px] tracking-tight text-paper hover:text-cobalt-bright transition-colors shrink-0"
               >
-                <span className="link-underline">Bereken uw besparingspotentieel</span>
+                <span className="link-underline">{t.calcLink}</span>
                 <svg width="14" height="14" viewBox="0 0 14 14" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                   <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="square" />
                 </svg>
