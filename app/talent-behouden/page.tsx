@@ -8,13 +8,18 @@ import CTA from "@/components/CTA";
 import Calculator from "@/components/Calculator";
 import SubpagesNav from "@/components/SubpagesNav";
 import Accent from "@/components/Accent";
+import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
 import { usePick } from "@/lib/i18n/provider";
 import { cta } from "@/content/ui";
 import { talentBehouden } from "@/content/talentBehouden";
+import { talentBehoudenFaq } from "@/content/faq";
+import { serviceSchemaFor, faqSchema, breadcrumbFor } from "@/lib/seo/schema";
 
 export default function TalentBehoudenPage() {
   const t = usePick(talentBehouden);
   const ctaLong = usePick(cta.long);
+  const faq = usePick(talentBehoudenFaq);
 
   return (
     <>
@@ -304,6 +309,15 @@ export default function TalentBehoudenPage() {
           </Reveal>
         </div>
       </section>
+
+      <JsonLd
+        schema={[
+          serviceSchemaFor("/talent-behouden", "Employee retention"),
+          faqSchema(talentBehoudenFaq.nl),
+          breadcrumbFor("/talent-behouden"),
+        ]}
+      />
+      <Faq items={faq} />
 
       <SubpagesNav chapter="04" items={t.subpages} />
 

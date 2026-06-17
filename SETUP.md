@@ -20,25 +20,26 @@ De site draait op **Vercel** — niets te doen, automatische builds via GitHub.
 
 > Belangrijk: Hostnet is **alleen DNS-provider**. De site zelf draait op Vercel. Hostnet kan niet vanuit hun paneel naar Vercel doorlinken — DNS-records moeten handmatig in het Hostnet-paneel.
 
-## 3. reCAPTCHA — echte keys aanvragen
+## 3. reCAPTCHA — echte keys
 
-Nu draait reCAPTCHA op Google's officiële test-keys (gele "for testing only"-banner, werkt wel maar verifieert niets echts). Voor productie:
+**Status (17 juni 2026):** DCF (Len) heeft de echte keys aangeleverd. Ze zijn in de reCAPTCHA-admin geregistreerd voor **alleen `digitalconceptsfactory.nl`**. De demo blijft bewust op de test-keys draaien (gele "for testing only"-banner).
 
-1. Ga naar https://www.google.com/recaptcha/admin/create
-2. Log in met een Google-account (van DCF bij voorkeur, anders Reflow)
-3. Vul in:
-   - **Label**: `Digital Concepts Factory`
-   - **reCAPTCHA type**: `Challenge (v2)` → `"Ik ben geen robot" Checkbox`
-   - **Domains**:
-     - `digitalconceptsfactory.nl`
-     - `dcf-demo.vercel.app` (voor preview-deploys)
-   - **Accept Terms of Service** + Submit
-4. Je krijgt **SITE KEY** (publiek) en **SECRET KEY** (server)
-5. In Vercel → Project → Settings → Environment Variables, voeg toe voor **alle environments** (Production + Preview + Development):
-   - `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` = de SITE KEY
-   - `RECAPTCHA_SECRET_KEY` = de SECRET KEY
-6. Trigger een Redeploy (Vercel → Deployments → laatste → ⋮ → Redeploy)
-7. De gele test-banner verdwijnt en de widget werkt nu écht
+> **Niet omzetten voordat `digitalconceptsfactory.nl` live op Vercel staat (zie stap 2 hierboven).** De keys zijn domein-gebonden: op `demo-website-lev.vercel.app` of op localhost faalt de verificatie. Tot het custom domein live is, de test-keys laten staan (die werken overal).
+
+Zodra het custom domein live is, flip-the-switch (circa 2 minuten):
+
+1. Vercel → Project → Settings → Environment Variables, voor **alle environments** (Production + Preview + Development):
+   - `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` = `6LeTfSQtAAAAAHe-o6mPuIgUBxSD8z3zAjHAWey0` (publieke sitesleutel, mag in code/HTML staan)
+   - `RECAPTCHA_SECRET_KEY` = de **geheime sleutel uit de reCAPTCHA-admin / de aangeleverde PNG**. NOOIT in git en NOOIT achter een `NEXT_PUBLIC_`-prefix.
+2. Trigger een Redeploy (Vercel → Deployments → laatste → ⋮ → Redeploy)
+3. De gele test-banner verdwijnt; de widget verifieert nu echt
+4. Verifieer: open de live contactpagina, vink reCAPTCHA aan, verstuur. Check daarna Vercel → Functions → /api/contact op `captchaHost: digitalconceptsfactory.nl`
+
+De code in `components/ReCaptcha.tsx` en `app/api/contact/route.ts` switcht automatisch zodra deze env-vars gezet zijn, geen code-wijziging nodig.
+
+> Tip: de tekens `I` en `l` in de sitesleutel (`...o6mPuIg...`) zijn lastig te onderscheiden. Gebruik bij twijfel de **KOPIËREN**-knop in de reCAPTCHA-admin in plaats van overtypen.
+
+Nieuwe keys aanvragen (alleen indien nodig): https://www.google.com/recaptcha/admin/create → v2 Checkbox, label `Digital Concepts Factory`, domein `digitalconceptsfactory.nl` (eventueel `demo-website-lev.vercel.app` toevoegen als reCAPTCHA ook op de demo getest moet worden).
 
 ## 4. Cal.com booking embed
 
@@ -53,20 +54,44 @@ Wanneer Lev de embed-code stuurt:
 
 ## 5. E-mail bezorging vanuit contact-form
 
-Nu logt het contact-form alleen naar Vercel-logs (Project → Deployments → laatste → Functions → /api/contact). Voor échte bezorging in `info@digitalconceptsfactory.nl`:
+**Gekozen: Resend.** Nu logt het contact-form alleen naar Vercel-logs (Project → Deployments → laatste → Functions → /api/contact); het mailt nog niet.
 
-Opties (eenvoudig naar minder eenvoudig):
+De Resend gratis tier staat één geverifieerd domein per account toe. Het Reflow-account is al voor een ander domein in gebruik, dus **DCF maakt een eigen (gratis) Resend-account aan**:
 
-**Resend (aanbevolen)**:
-1. Account op resend.com (gratis tot 100 mails/dag)
-2. Domein `digitalconceptsfactory.nl` verifiëren (3 DNS-records in Hostnet)
-3. API-key in Vercel env: `RESEND_API_KEY`
-4. In `app/api/contact/route.ts` op de TODO-regel een paar regels code toevoegen — vraag mij het in te bouwen
+1. Account op resend.com (gratis, ruim voldoende voor contactaanvragen)
+2. Domein `digitalconceptsfactory.nl` verifiëren: Resend toont 3 DNS-records die in het Hostnet-DNS-paneel gezet worden
+3. API-key aanmaken en aan Rogier geven → komt in Vercel env: `RESEND_API_KEY` (server-only, niet in git)
+4. Rogier bouwt de verzendcode in op de TODO-regel in `app/api/contact/route.ts`; bericht gaat naar `info@digitalconceptsfactory.nl`
 
-**SMTP via Hostnet mail**:
-- Werkt ook. Gebruik `nodemailer`. Hostnet SMTP-instellingen invoeren in env vars.
+> n8n-webhook is bewust niet gekozen: dan zou de mail via Reflow's eigen e-mail lopen in plaats van vanaf het DCF-domein. Een losse `mailto:`-link ook niet, die triggert de reCAPTCHA-flow niet.
 
-Niet doen: simpel `mailto:`-link op het form. Werkt onbetrouwbaar en triggert geen reCAPTCHA-flow.
+## AVG: cookiebanner, analytics en juridische pagina's
+
+Nog te bouwen zodra de input van DCF binnen is, bij voorkeur in één set live:
+
+- **Privacy- en voorwaarden-pagina's**: DCF levert de juridische teksten aan (die staan niet in het content-document). Nu zijn de footer-links placeholders (`href="#"`).
+- **Google Analytics**: alleen als DCF dat wil. Dan levert DCF een GA4 Measurement ID (`G-XXXXXXX`). Alternatief zonder cookie-gedoe: Plausible.
+- **Cookiebanner met opslag van toestemming**: vereist zodra GA of andere niet-essentiële cookies actief zijn. De banner slaat de keuze (accepteren of weigeren) op in de browser en laadt analytics pas ná akkoord; weigeren blijft mogelijk. Reflow bouwt dit.
+
+## AI-chatbot (n8n backend gereed)
+
+De chatbot-backend draait in n8n: workflow **DCF Chatbot (website)** (`A1sIoMtz6M0liUne`), actief. Model: Claude Haiku 4.5. Bevat een uitgebreide DCF-system-prompt (diensten, cijfers, grenzen, u-vorm, lead-gen-nudge) plus gespreksgeheugen per bezoeker (14 berichten).
+
+**Endpoint** (POST): `https://n8n.reflowautomations.nl/webhook/dcf-chat`
+
+Request body:
+
+```json
+{ "message": "vraag van de bezoeker", "sessionId": "unieke-id-per-bezoeker" }
+```
+
+Response:
+
+```json
+{ "reply": "antwoord van de bot" }
+```
+
+**Widget gebouwd:** `components/ChatWidget.tsx`, gemount in de root layout, dus rechtsonder op elke pagina. Tweetalig (NL/EN), met sessie-geheugen via `localStorage` (`dcf-chat-session`). De webhook-URL komt uit env-var `NEXT_PUBLIC_CHAT_WEBHOOK_URL` met de productie-URL als fallback, dus de widget werkt direct (ook lokaal en op de demo). Wil je een andere webhook, zet dan die env-var in Vercel.
 
 ## 6. Logo
 
@@ -88,7 +113,7 @@ Dan beschikbaar op `http://localhost:3000`. Hot reload werkt automatisch.
 
 ## 8. Belangrijke files voor content-aanpassingen
 
-- `app/page.tsx` — Home (Hero, Pillars, Stats, Manifesto, Marquee, Newsletter, FinalCTA)
+- `app/page.tsx` — Home (Hero, Pillars, Stats, Manifesto, Marquee, FinalCTA). Nieuwsbrief is tijdelijk verwijderd (juni 2026); de component staat nog in `components/home/Newsletter.tsx`.
 - `app/<route>/page.tsx` — elke hoofdpagina (16 subpages gebruiken `SubpageTemplate`)
 - `components/home/*` — homepage-secties
 - `components/SubpageTemplate.tsx` — template voor subpages, data-driven

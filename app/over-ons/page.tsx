@@ -6,9 +6,11 @@ import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import SubpagesNav from "@/components/SubpagesNav";
 import Accent from "@/components/Accent";
+import JsonLd from "@/components/JsonLd";
 import { usePick } from "@/lib/i18n/provider";
 import { cta } from "@/content/ui";
 import { overOns } from "@/content/overOns";
+import { breadcrumbFor } from "@/lib/seo/schema";
 
 export default function OverOnsPage() {
   const t = usePick(overOns);
@@ -16,6 +18,7 @@ export default function OverOnsPage() {
 
   return (
     <>
+      <JsonLd schema={[breadcrumbFor("/over-ons")]} />
       {/* HERO */}
       <section className="relative pt-10 pb-10 lg:pt-12 lg:pb-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-20">

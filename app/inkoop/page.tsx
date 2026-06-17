@@ -6,13 +6,18 @@ import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
 import Accent from "@/components/Accent";
+import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
 import { usePick } from "@/lib/i18n/provider";
 import { cta } from "@/content/ui";
 import { inkoop } from "@/content/inkoop";
+import { inkoopFaq } from "@/content/faq";
+import { serviceSchemaFor, faqSchema, breadcrumbFor } from "@/lib/seo/schema";
 
 export default function InkoopPage() {
   const t = usePick(inkoop);
   const ctaLong = usePick(cta.long);
+  const faq = usePick(inkoopFaq);
 
   return (
     <>
@@ -200,6 +205,15 @@ export default function InkoopPage() {
           </div>
         </div>
       </section>
+
+      <JsonLd
+        schema={[
+          serviceSchemaFor("/inkoop", "Procurement consultancy"),
+          faqSchema(inkoopFaq.nl),
+          breadcrumbFor("/inkoop"),
+        ]}
+      />
+      <Faq items={faq} />
 
       {/* CLOSING CTA */}
       <section className="py-20 lg:py-28">

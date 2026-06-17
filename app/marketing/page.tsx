@@ -7,13 +7,18 @@ import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
 import SubpagesNav from "@/components/SubpagesNav";
 import Accent from "@/components/Accent";
+import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
 import { usePick } from "@/lib/i18n/provider";
 import { cta } from "@/content/ui";
 import { marketing } from "@/content/marketing";
+import { marketingFaq } from "@/content/faq";
+import { serviceSchemaFor, faqSchema, breadcrumbFor } from "@/lib/seo/schema";
 
 export default function MarketingPage() {
   const t = usePick(marketing);
   const ctaLong = usePick(cta.long);
+  const faq = usePick(marketingFaq);
 
   return (
     <>
@@ -199,6 +204,15 @@ export default function MarketingPage() {
           </div>
         </div>
       </section>
+
+      <JsonLd
+        schema={[
+          serviceSchemaFor("/marketing", "Marketing services"),
+          faqSchema(marketingFaq.nl),
+          breadcrumbFor("/marketing"),
+        ]}
+      />
+      <Faq items={faq} />
 
       <SubpagesNav chapter="03" items={t.subpages} />
 

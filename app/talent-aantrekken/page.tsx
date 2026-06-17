@@ -7,14 +7,19 @@ import ChapterMark from "@/components/ChapterMark";
 import CTA from "@/components/CTA";
 import SubpagesNav from "@/components/SubpagesNav";
 import Accent from "@/components/Accent";
+import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
 import { usePick } from "@/lib/i18n/provider";
 import { cta } from "@/content/ui";
 import { talentAantrekken } from "@/content/talentAantrekken";
+import { talentAantrekkenFaq } from "@/content/faq";
+import { serviceSchemaFor, faqSchema, breadcrumbFor } from "@/lib/seo/schema";
 
 export default function TalentAantrekkenPage() {
   const t = usePick(talentAantrekken);
   const ctaLong = usePick(cta.long);
   const ctaShort = usePick(cta.short);
+  const faq = usePick(talentAantrekkenFaq);
 
   return (
     <>
@@ -210,6 +215,15 @@ export default function TalentAantrekkenPage() {
           </Reveal>
         </div>
       </section>
+
+      <JsonLd
+        schema={[
+          serviceSchemaFor("/talent-aantrekken", "Recruitment marketing"),
+          faqSchema(talentAantrekkenFaq.nl),
+          breadcrumbFor("/talent-aantrekken"),
+        ]}
+      />
+      <Faq items={faq} />
 
       <SubpagesNav chapter="03" items={t.subpages} />
 
