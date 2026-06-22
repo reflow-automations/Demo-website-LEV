@@ -84,6 +84,24 @@ function loadCalEmbed() {
   namespacedCal?.("ui", {
     hideEventTypeDetails: false,
     layout: "month_view",
+    theme: "dark",
+    cssVarsPerTheme: {
+      dark: {
+        "cal-bg": "#2D1F14", // dark espresso — primary brand
+        "cal-bg-emphasis": "#3D2B1C", // hover/depth coffee
+        "cal-bg-subtle": "#4A372A", // medium coffee surface
+        "cal-bg-muted": "#3D2B1C",
+        "cal-bg-inverted": "#F6F0E5", // cream
+        "cal-border": "#4A372A",
+        "cal-border-emphasis": "#8A7660",
+        "cal-border-subtle": "#3D2B1C",
+        "cal-text": "#F6F0E5", // warm cream body text
+        "cal-text-emphasis": "#FFFFFF",
+        "cal-text-subtle": "#D8CBB6",
+        "cal-text-muted": "#8A7660",
+        "cal-brand": "#2A82AC", // petrol blue accent
+      },
+    },
   });
 }
 
@@ -96,7 +114,7 @@ export default function CalEmbed() {
     <div className="relative w-full">
       <div
         id={CAL_TARGET_ID}
-        className="w-full overflow-auto bg-paper-deep border border-mist rounded-3xl"
+        className="w-full overflow-auto bg-ink border border-ink-soft rounded-3xl"
         style={{ minHeight: 620 }}
       />
     </div>
