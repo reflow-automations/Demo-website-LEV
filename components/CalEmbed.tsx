@@ -87,18 +87,20 @@ function loadCalEmbed() {
     theme: "dark",
     cssVarsPerTheme: {
       dark: {
-        "cal-bg": "#2D1F14", // dark espresso — primary brand
-        "cal-bg-emphasis": "#3D2B1C", // hover/depth coffee
-        "cal-bg-subtle": "#4A372A", // medium coffee surface
-        "cal-bg-muted": "#3D2B1C",
+        // Stepped coffee ramp — each level is clearly lighter than the last
+        // so available days keep a visible "button" fill (don't flatten this).
+        "cal-bg": "#2D1F14", // dark espresso — base surface
+        "cal-bg-muted": "#392819", // recessed
+        "cal-bg-subtle": "#4A372A", // available-day fill / time-slot surface
+        "cal-bg-emphasis": "#6E5239", // hover / strong emphasis (clearly lighter)
         "cal-bg-inverted": "#F6F0E5", // cream
         "cal-border": "#4A372A",
-        "cal-border-emphasis": "#8A7660",
         "cal-border-subtle": "#3D2B1C",
-        "cal-text": "#F6F0E5", // warm cream body text
+        "cal-border-emphasis": "#8A7660",
+        "cal-text": "#F6F0E5", // warm cream — available day text
         "cal-text-emphasis": "#FFFFFF",
-        "cal-text-subtle": "#D8CBB6",
-        "cal-text-muted": "#8A7660",
+        "cal-text-subtle": "#C9BBA3",
+        "cal-text-muted": "#7C6A56", // dim — unavailable days
         "cal-brand": "#2A82AC", // petrol blue accent
       },
     },
