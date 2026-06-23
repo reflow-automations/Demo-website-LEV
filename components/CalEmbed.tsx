@@ -94,9 +94,9 @@ function loadCalEmbed() {
         "cal-bg-subtle": "#4A372A", // available-day fill / time-slot surface
         "cal-bg-emphasis": "#6E5239", // hover / strong emphasis (clearly lighter)
         "cal-bg-inverted": "#F6F0E5", // cream
-        "cal-border": "#4A372A",
-        "cal-border-subtle": "#3D2B1C",
-        "cal-border-emphasis": "#8A7660",
+        "cal-border": "#6E5239", // visible warm hairline (column dividers)
+        "cal-border-subtle": "#5A4332",
+        "cal-border-emphasis": "#9C8568",
         "cal-text": "#F6F0E5", // warm cream — available day text
         "cal-text-emphasis": "#FFFFFF",
         "cal-text-subtle": "#C9BBA3",
