@@ -27,7 +27,6 @@ export default function Footer() {
                 accent={t.taglineAccent}
                 className="italic font-light text-cobalt-bright"
               />
-              .
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pl-10 flex flex-col justify-end">

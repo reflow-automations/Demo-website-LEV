@@ -56,7 +56,6 @@ export default function Hero() {
                 accent={t.h1Accent}
                 className="italic font-light text-cobalt"
               />
-              .
             </h1>
 
             <p className="text-text text-[17px] lg:text-[18px] leading-[1.55] max-w-xl mb-10">

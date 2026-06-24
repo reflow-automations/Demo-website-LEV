@@ -166,7 +166,6 @@ export default function StatBlock() {
                 <em className="font-display italic font-light text-cobalt-bright">
                   rekent
                 </em>
-                .
               </h2>
             </Reveal>
           </div>
