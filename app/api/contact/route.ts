@@ -41,6 +41,11 @@ const CONTACT_FROM =
   process.env.CONTACT_FROM?.trim() ||
   "Digital Concepts Factory <noreply@digitalconceptsfactory.nl>";
 
+// Pas gezet in productie. Zolang leeg wordt de hostname-check overgeslagen,
+// zodat de demo / localhost niet breekt. In Vercel zetten op:
+//   RECAPTCHA_EXPECTED_HOSTNAME = digitalconceptsfactory.nl
+const EXPECTED_HOSTNAME = process.env.RECAPTCHA_EXPECTED_HOSTNAME?.trim() || "";
+
 interface VerifyResponse {
   success: boolean;
   "error-codes"?: string[];
@@ -149,6 +154,15 @@ export async function POST(req: Request) {
     );
   }
 
+  // 0) Honeypot — een onzichtbaar veld dat mensen nooit invullen. Vult een
+  //    bot het toch, dan doen we alsof het gelukt is (ok:true) zodat de bot
+  //    niets doorheeft, maar we versturen niets.
+  const honeypot = String(payload.website ?? "").trim();
+  if (honeypot) {
+    console.warn("[contact] honeypot ingevuld — genegeerd als spam");
+    return NextResponse.json({ ok: true });
+  }
+
   const token =
     typeof payload.captchaToken === "string" ? payload.captchaToken : "";
 
@@ -168,6 +182,20 @@ export async function POST(req: Request) {
         error: "reCAPTCHA-verificatie gefaald",
         details: verify["error-codes"] ?? [],
       },
+      { status: 400 },
+    );
+  }
+
+  // 1b) Hostname-check — het token moet op het eigen domein zijn opgelost.
+  //     Alleen actief zodra RECAPTCHA_EXPECTED_HOSTNAME gezet is.
+  if (
+    EXPECTED_HOSTNAME &&
+    verify.hostname &&
+    verify.hostname !== EXPECTED_HOSTNAME
+  ) {
+    console.warn("[contact] reCAPTCHA hostname-mismatch", verify.hostname);
+    return NextResponse.json(
+      { ok: false, error: "reCAPTCHA-verificatie gefaald" },
       { status: 400 },
     );
   }

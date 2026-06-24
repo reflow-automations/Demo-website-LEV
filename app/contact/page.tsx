@@ -24,6 +24,7 @@ export default function ContactPage() {
     phone: "",
     topics: [] as string[],
     message: "",
+    website: "", // honeypot — moet leeg blijven; alleen bots vullen dit
   });
 
   const toggleTopic = (topic: string) =>
@@ -200,6 +201,31 @@ export default function ContactPage() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full bg-transparent border-b border-mist py-3 text-ink text-[16px] focus:outline-none focus:border-ink transition-colors resize-none"
+                    />
+                  </div>
+
+                  {/* Honeypot — onzichtbaar voor mensen, vangt bots die
+                      blind alle velden invullen. Niet verwijderen. */}
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      left: "-9999px",
+                      width: 1,
+                      height: 1,
+                      overflow: "hidden",
+                    }}
+                  >
+                    <label htmlFor="f-website">Website (niet invullen)</label>
+                    <input
+                      id="f-website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.website}
+                      onChange={(e) =>
+                        setForm({ ...form, website: e.target.value })
+                      }
                     />
                   </div>
 
