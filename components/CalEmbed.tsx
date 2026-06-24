@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { trackEvent } from "@/lib/gtag";
 
 type CalFunction = {
   (...args: unknown[]): void;
@@ -79,6 +80,18 @@ function loadCalEmbed() {
       useSlotsViewOnSmallScreen: "true",
     },
     calLink: "len-v-fiuafk/30min",
+  });
+
+  // Conversie-tracking via cal.com's eigen embed-callbacks. Ook al is het een
+  // iframe, cal.com stuurt deze events naar de parent. trackEvent is een no-op
+  // zolang de bezoeker geen cookies heeft geaccepteerd (consent-veilig).
+  namespacedCal?.("on", {
+    action: "linkReady",
+    callback: () => trackEvent("cal_viewed", { method: "cal.com" }),
+  });
+  namespacedCal?.("on", {
+    action: "bookingSuccessful",
+    callback: () => trackEvent("cal_booking", { method: "cal.com" }),
   });
 
   namespacedCal?.("ui", {

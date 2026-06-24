@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 import ChapterMark from "@/components/ChapterMark";
 import CalEmbed from "@/components/CalEmbed";
@@ -8,6 +8,7 @@ import ReCaptcha from "@/components/ReCaptcha";
 import Accent from "@/components/Accent";
 import { usePick } from "@/lib/i18n/provider";
 import { contact } from "@/content/contact";
+import { trackEvent } from "@/lib/gtag";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -16,6 +17,15 @@ export default function ContactPage() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const startedRef = useRef(false);
+
+  // Vuurt één keer zodra de bezoeker met het formulier begint (top van de
+  // funnel). Het verschil tussen form_start en generate_lead is je afhaak.
+  const handleFirstInteraction = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent("form_start", { form_name: "contact" });
+  };
 
   const [form, setForm] = useState({
     name: "",
@@ -49,6 +59,11 @@ export default function ContactPage() {
       const data = (await res.json()) as { ok?: boolean; error?: string };
       if (res.ok && data.ok) {
         setStatus("success");
+        // Echte conversie: alleen bij een geslaagde verzending.
+        trackEvent("generate_lead", {
+          form_name: "contact",
+          topics: form.topics.join(", "),
+        });
       } else {
         setStatus("error");
         setErrorMsg(data.error || t.form.errorFallback);
@@ -109,7 +124,11 @@ export default function ContactPage() {
             {/* Left, form */}
             <div className="lg:col-span-7">
               <Reveal>
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form
+                  onSubmit={handleSubmit}
+                  onFocus={handleFirstInteraction}
+                  className="space-y-8"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <label htmlFor="f-name" className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted block mb-3">
