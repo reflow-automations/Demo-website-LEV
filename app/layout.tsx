@@ -3,6 +3,7 @@ import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import CookieConsent from "@/components/CookieConsent";
 import JsonLd from "@/components/JsonLd";
 import { LanguageProvider } from "@/lib/i18n/provider";
 import { organizationSchema } from "@/lib/seo/schema";
@@ -80,6 +81,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ChatWidget />
+          <CookieConsent />
         </LanguageProvider>
       </body>
     </html>

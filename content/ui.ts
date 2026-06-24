@@ -65,6 +65,7 @@ export const ui = {
       privacy: "Privacy",
       cookies: "Cookies",
       terms: "Voorwaarden",
+      cookiePrefs: "Cookievoorkeuren",
     },
     subpagesNav: {
       label: "Verdieping",
@@ -89,6 +90,7 @@ export const ui = {
       privacy: "Privacy",
       cookies: "Cookies",
       terms: "Terms",
+      cookiePrefs: "Cookie preferences",
     },
     subpagesNav: {
       label: "Further reading",

@@ -9,6 +9,7 @@ import {
   FOOTER_COMPANY_LINKS,
 } from "@/content/ui";
 import Accent from "@/components/Accent";
+import { openCookieSettings } from "@/components/CookieConsent";
 
 export default function Footer() {
   const lang = useLang();
@@ -107,6 +108,13 @@ export default function Footer() {
             <a href="#" className="hover:text-paper">
               {t.terms}
             </a>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="uppercase tracking-[0.14em] hover:text-paper"
+            >
+              {t.cookiePrefs}
+            </button>
           </div>
         </div>
       </div>
