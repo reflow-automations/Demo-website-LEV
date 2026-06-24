@@ -152,6 +152,23 @@ export const pageSeo: Record<string, SeoEntry> = {
     description:
       "Plan een vrijblijvend gesprek met Digital Concepts Factory of laat een bericht achter. Wij reageren binnen 24 uur.",
   },
+
+  // --- Juridisch ---
+  "/privacy": {
+    title: "Privacyverklaring",
+    description:
+      "Lees hoe Digital Concepts Factory persoonsgegevens verwerkt, op welke grondslag, hoe lang wij bewaren en welke rechten u heeft onder de AVG.",
+  },
+  "/disclaimer": {
+    title: "Disclaimer",
+    description:
+      "De voorwaarden voor het gebruik van de website van Digital Concepts Factory: informatief karakter, aansprakelijkheid, AI-uitkomsten en intellectueel eigendom.",
+  },
+  "/algemene-voorwaarden": {
+    title: "Algemene voorwaarden",
+    description:
+      "De algemene voorwaarden van Digital Concepts Factory B.V. voor offertes, overeenkomsten, software, AI-oplossingen, marketing en dienstverlening.",
+  },
 };
 
 /**

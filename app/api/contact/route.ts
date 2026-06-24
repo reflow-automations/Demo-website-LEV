@@ -46,6 +46,15 @@ const CONTACT_FROM =
 //   RECAPTCHA_EXPECTED_HOSTNAME = digitalconceptsfactory.nl
 const EXPECTED_HOSTNAME = process.env.RECAPTCHA_EXPECTED_HOSTNAME?.trim() || "";
 
+// Tweede, duurzame leverkanaal: een n8n-webhook die de lead naar Rogier mailt
+// (workflow "DCF website - contact lead (backup)"). Server-only, GEEN
+// NEXT_PUBLIC_. Het onraadbare webhook-pad is de bescherming; LEAD_WEBHOOK_SECRET
+// is optioneel (de n8n-flow verifieert hem nu nog niet).
+//   LEAD_WEBHOOK_URL    = https://n8n.reflowautomations.nl/webhook/dcf-website-lead-3f9a7c21e8
+//   LEAD_WEBHOOK_SECRET = <optioneel, meegestuurd als x-lead-secret header>
+const LEAD_WEBHOOK_URL = process.env.LEAD_WEBHOOK_URL?.trim() || "";
+const LEAD_WEBHOOK_SECRET = process.env.LEAD_WEBHOOK_SECRET?.trim() || "";
+
 interface VerifyResponse {
   success: boolean;
   "error-codes"?: string[];
@@ -143,6 +152,39 @@ async function sendMail(sub: Submission): Promise<void> {
   }
 }
 
+/**
+ * Stuurt de lead naar de n8n-webhook (duurzame backup). Timeout van 8s via
+ * AbortController zodat een trage/dode webhook de respons niet ophoudt.
+ * Gooit bij timeout of een niet-2xx-respons.
+ */
+async function sendToWebhook(sub: Submission): Promise<void> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8000);
+  try {
+    const res = await fetch(LEAD_WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(LEAD_WEBHOOK_SECRET ? { "x-lead-secret": LEAD_WEBHOOK_SECRET } : {}),
+      },
+      body: JSON.stringify({
+        name: sub.name,
+        organisation: sub.organisation,
+        email: sub.email,
+        phone: sub.phone,
+        topics: sub.topics,
+        message: sub.message,
+      }),
+      signal: controller.signal,
+    });
+    if (!res.ok) {
+      throw new Error(`Lead-webhook ${res.status}`);
+    }
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function POST(req: Request) {
   let payload: Record<string, unknown>;
   try {
@@ -233,18 +275,59 @@ export async function POST(req: Request) {
     captchaTs: verify.challenge_ts,
   });
 
-  // 3b) E-mail versturen zodra Resend geconfigureerd is. Faalt het, dan
-  //     loggen we de fout maar blijven we ok:true geven — de aanvraag staat
-  //     immers al in de logs en de bezoeker mag er niet de dupe van worden.
+  // 3b) Aflevering via twee onafhankelijke kanalen:
+  //       - Resend  → e-mailnotificatie naar DCF (CONTACT_TO)
+  //       - n8n     → duurzame backup die Rogier monitort
+  //     delivered = minstens één kanaal slaagde. Zo weet de bezoeker eerlijk
+  //     of het verzenden écht is gelukt, en gaat een lead niet stilletjes
+  //     verloren wanneer één kanaal plat ligt.
+  let resendOk = false;
+  let webhookOk = false;
+
   if (RESEND_API_KEY) {
     try {
       await sendMail(sub);
+      resendOk = true;
     } catch (err) {
-      console.error("[contact] mail versturen mislukt", err);
+      console.error("[contact] Resend-mail mislukt", err);
     }
-  } else {
+  }
+
+  if (LEAD_WEBHOOK_URL) {
+    try {
+      await sendToWebhook(sub);
+      webhookOk = true;
+    } catch (err) {
+      console.error("[contact] lead-webhook mislukt", err);
+    }
+  }
+
+  // Geen enkel kanaal geconfigureerd → demo/preview/localhost. We doen alsof
+  // het gelukt is (de inzending staat in de Vercel-log) zodat de demo niet
+  // breekt. In productie hoort minstens één kanaal gezet te zijn.
+  const noChannelConfigured = !RESEND_API_KEY && !LEAD_WEBHOOK_URL;
+  if (noChannelConfigured) {
     console.warn(
-      "[contact] RESEND_API_KEY niet gezet — alleen gelogd, geen mail verstuurd",
+      "[contact] geen leverkanaal geconfigureerd — alleen gelogd (demo-modus)",
+    );
+    return NextResponse.json({ ok: true });
+  }
+
+  // Minstens één kanaal is geconfigureerd: nu telt of er echt iets is
+  // afgeleverd. Lukte niets, dan een eerlijke fout (de lead staat nog in de
+  // Vercel-log als vangnet, maar de bezoeker krijgt geen valse bevestiging).
+  if (!resendOk && !webhookOk) {
+    console.error("[contact] aflevering via alle kanalen mislukt", {
+      resendConfigured: Boolean(RESEND_API_KEY),
+      webhookConfigured: Boolean(LEAD_WEBHOOK_URL),
+    });
+    return NextResponse.json(
+      {
+        ok: false,
+        error:
+          "Uw aanvraag kon op dit moment niet worden verzonden. Probeer het later opnieuw of mail ons direct op info@digitalconceptsfactory.nl.",
+      },
+      { status: 502 },
     );
   }
 

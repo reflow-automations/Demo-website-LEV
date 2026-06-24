@@ -1,21 +1,17 @@
 "use client";
 
 /**
- * ChatWidget — zwevend chat-bolletje rechtsonder, gekoppeld aan de n8n-backend
- * (workflow "DCF Chatbot (website)"). Stuurt { message, sessionId } naar de
- * webhook en toont de { reply }. Bewaart een sessionId per bezoeker in
+ * ChatWidget — zwevend chat-bolletje rechtsonder. Stuurt { message, sessionId }
+ * naar de eigen /api/chat proxy (niet meer rechtstreeks naar n8n) en toont de
+ * { reply }. De proxy doet origin-check, rate-limit en timeout, en houdt de
+ * n8n-webhook-URL server-side. Bewaart een sessionId per bezoeker in
  * localStorage zodat de bot vervolgvragen begrijpt. Tweetalig via usePick.
- *
- * De webhook-URL is geen secret (het model-key zit in n8n), maar staat via een
- * public env-var zodat omgevingen schoon blijven.
  */
 
 import { useEffect, useRef, useState } from "react";
 import { usePick } from "@/lib/i18n/provider";
 
-const WEBHOOK_URL =
-  process.env.NEXT_PUBLIC_CHAT_WEBHOOK_URL ||
-  "https://n8n.reflowautomations.nl/webhook/dcf-chat";
+const CHAT_ENDPOINT = "/api/chat";
 
 const SESSION_STORAGE_KEY = "dcf-chat-session";
 
@@ -87,13 +83,16 @@ export default function ChatWidget() {
     setInput("");
     setLoading(true);
     try {
-      const res = await fetch(WEBHOOK_URL, {
+      const res = await fetch(CHAT_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text, sessionId: sessionId.current }),
       });
-      const data = await res.json();
-      const reply = typeof data?.reply === "string" ? data.reply : t.error;
+      const data = await res.json().catch(() => ({}));
+      const reply =
+        res.ok && typeof data?.reply === "string" && data.reply
+          ? data.reply
+          : t.error;
       setMessages((m) => [...m, { role: "bot", text: reply }]);
     } catch {
       setMessages((m) => [...m, { role: "bot", text: t.error }]);

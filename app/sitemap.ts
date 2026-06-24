@@ -2,9 +2,8 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo/site";
 
 /**
- * Served at /sitemap.xml. Lists every real, indexable route.
- * Placeholder legal links (privacy/cookies/voorwaarden = href="#") zijn bewust
- * weggelaten tot er echte pagina's zijn.
+ * Served at /sitemap.xml. Lists every real, indexable route, inclusief de
+ * juridische pagina's (privacy, disclaimer, algemene voorwaarden).
  */
 
 const LAST_MODIFIED = "2026-06-17";
@@ -54,6 +53,11 @@ const ENTRIES: Entry[] = [
   { path: "/over-ons/visie", priority: 0.5, changeFrequency: "yearly" },
   { path: "/over-ons/team", priority: 0.5, changeFrequency: "yearly" },
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
+
+  // Juridisch
+  { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
+  { path: "/disclaimer", priority: 0.3, changeFrequency: "yearly" },
+  { path: "/algemene-voorwaarden", priority: 0.3, changeFrequency: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

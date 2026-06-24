@@ -43,35 +43,30 @@ Nieuwe keys aanvragen (alleen indien nodig): https://www.google.com/recaptcha/ad
 
 ## 4. Cal.com booking embed
 
-Op de contactpagina staat nu een **placeholder** waar de cal.com inline-embed komt.
-
-Wanneer Lev de embed-code stuurt:
-1. Open `site/components/CalEmbed.tsx`
-2. Volg de instructies in het JSDoc-comment bovenaan
-3. Vervang de `loadCalEmbed()`-body met de cal.com snippet
-4. Zet `CAL_PLACEHOLDER = false`
-5. Commit + push → automatisch redeploy
+**Status: gereed.** De inline-embed staat live in `site/components/CalEmbed.tsx` (boekingslink `len-v-fiuafk/30min`). Wil je een andere kalender, pas de `calLink` in dat bestand aan.
 
 ## 5. E-mail bezorging vanuit contact-form
 
-**Gekozen: Resend.** Nu logt het contact-form alleen naar Vercel-logs (Project → Deployments → laatste → Functions → /api/contact); het mailt nog niet.
+**Status: code gereed.** `app/api/contact/route.ts` levert de aanvraag via twee onafhankelijke kanalen af en geeft de bezoeker eerlijke feedback: alleen "verzonden" als er écht iets is afgeleverd, anders een nette fout met het directe e-mailadres. Elke inzending wordt daarnaast altijd naar de Vercel-logs geschreven als vangnet.
 
-De Resend gratis tier staat één geverifieerd domein per account toe. Het Reflow-account is al voor een ander domein in gebruik, dus **DCF maakt een eigen (gratis) Resend-account aan**:
+**Kanaal 1 — Resend (e-mailnotificatie naar DCF).** De Resend gratis tier staat één geverifieerd domein per account toe. Het Reflow-account is al voor een ander domein in gebruik, dus **DCF maakt een eigen (gratis) Resend-account aan**:
 
 1. Account op resend.com (gratis, ruim voldoende voor contactaanvragen)
 2. Domein `digitalconceptsfactory.nl` verifiëren: Resend toont 3 DNS-records die in het Hostnet-DNS-paneel gezet worden
-3. API-key aanmaken en aan Rogier geven → komt in Vercel env: `RESEND_API_KEY` (server-only, niet in git)
-4. Rogier bouwt de verzendcode in op de TODO-regel in `app/api/contact/route.ts`; bericht gaat naar `info@digitalconceptsfactory.nl`
+3. API-key aanmaken en aan Rogier geven → komt in Vercel env: `RESEND_API_KEY` (server-only, niet in git). Optioneel `CONTACT_TO` / `CONTACT_FROM` overschrijven.
 
-> n8n-webhook is bewust niet gekozen: dan zou de mail via Reflow's eigen e-mail lopen in plaats van vanaf het DCF-domein. Een losse `mailto:`-link ook niet, die triggert de reCAPTCHA-flow niet.
+**Kanaal 2 — n8n-webhook (duurzame backup die Rogier monitort).** Workflow **DCF website - contact lead (backup)** (`kwDbB91h9tg6l1fh`), actief. Mailt elke lead via SMTP naar `rogier@reflowautomations.nl`. In Vercel env zetten:
+- `LEAD_WEBHOOK_URL` = `https://n8n.reflowautomations.nl/webhook/dcf-website-lead-3f9a7c21e8`
+- `LEAD_WEBHOOK_SECRET` (optioneel; wordt als `x-lead-secret` header meegestuurd, de n8n-flow verifieert hem nu nog niet — het onraadbare pad is de bescherming).
+
+> Werkt minstens één kanaal, dan ziet de bezoeker succes. Valt Resend weg, dan komt de lead alsnog via n8n binnen (en andersom). Zijn in een omgeving géén van beide env-vars gezet (demo/localhost), dan toont het formulier succes en staat de lead in de Vercel-log.
 
 ## AVG: cookiebanner, analytics en juridische pagina's
 
-Nog te bouwen zodra de input van DCF binnen is, bij voorkeur in één set live:
+**Status: grotendeels gereed.**
 
-- **Privacy- en voorwaarden-pagina's**: DCF levert de juridische teksten aan (die staan niet in het content-document). Nu zijn de footer-links placeholders (`href="#"`).
-- **Google Analytics**: alleen als DCF dat wil. Dan levert DCF een GA4 Measurement ID (`G-XXXXXXX`). Alternatief zonder cookie-gedoe: Plausible.
-- **Cookiebanner met opslag van toestemming**: vereist zodra GA of andere niet-essentiële cookies actief zijn. De banner slaat de keuze (accepteren of weigeren) op in de browser en laadt analytics pas ná akkoord; weigeren blijft mogelijk. Reflow bouwt dit.
+- **Juridische pagina's**: `/privacy`, `/disclaimer` en `/algemene-voorwaarden` zijn live (server-gerenderd, in de sitemap, footer-links wijzen ernaar). De teksten komen uit de door DCF aangeleverde documenten (versie 1.0, juni 2026) en staan als gestructureerde data in `content/legal.ts`. Bij een nieuwe versie: dat bestand bijwerken.
+- **Cookiebanner + Google Analytics**: gebouwd in `components/CookieConsent.tsx`. GA4 (`G-FNBVMVJ5PB`) laadt pas ná akkoord en alleen op het echte domein; weigeren laadt niets. De keuze staat in `localStorage`; de footer-link "Cookievoorkeuren" reset hem.
 
 ## AI-chatbot (n8n backend gereed)
 
@@ -91,7 +86,12 @@ Response:
 { "reply": "antwoord van de bot" }
 ```
 
-**Widget gebouwd:** `components/ChatWidget.tsx`, gemount in de root layout, dus rechtsonder op elke pagina. Tweetalig (NL/EN), met sessie-geheugen via `localStorage` (`dcf-chat-session`). De webhook-URL komt uit env-var `NEXT_PUBLIC_CHAT_WEBHOOK_URL` met de productie-URL als fallback, dus de widget werkt direct (ook lokaal en op de demo). Wil je een andere webhook, zet dan die env-var in Vercel.
+**Widget gebouwd:** `components/ChatWidget.tsx`, gemount in de root layout, dus rechtsonder op elke pagina. Tweetalig (NL/EN), met sessie-geheugen via `localStorage` (`dcf-chat-session`).
+
+De widget post **niet** meer rechtstreeks naar n8n, maar naar de eigen proxy `app/api/chat/route.ts`. Die doet origin-check, rate-limit (best-effort per IP) en een timeout, en houdt de n8n-URL server-side. Env-var (server-only, GEEN `NEXT_PUBLIC_`):
+- `CHAT_WEBHOOK_URL` = `https://n8n.reflowautomations.nl/webhook/dcf-chat` (productie-URL is ook de fallback, dus werkt direct).
+
+> **Kosten-backstop (belangrijk):** de chat triggert een betaalde LLM in n8n. De proxy beperkt browser-misbruik, maar de echte rem is een **dag-quota-cap op de AI-key in n8n** (Cloud Console → Quotas, of de Anthropic-limiet). Zet die, conform de twee-laags bescherming in CLAUDE.md.
 
 ## 6. Logo
 

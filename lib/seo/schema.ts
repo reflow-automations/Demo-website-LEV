@@ -10,9 +10,12 @@ import {
   SITE_LEGAL_NAME,
   DEFAULT_DESCRIPTION,
   CONTACT_EMAIL,
+  CONTACT_PHONE,
+  ADDRESS_STREET,
   ADDRESS_LOCALITY,
   ADDRESS_COUNTRY,
   AREA_SERVED,
+  KVK_NUMBER,
   SAME_AS,
   LOGO_PATH,
 } from "./site";
@@ -35,10 +38,17 @@ export const organizationSchema: Schema = {
   },
   description: DEFAULT_DESCRIPTION,
   email: CONTACT_EMAIL,
+  telephone: CONTACT_PHONE,
   address: {
     "@type": "PostalAddress",
+    streetAddress: ADDRESS_STREET,
     addressLocality: ADDRESS_LOCALITY,
     addressCountry: ADDRESS_COUNTRY,
+  },
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "KvK",
+    value: KVK_NUMBER,
   },
   areaServed: { "@type": "Country", name: AREA_SERVED },
   knowsAbout: [

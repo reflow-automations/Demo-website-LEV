@@ -99,15 +99,15 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-paper/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] font-mono uppercase tracking-[0.14em] text-paper/40">
           <div>{t.rights}</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-paper">
+            <Link href="/privacy" className="hover:text-paper">
               {t.privacy}
-            </a>
-            <a href="#" className="hover:text-paper">
-              {t.cookies}
-            </a>
-            <a href="#" className="hover:text-paper">
+            </Link>
+            <Link href="/disclaimer" className="hover:text-paper">
+              {t.disclaimer}
+            </Link>
+            <Link href="/algemene-voorwaarden" className="hover:text-paper">
               {t.terms}
-            </a>
+            </Link>
             <button
               type="button"
               onClick={openCookieSettings}

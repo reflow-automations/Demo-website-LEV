@@ -17,11 +17,14 @@ export const DEFAULT_DESCRIPTION =
   "Digital Concepts Factory ontwikkelt digitale innovaties voor HR, Inkoop en Marketing. Sneller talent vinden, langer behouden, ziekteverzuim verlagen en inkoop slimmer organiseren.";
 
 export const CONTACT_EMAIL = "info@digitalconceptsfactory.nl";
+export const CONTACT_PHONE = "+31 (0)10 786 56 84";
 
-/** Office (uit footer/contact). Geen straat/telefoon bekend in de codebase. */
+/** Bedrijfsgegevens (uit de juridische documenten van DCF, juni 2026). */
+export const ADDRESS_STREET = "Stationsplein 45";
 export const ADDRESS_LOCALITY = "Rotterdam";
 export const ADDRESS_COUNTRY = "NL";
 export const AREA_SERVED = "Netherlands";
+export const KVK_NUMBER = "55540325";
 
 /** Social/LinkedIn profielen voor Organization.sameAs. Aanvullen zodra bekend. */
 export const SAME_AS: string[] = [];
