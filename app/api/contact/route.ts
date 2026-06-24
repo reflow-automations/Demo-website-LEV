@@ -186,18 +186,20 @@ export async function POST(req: Request) {
     );
   }
 
-  // 1b) Hostname-check — het token moet op het eigen domein zijn opgelost.
-  //     Alleen actief zodra RECAPTCHA_EXPECTED_HOSTNAME gezet is.
-  if (
-    EXPECTED_HOSTNAME &&
-    verify.hostname &&
-    verify.hostname !== EXPECTED_HOSTNAME
-  ) {
-    console.warn("[contact] reCAPTCHA hostname-mismatch", verify.hostname);
-    return NextResponse.json(
-      { ok: false, error: "reCAPTCHA-verificatie gefaald" },
-      { status: 400 },
-    );
+  // 1b) Hostname-check — het token moet op het eigen domein (of een
+  //     subdomein zoals www) zijn opgelost. Alleen actief zodra
+  //     RECAPTCHA_EXPECTED_HOSTNAME gezet is.
+  if (EXPECTED_HOSTNAME && verify.hostname) {
+    const host = verify.hostname;
+    const hostOk =
+      host === EXPECTED_HOSTNAME || host.endsWith(`.${EXPECTED_HOSTNAME}`);
+    if (!hostOk) {
+      console.warn("[contact] reCAPTCHA hostname-mismatch", host);
+      return NextResponse.json(
+        { ok: false, error: "reCAPTCHA-verificatie gefaald" },
+        { status: 400 },
+      );
+    }
   }
 
   // 2) Velden uit form
