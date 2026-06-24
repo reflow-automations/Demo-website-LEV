@@ -5,13 +5,13 @@ export const inkoop = {
   nl: {
     hero: {
       chapter: "Inkoop",
-      h1: "Aanbesteden is complexer dan ooit en vraagt om grip.",
+      h1: "Aanbesteden is complexer dan ooit en vraagt om grip",
       h1Accent: "grip",
       imageAlt: "Inkoop & aanbesteden, werksessie",
     },
     context: {
       eyebrow: "Een breed en complex vakgebied",
-      heading: "Inkoop gaat allang niet meer over alleen bestellen.",
+      heading: "Inkoop gaat allang niet meer over alleen bestellen",
       paragraphs: [
         "Het omvat leveranciersselectie, aanbestedingen, contractmanagement, risicobeheersing, compliance, kostenbeheersing en interne afstemming. Juist doordat alles met elkaar samenhangt, vraagt inkoop om structuur, overzicht en specialistische kennis.",
         "De Europese Commissie geeft aan dat publieke inkoop in de EU goed is voor circa 14% van het bruto binnenlands product. In Nederland vertegenwoordigt het publieke inkoopvolume jaarlijks ruim €100 miljard.",
@@ -33,7 +33,7 @@ export const inkoop = {
     depthChapter: {
       chapter: "02",
       label: "Drie diepteslagen",
-      heading: "Van strategie tot uitvoering.",
+      heading: "Van strategie tot uitvoering",
       readMore: "Lees meer →",
     },
     subpages: [
@@ -58,7 +58,7 @@ export const inkoop = {
     ],
     secondarySection: {
       eyebrow: "Interne kosten lopen snel op",
-      heading: "De werkelijke kosten zitten vaak niet in externe ondersteuning.",
+      heading: "De werkelijke kosten zitten vaak niet in externe ondersteuning",
       body: "Maar in het opstellen van stukken, juridische controle, planning, beoordeling, motivering en dossiervorming. Daardoor vragen aanbestedingen vaak meer dan vooraf wordt ingeschat.",
       cta: "Bespreek uw inkoopvraagstuk",
       imageAlt: "Aanbestedingsteam met dossiers",
@@ -73,13 +73,13 @@ export const inkoop = {
   en: {
     hero: {
       chapter: "Procurement",
-      h1: "Tendering is more complex than ever and demands control.",
+      h1: "Tendering is more complex than ever and demands control",
       h1Accent: "control",
       imageAlt: "Procurement and tendering workshop",
     },
     context: {
       eyebrow: "A broad and complex field",
-      heading: "Procurement has long been about more than just ordering.",
+      heading: "Procurement has long been about more than just ordering",
       paragraphs: [
         "It encompasses supplier selection, tenders, contract management, risk management, compliance, cost control and internal alignment. Precisely because everything is interconnected, procurement demands structure, oversight and specialist knowledge.",
         "The European Commission states that public procurement in the EU accounts for approximately 14% of gross domestic product. In the Netherlands, public procurement volume exceeds €100 billion per year.",
@@ -101,7 +101,7 @@ export const inkoop = {
     depthChapter: {
       chapter: "02",
       label: "Three deep dives",
-      heading: "From strategy to execution.",
+      heading: "From strategy to execution",
       readMore: "Read more →",
     },
     subpages: [
@@ -126,7 +126,7 @@ export const inkoop = {
     ],
     secondarySection: {
       eyebrow: "Internal costs add up quickly",
-      heading: "The real costs are often not in external support.",
+      heading: "The real costs are often not in external support",
       body: "They are in drafting documents, legal review, planning, assessment, justification and file management. That is why tenders often demand more than initially estimated.",
       cta: "Discuss your procurement challenge",
       imageAlt: "Tendering team with dossiers",
@@ -150,7 +150,7 @@ export const inkoopInnovatie = {
     h1Accent: "slimmer",
     intro: {
       eyebrow: "Onze innovatie",
-      headline: "Grip op inkoop, aanbestedingen en contractmanagement — in één samenhangende oplossing.",
+      headline: "Grip op inkoop, aanbestedingen en contractmanagement — in één samenhangende oplossing",
       paragraphs: [
         "Digital Concepts Factory ontwikkelt oplossingen waarmee organisaties grip krijgen op inkoop, aanbestedingen en contractmanagement. Onze innovaties helpen om processen te structureren, informatie inzichtelijk te maken, doorlooptijden te verkorten en de druk op interne capaciteit te verlagen.",
         "Zo wordt inkoop niet alleen overzichtelijker en efficiënter, maar ook beter beheersbaar.",
@@ -160,7 +160,7 @@ export const inkoopInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Betaalbaar voor iedere organisatie",
-        heading: "Slimme innovatie is geen voorrecht van grote partijen.",
+        heading: "Slimme innovatie is geen voorrecht van grote partijen",
         headingAccent: "geen voorrecht",
         paragraphs: [
           "Veel organisaties denken dat innovatieve digitale oplossingen alleen zijn weggelegd voor grote partijen met grote budgetten. Wij laten zien dat dit anders kan. Onze oplossingen zijn juist ontwikkeld om betaalbaar en toegankelijk te zijn voor iedere organisatie.",
@@ -189,7 +189,7 @@ export const inkoopInnovatie = {
     h1Accent: "smarter",
     intro: {
       eyebrow: "Our innovation",
-      headline: "Control over procurement, tendering and contract management in one coherent solution.",
+      headline: "Control over procurement, tendering and contract management in one coherent solution",
       paragraphs: [
         "Digital Concepts Factory develops solutions that give organisations control over procurement, tendering and contract management. Our innovations help structure processes, make information transparent, shorten lead times and reduce pressure on internal capacity.",
         "That makes procurement not only clearer and more efficient, but also better managed.",
@@ -199,7 +199,7 @@ export const inkoopInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Affordable for every organisation",
-        heading: "Smart innovation is not the privilege of large players.",
+        heading: "Smart innovation is not the privilege of large players",
         headingAccent: "not the privilege",
         paragraphs: [
           "Many organisations assume that innovative digital solutions are only available to large players with large budgets. We show that this can be different. Our solutions are specifically developed to be affordable and accessible for every organisation.",
@@ -230,7 +230,7 @@ export const inkoopAanbesteden = {
     h1Accent: "grip, structuur",
     intro: {
       eyebrow: "Het vraagstuk",
-      headline: "Een aanbestedingstraject is complex, tijdrovend en kost al snel tienduizenden euro's.",
+      headline: "Een aanbestedingstraject is complex, tijdrovend en kost al snel tienduizenden euro's",
       paragraphs: [
         "Voor veel organisaties is een aanbestedingstraject een complex en tijdrovend proces. Stukken moeten zorgvuldig worden voorbereid, documenten moeten juridisch correct zijn, deadlines moeten worden bewaakt en het hele traject moet transparant en controleerbaar verlopen. Zeker bij Europese aanbestedingen vraagt dit om structuur, specialistische kennis en voldoende capaciteit.",
         "In de praktijk ontbreekt het daar juist vaak aan: beperkte tijd, beperkte capaciteit of onvoldoende kennis om aanbestedingen efficiënt en zorgvuldig te organiseren.",
@@ -241,7 +241,7 @@ export const inkoopAanbesteden = {
       {
         type: "text" as const,
         eyebrow: "Schaal van publieke inkoop",
-        heading: "Publieke inkoop in NL: ruim €100 miljard per jaar.",
+        heading: "Publieke inkoop in NL: ruim €100 miljard per jaar",
         headingAccent: "€100 miljard",
         paragraphs: [
           "Voor één vast gemiddeld bedrag per aanbesteding bestaat geen eenduidige landelijke norm. Wel is duidelijk dat een aanbestedingstraject organisaties al snel tienduizenden euro's kost aan interne uren, voorbereiding, afstemming, documentatie en eventuele externe begeleiding.",
@@ -259,7 +259,7 @@ export const inkoopAanbesteden = {
       {
         type: "numbered-list" as const,
         eyebrow: "Wat dit u oplevert",
-        heading: "Wat de innovatie concreet verandert.",
+        heading: "Wat de innovatie concreet verandert",
         intro: "Geen losse tools en handmatig uitzoekwerk meer. Eén werkomgeving die het hele traject beheersbaar maakt.",
         items: [
           { n: "01", title: "Minder tijdverlies", text: "Geen versnipperde informatie meer over mailwisselingen, sharepoints en lokale bestanden — alles centraal." },
@@ -273,7 +273,7 @@ export const inkoopAanbesteden = {
       {
         type: "text" as const,
         eyebrow: "Betaalbaar voor iedereen",
-        heading: "Professioneel aanbesteden — geen privilege van grote partijen.",
+        heading: "Professioneel aanbesteden — geen privilege van grote partijen",
         headingAccent: "geen privilege",
         paragraphs: [
           "Veel organisaties denken dat slimme digitale ondersteuning bij aanbestedingen alleen haalbaar is voor grote partijen met grote budgetten. Wij laten zien dat dit anders kan.",
@@ -298,7 +298,7 @@ export const inkoopAanbesteden = {
     h1Accent: "control, structure",
     intro: {
       eyebrow: "The challenge",
-      headline: "A tendering process is complex, time-consuming and quickly costs tens of thousands of euros.",
+      headline: "A tendering process is complex, time-consuming and quickly costs tens of thousands of euros",
       paragraphs: [
         "For many organisations a tendering process is a complex and time-consuming undertaking. Documents must be carefully prepared, papers must be legally sound, deadlines must be monitored and the entire process must run transparently and verifiably. European tenders in particular require structure, specialist knowledge and sufficient capacity.",
         "In practice, that is precisely what is often lacking: limited time, limited capacity or insufficient knowledge to organise tenders efficiently and carefully.",
@@ -309,7 +309,7 @@ export const inkoopAanbesteden = {
       {
         type: "text" as const,
         eyebrow: "Scale of public procurement",
-        heading: "Public procurement in the Netherlands: over €100 billion per year.",
+        heading: "Public procurement in the Netherlands: over €100 billion per year",
         headingAccent: "€100 billion",
         paragraphs: [
           "There is no single national average for the cost of a tender. What is clear is that a tendering process quickly costs organisations tens of thousands of euros in internal hours, preparation, coordination, documentation and any external support.",
@@ -327,7 +327,7 @@ export const inkoopAanbesteden = {
       {
         type: "numbered-list" as const,
         eyebrow: "What this delivers for you",
-        heading: "What the innovation concretely changes.",
+        heading: "What the innovation concretely changes",
         intro: "No more scattered tools and manual searching. One working environment that makes the entire process manageable.",
         items: [
           { n: "01", title: "Less time lost", text: "No more fragmented information across email threads, SharePoints and local files — everything centralised." },
@@ -341,7 +341,7 @@ export const inkoopAanbesteden = {
       {
         type: "text" as const,
         eyebrow: "Affordable for everyone",
-        heading: "Professional tendering is not the privilege of large players.",
+        heading: "Professional tendering is not the privilege of large players",
         headingAccent: "not the privilege",
         paragraphs: [
           "Many organisations assume that smart digital support for tendering is only feasible for large players with large budgets. We show that this can be different.",
@@ -368,7 +368,7 @@ export const inkoopContractmanagement = {
     h1Accent: "inzicht en overzicht",
     intro: {
       eyebrow: "Na de handtekening begint het pas",
-      headline: "Het werk stopt niet bij het afsluiten van een contract — juist daarna begint het bewaken.",
+      headline: "Het werk stopt niet bij het afsluiten van een contract — juist daarna begint het bewaken",
       paragraphs: [
         "Voor veel organisaties stopt het werk niet bij het afsluiten van een contract. Juist daarna begint een minstens zo belangrijke fase: het bewaken van afspraken, prestaties, termijnen, risico's en verplichtingen. Contractmanagement is daarmee een essentieel onderdeel van professioneel inkopen.",
         "Toch krijgt contractmanagement binnen veel organisaties onvoldoende aandacht. Het ontbreekt vaak aan tijd, capaciteit, structuur en specialistische kennis om contracten actief en zorgvuldig te beheren.",
@@ -379,7 +379,7 @@ export const inkoopContractmanagement = {
       {
         type: "text" as const,
         eyebrow: "Wat er misgaat zonder grip",
-        heading: "Versnipperde contracten kosten tijd, geld én kansen.",
+        heading: "Versnipperde contracten kosten tijd, geld én kansen",
         headingAccent: "tijd, geld",
         paragraphs: [
           "Wanneer contractmanagement niet goed is ingericht, raken afspraken versnipperd, worden deadlines gemist en ontbreekt inzicht in verplichtingen, verlengmomenten, prestaties en risico's. Dat leidt niet alleen tot onrust en extra werk, maar ook tot onnodige kosten en gemiste kansen.",
@@ -394,7 +394,7 @@ export const inkoopContractmanagement = {
       {
         type: "text" as const,
         eyebrow: "Onze innovatie",
-        heading: "Centraal inzichtelijk, beter bewaakt, minder afhankelijk van losse bestanden.",
+        heading: "Centraal inzichtelijk, beter bewaakt, minder afhankelijk van losse bestanden",
         headingAccent: "Centraal inzichtelijk",
         paragraphs: [
           "Wij hebben een innovatieve digitale oplossing ontwikkeld die contractmanagement overzichtelijker, transparanter en efficiënter maakt voor organisaties.",
@@ -404,7 +404,7 @@ export const inkoopContractmanagement = {
       {
         type: "numbered-list" as const,
         eyebrow: "Wat dat oplevert",
-        heading: "Meer grip, minder risico, lagere interne belasting.",
+        heading: "Meer grip, minder risico, lagere interne belasting",
         items: [
           { n: "01", title: "Meer overzicht in lopende contracten", text: "Eén plek waar elk contract leeft — status, eigenaar, deadlines en geschiedenis." },
           { n: "02", title: "Beter inzicht in verplichtingen", text: "Wie heeft beloofd wat, wanneer, en wat staat nog open?" },
@@ -417,7 +417,7 @@ export const inkoopContractmanagement = {
       {
         type: "text" as const,
         eyebrow: "Voor iedere organisatie",
-        heading: "Betaalbaar, toegankelijk, direct toepasbaar.",
+        heading: "Betaalbaar, toegankelijk, direct toepasbaar",
         headingAccent: "Betaalbaar",
         paragraphs: [
           "Veel organisaties denken dat professioneel contractmanagement alleen haalbaar is met grote systemen of hoge investeringen. Wij laten zien dat dit anders kan.",
@@ -442,7 +442,7 @@ export const inkoopContractmanagement = {
     h1Accent: "insight and overview",
     intro: {
       eyebrow: "The work starts after signing",
-      headline: "The work does not stop when a contract is signed — that is precisely when monitoring begins.",
+      headline: "The work does not stop when a contract is signed — that is precisely when monitoring begins",
       paragraphs: [
         "For many organisations the work does not stop at signing a contract. What follows is an equally important phase: monitoring agreements, performance, deadlines, risks and obligations. Contract management is therefore an essential part of professional procurement.",
         "Yet contract management receives insufficient attention in many organisations. There is often a lack of time, capacity, structure and specialist knowledge to actively and carefully manage contracts.",
@@ -453,7 +453,7 @@ export const inkoopContractmanagement = {
       {
         type: "text" as const,
         eyebrow: "What goes wrong without control",
-        heading: "Fragmented contracts cost time, money and opportunities.",
+        heading: "Fragmented contracts cost time, money and opportunities",
         headingAccent: "time, money",
         paragraphs: [
           "When contract management is not properly set up, agreements become fragmented, deadlines are missed and there is no insight into obligations, renewal moments, performance and risks. This leads not only to unrest and extra work but also to unnecessary costs and missed opportunities.",
@@ -468,7 +468,7 @@ export const inkoopContractmanagement = {
       {
         type: "text" as const,
         eyebrow: "Our innovation",
-        heading: "Centrally visible, better monitored, less dependent on scattered files.",
+        heading: "Centrally visible, better monitored, less dependent on scattered files",
         headingAccent: "Centrally visible",
         paragraphs: [
           "We have developed an innovative digital solution that makes contract management clearer, more transparent and more efficient for organisations.",
@@ -478,7 +478,7 @@ export const inkoopContractmanagement = {
       {
         type: "numbered-list" as const,
         eyebrow: "What this delivers",
-        heading: "More control, less risk, lower internal burden.",
+        heading: "More control, less risk, lower internal burden",
         items: [
           { n: "01", title: "Better overview of active contracts", text: "One place where every contract lives — status, owner, deadlines and history." },
           { n: "02", title: "Better insight into obligations", text: "Who promised what, when, and what is still outstanding?" },
@@ -491,7 +491,7 @@ export const inkoopContractmanagement = {
       {
         type: "text" as const,
         eyebrow: "For every organisation",
-        heading: "Affordable, accessible, immediately applicable.",
+        heading: "Affordable, accessible, immediately applicable",
         headingAccent: "Affordable",
         paragraphs: [
           "Many organisations assume that professional contract management is only feasible with large systems or major investment. We show that this can be different.",

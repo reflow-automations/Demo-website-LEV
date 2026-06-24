@@ -12,7 +12,7 @@ export const home = {
     },
     pillars: {
       chapter: "Onze innovaties",
-      heading: "Vijf domeinen, één vaste belofte.",
+      heading: "Vijf domeinen, één vaste belofte",
       headingAccent: "vaste belofte",
       intro:
         "Innovaties die organisaties praktisch helpen, geen losse tools of tijdelijke oplossingen, maar digitale verbeteringen met duurzame impact op groei, continuïteit en rendement.",
@@ -46,7 +46,7 @@ export const home = {
     },
     stats: {
       chapter: "De cijfers",
-      heading: "Innovatie die rekent.",
+      heading: "Innovatie die rekent",
       headingAccent: "rekent",
       calcLink: "Bereken uw besparingspotentieel",
       items: [
@@ -84,7 +84,7 @@ export const home = {
     manifesto: {
       chapter: "Onze overtuiging",
       heading:
-        "De brug tussen traditionele organisaties en de digitale toekomst.",
+        "De brug tussen traditionele organisaties en de digitale toekomst",
       headingAccent: "traditionele organisaties",
       intro:
         "Degelijk waar het moet, vernieuwend waar het kan. Drie principes die aan elke opdracht ten grondslag liggen.",
@@ -108,7 +108,7 @@ export const home = {
     },
     newsletter: {
       chapter: "Nieuwsbrief",
-      heading: "Ontvang als eerste de innovaties die het verschil maken.",
+      heading: "Ontvang als eerste de innovaties die het verschil maken",
       headingAccent: "verschil maken",
       intro:
         "Eén editie per maand, met de nieuwste digitale innovaties die de verbindende schakel vormen tussen de oude en de nieuwe wereld.",
@@ -134,7 +134,7 @@ export const home = {
     },
     pillars: {
       chapter: "Our innovations",
-      heading: "Five domains, one firm promise.",
+      heading: "Five domains, one firm promise",
       headingAccent: "firm promise",
       intro:
         "Innovations that help organisations in practice. Not isolated tools or temporary fixes, but digital improvements with lasting impact on growth, continuity and return.",
@@ -168,7 +168,7 @@ export const home = {
     },
     stats: {
       chapter: "The numbers",
-      heading: "Innovation that adds up.",
+      heading: "Innovation that adds up",
       headingAccent: "adds up",
       calcLink: "Calculate your savings potential",
       items: [
@@ -206,7 +206,7 @@ export const home = {
     manifesto: {
       chapter: "What we believe",
       heading:
-        "The bridge between traditional organisations and the digital future.",
+        "The bridge between traditional organisations and the digital future",
       headingAccent: "traditional organisations",
       intro:
         "Solid where it must be, innovative where it can be. Three principles that underpin every assignment.",
@@ -230,7 +230,7 @@ export const home = {
     },
     newsletter: {
       chapter: "Newsletter",
-      heading: "Be the first to receive the innovations that make the difference.",
+      heading: "Be the first to receive the innovations that make the difference",
       headingAccent: "make the difference",
       intro:
         "One edition a month, featuring the latest digital innovations that bridge the old world and the new.",

@@ -5,13 +5,13 @@ export const overOns = {
   nl: {
     hero: {
       chapter: "Over ons",
-      h1: "Digitale innovatie die organisaties écht verder helpt.",
+      h1: "Digitale innovatie die organisaties écht verder helpt",
       h1Accent: "écht",
       imageAlt: "Team rond laptop met HR, Inkoop en Marketing dashboards",
     },
     intro: {
       eyebrow: "Eerst begrijpen, dan bouwen",
-      heading: "Achter iedere organisatie zit een eigen verhaal.",
+      heading: "Achter iedere organisatie zit een eigen verhaal",
       paragraphs: [
         "Wij ontwikkelen digitale innovaties die organisaties helpen slimmer, sterker en toekomstbestendiger te opereren, met focus op drie domeinen waar vandaag de dag veel winst valt te behalen: HR, Inkoop en Marketing.",
         "Daarom nemen wij de tijd om klanten goed te leren kennen. We luisteren, analyseren en verdiepen ons in wat er speelt, zodat we digitale concepten kunnen ontwikkelen die écht aansluiten op de behoefte van de organisatie.",
@@ -20,7 +20,7 @@ export const overOns = {
     values: {
       chapter: "01",
       label: "Visie & kernwaarden",
-      heading: "Waar wij voor staan.",
+      heading: "Waar wij voor staan",
       lead: "Slim bedacht, praktisch toepasbaar en gericht op resultaat. Niet als los idee, maar als concrete oplossing waarmee organisaties echt verder kunnen.",
       items: [
         {
@@ -53,7 +53,7 @@ export const overOns = {
     team: {
       chapter: "02",
       label: "Het team",
-      heading: "Techniek, business en gebruiker verbonden.",
+      heading: "Techniek, business en gebruiker verbonden",
       body: "Een veelzijdig team van software developers, UX-designers en strategen. Echte digitale innovatie ontstaat niet door alleen naar techniek of strategie te kijken, maar wanneer alles samenkomt.",
       roles: [
         {
@@ -85,7 +85,7 @@ export const overOns = {
       },
     ],
     closing: {
-      heading: "Bespreek uw uitdaging met onze specialisten.",
+      heading: "Bespreek uw uitdaging met onze specialisten",
       headingAccent: "specialisten",
       cta: "Plan vrijblijvend gesprek",
     },
@@ -94,13 +94,13 @@ export const overOns = {
   en: {
     hero: {
       chapter: "About us",
-      h1: "Digital innovation that truly moves organisations forward.",
+      h1: "Digital innovation that truly moves organisations forward",
       h1Accent: "truly",
       imageAlt: "Team around a laptop with HR, Procurement and Marketing dashboards",
     },
     intro: {
       eyebrow: "Understand first, build second",
-      heading: "Every organisation has its own story.",
+      heading: "Every organisation has its own story",
       paragraphs: [
         "We develop digital innovations that help organisations operate smarter, stronger and more future-proof, with a focus on three domains where there is much to gain today: HR, Procurement and Marketing.",
         "That is why we take the time to get to know our clients well. We listen, analyse and immerse ourselves in what is happening, so that we can develop digital concepts that truly connect with the organisation's needs.",
@@ -109,7 +109,7 @@ export const overOns = {
     values: {
       chapter: "01",
       label: "Vision and core values",
-      heading: "What we stand for.",
+      heading: "What we stand for",
       lead: "Cleverly conceived, practically applicable and results-oriented. Not as a loose idea but as a concrete solution with which organisations can truly move forward.",
       items: [
         {
@@ -142,7 +142,7 @@ export const overOns = {
     team: {
       chapter: "02",
       label: "The team",
-      heading: "Technology, business and user connected.",
+      heading: "Technology, business and user connected",
       body: "A versatile team of software developers, UX designers and strategists. Real digital innovation does not arise by looking only at technology or strategy but when everything comes together.",
       roles: [
         {
@@ -174,7 +174,7 @@ export const overOns = {
       },
     ],
     closing: {
-      heading: "Discuss your challenge with our specialists.",
+      heading: "Discuss your challenge with our specialists",
       headingAccent: "specialists",
       cta: "Book a no-obligation call",
     },
@@ -192,7 +192,7 @@ export const overOnsVisie = {
     h1Accent: "staan",
     intro: {
       eyebrow: "Onze overtuiging",
-      headline: "Digitale innovatie met impact — slim bedacht, praktisch toepasbaar en gericht op resultaat.",
+      headline: "Digitale innovatie met impact — slim bedacht, praktisch toepasbaar en gericht op resultaat",
       paragraphs: [
         "Wij staan voor digitale innovatie die organisaties echt verder helpt. Niet als los idee, maar als concrete oplossing waarmee organisaties duurzaam vooruit kunnen.",
         "Vijf principes liggen aan elke opdracht ten grondslag.",
@@ -202,7 +202,7 @@ export const overOnsVisie = {
       {
         type: "numbered-list" as const,
         eyebrow: "Vijf kernwaarden",
-        heading: "Wat ons werk altijd stuurt.",
+        heading: "Wat ons werk altijd stuurt",
         items: [
           {
             n: "01",
@@ -237,7 +237,7 @@ export const overOnsVisie = {
       },
     ],
     closing: {
-      headline: "Ontdek hoe wij uw organisatie helpen groeien met slimme digitale innovatie.",
+      headline: "Ontdek hoe wij uw organisatie helpen groeien met slimme digitale innovatie",
       headlineAccent: "slimme digitale innovatie",
       ctaLabel: "Plan een vrijblijvend gesprek",
     },
@@ -253,7 +253,7 @@ export const overOnsVisie = {
     h1Accent: "stand for",
     intro: {
       eyebrow: "Our conviction",
-      headline: "Digital innovation with impact — cleverly conceived, practically applicable and results-oriented.",
+      headline: "Digital innovation with impact — cleverly conceived, practically applicable and results-oriented",
       paragraphs: [
         "We stand for digital innovation that truly moves organisations forward. Not as a loose idea but as a concrete solution with which organisations can sustainably progress.",
         "Five principles underpin every assignment.",
@@ -263,7 +263,7 @@ export const overOnsVisie = {
       {
         type: "numbered-list" as const,
         eyebrow: "Five core values",
-        heading: "What always guides our work.",
+        heading: "What always guides our work",
         items: [
           {
             n: "01",
@@ -298,7 +298,7 @@ export const overOnsVisie = {
       },
     ],
     closing: {
-      headline: "Discover how we help your organisation grow with smart digital innovation.",
+      headline: "Discover how we help your organisation grow with smart digital innovation",
       headlineAccent: "smart digital innovation",
       ctaLabel: "Book a no-obligation call",
     },
@@ -316,7 +316,7 @@ export const overOnsTeam = {
     h1Accent: "techniek, business en gebruiker",
     intro: {
       eyebrow: "Achter onze innovaties",
-      headline: "Een veelzijdig team van software developers, UX-designers en strategen.",
+      headline: "Een veelzijdig team van software developers, UX-designers en strategen",
       paragraphs: [
         "Onze mensen hebben hun sporen verdiend in uiteenlopende sectoren en bedrijfstakken. Juist die combinatie van technische kennis, creatief denkvermogen en strategisch inzicht maakt het mogelijk om digitale innovaties te ontwikkelen die niet alleen slim bedacht zijn, maar ook daadwerkelijk werken in de praktijk.",
       ],
@@ -325,7 +325,7 @@ export const overOnsTeam = {
       {
         type: "numbered-list" as const,
         eyebrow: "Drie disciplines, één team",
-        heading: "Wat elke rol bijdraagt.",
+        heading: "Wat elke rol bijdraagt",
         items: [
           {
             n: "01",
@@ -351,7 +351,7 @@ export const overOnsTeam = {
       {
         type: "text" as const,
         eyebrow: "Wat dit voor klanten betekent",
-        heading: "Een team dat verder kijkt dan alleen het idee.",
+        heading: "Een team dat verder kijkt dan alleen het idee",
         headingAccent: "verder kijkt",
         paragraphs: [
           "Voor klanten betekent dit dat zij samenwerken met een team dat zowel de business als de gebruiker én de techniek begrijpt. Daardoor zijn wij in staat om oplossingen te ontwikkelen die niet alleen vernieuwend zijn, maar ook praktisch, doordacht en resultaatgericht.",
@@ -360,7 +360,7 @@ export const overOnsTeam = {
       },
     ],
     closing: {
-      headline: "Bespreek uw uitdaging met onze specialisten.",
+      headline: "Bespreek uw uitdaging met onze specialisten",
       headlineAccent: "uw uitdaging",
       ctaLabel: "Plan vrijblijvend gesprek",
     },
@@ -376,7 +376,7 @@ export const overOnsTeam = {
     h1Accent: "technology, business and user",
     intro: {
       eyebrow: "Behind our innovations",
-      headline: "A versatile team of software developers, UX designers and strategists.",
+      headline: "A versatile team of software developers, UX designers and strategists",
       paragraphs: [
         "Our people have proved themselves across a wide range of sectors and industries. That combination of technical knowledge, creative thinking and strategic insight is precisely what makes it possible to develop digital innovations that are not only cleverly conceived but also genuinely work in practice.",
       ],
@@ -385,7 +385,7 @@ export const overOnsTeam = {
       {
         type: "numbered-list" as const,
         eyebrow: "Three disciplines, one team",
-        heading: "What each role contributes.",
+        heading: "What each role contributes",
         items: [
           {
             n: "01",
@@ -411,7 +411,7 @@ export const overOnsTeam = {
       {
         type: "text" as const,
         eyebrow: "What this means for clients",
-        heading: "A team that looks beyond the idea.",
+        heading: "A team that looks beyond the idea",
         headingAccent: "beyond the idea",
         paragraphs: [
           "For clients this means working with a team that understands both the business and the user as well as the technology. That enables us to develop solutions that are not only innovative but also practical, well-considered and results-oriented.",
@@ -420,7 +420,7 @@ export const overOnsTeam = {
       },
     ],
     closing: {
-      headline: "Discuss your challenge with our specialists.",
+      headline: "Discuss your challenge with our specialists",
       headlineAccent: "your challenge",
       ctaLabel: "Book a no-obligation call",
     },

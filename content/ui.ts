@@ -68,7 +68,7 @@ export const ui = {
     },
     subpagesNav: {
       label: "Verdieping",
-      heading: "Lees verder over dit onderwerp.",
+      heading: "Lees verder over dit onderwerp",
     },
   },
   en: {
@@ -92,7 +92,7 @@ export const ui = {
     },
     subpagesNav: {
       label: "Further reading",
-      heading: "Read more on this topic.",
+      heading: "Read more on this topic",
     },
   },
 } satisfies Record<"nl" | "en", unknown>;

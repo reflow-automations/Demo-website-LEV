@@ -136,7 +136,6 @@ export default function SubpageTemplate(p: SubpageTemplateProps) {
             </div>
             <h1 className="display-hero text-ink text-[clamp(2.5rem,6vw,5.5rem)] max-w-5xl">
               {renderAccented(p.h1, p.h1Accent)}
-              {p.h1.endsWith(".") || p.h1.endsWith("?") ? "" : "."}
             </h1>
           </Reveal>
         </div>

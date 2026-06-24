@@ -5,13 +5,13 @@ export const ziekteverzuim = {
   nl: {
     hero: {
       chapter: "Ziekteverzuim terugdringen",
-      h1: "Verzuim raakt direct uw kosten en continuïteit.",
+      h1: "Verzuim raakt direct uw kosten en continuïteit",
       h1Accent: "kosten en continuïteit",
       imageAlt: "Zieke medewerker thuis met laptop en kosten-indicatie",
     },
     intro: {
       eyebrow: "Een hardnekkig probleem",
-      heading: "Vooral kortdurend verzuim blijft een terugkerend probleem.",
+      heading: "Vooral kortdurend verzuim blijft een terugkerend probleem",
       paragraphs: [
         "Ziekteverzuim is voor veel organisaties al jaren een forse kostenpost. De gemiddelde kosten in Nederland liggen tussen €4.500 en €7.000 per medewerker per jaar, afhankelijk van sector, functie en verzuimduur.",
         "Vooral kortstondig ziekteverzuim is voor veel werkgevers een doorn in het oog. Juist omdat het onverwacht komt, lastig te plannen is en direct leidt tot verstoring van roosters, bezetting en dienstverlening.",
@@ -27,7 +27,7 @@ export const ziekteverzuim = {
     },
     innovation: {
       chapter: "De innovatie",
-      heading: "Eindelijk een oplossing die werkt én betaalbaar is.",
+      heading: "Eindelijk een oplossing die werkt én betaalbaar is",
       headingAccent: "én betaalbaar is",
       lead: "Veel werkgevers willen ziekteverzuim terugdringen, maar lopen in de praktijk tegen dezelfde uitdaging aan: hoe beïnvloed je gedrag op een positieve manier, zonder dat het ingewikkeld, duur of moeilijk uitvoerbaar wordt?",
       cta: "Plan gesprek",
@@ -39,7 +39,7 @@ export const ziekteverzuim = {
     secondaryImageAlt: "Kettingreactie van ziekmelding op het team",
     consequences: {
       chapter: "Gevolgen van ziekteverzuim",
-      heading: "Achter elke ziekmelding schuilt een kettingreactie.",
+      heading: "Achter elke ziekmelding schuilt een kettingreactie",
       intro: "De gevolgen zijn zowel financieel als organisatorisch groot, in euro's én in werkdruk en motivatie.",
       financialTitle: "Geldelijke gevolgen",
       financialItems: [
@@ -84,13 +84,13 @@ export const ziekteverzuim = {
   en: {
     hero: {
       chapter: "Reducing sick leave",
-      h1: "Absenteeism hits your costs and continuity directly.",
+      h1: "Absenteeism hits your costs and continuity directly",
       h1Accent: "costs and continuity",
       imageAlt: "Sick employee at home with laptop and cost indicator",
     },
     intro: {
       eyebrow: "A persistent problem",
-      heading: "Short-term absenteeism in particular remains a recurring problem.",
+      heading: "Short-term absenteeism in particular remains a recurring problem",
       paragraphs: [
         "Sick leave has been a significant cost item for many organisations for years. Average costs in the Netherlands run between €4,500 and €7,000 per employee per year, depending on sector, role and duration.",
         "Short-term sick leave is a particular thorn in the side of many employers — precisely because it arrives unexpectedly, is hard to plan for, and immediately disrupts rosters, staffing and service delivery.",
@@ -106,7 +106,7 @@ export const ziekteverzuim = {
     },
     innovation: {
       chapter: "The innovation",
-      heading: "Finally a solution that works and is affordable.",
+      heading: "Finally a solution that works and is affordable",
       headingAccent: "and is affordable",
       lead: "Many employers want to reduce sick leave but run into the same challenge in practice: how do you positively influence behaviour without making it complicated, expensive or hard to implement?",
       cta: "Book a call",
@@ -118,7 +118,7 @@ export const ziekteverzuim = {
     secondaryImageAlt: "Chain reaction triggered by a sick-day call on the team",
     consequences: {
       chapter: "Consequences of sick leave",
-      heading: "Every sick-day call triggers a chain reaction.",
+      heading: "Every sick-day call triggers a chain reaction",
       intro: "The consequences are both financial and organisational, in euros and in workload and motivation.",
       financialTitle: "Financial consequences",
       financialItems: [
@@ -186,7 +186,7 @@ export const ziekteverzuimInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Wat dat oplevert",
-        heading: "Meer grip op kosten, meer rust in teams, meer continuïteit.",
+        heading: "Meer grip op kosten, meer rust in teams, meer continuïteit",
         headingAccent: "rust in teams",
         paragraphs: [
           "Deze innovatie helpt organisaties om ziekteverzuim structureel terug te dringen. Minder onnodige ziekmeldingen betekent direct meer grip op kosten, meer rust in teams, minder druk op collega's en meer continuïteit in de dagelijkse operatie.",
@@ -232,7 +232,7 @@ export const ziekteverzuimInnovatie = {
       {
         type: "text" as const,
         eyebrow: "What this delivers",
-        heading: "More cost control, calmer teams, greater continuity.",
+        heading: "More cost control, calmer teams, greater continuity",
         headingAccent: "calmer teams",
         paragraphs: [
           "This innovation helps organisations structurally reduce sick leave. Fewer unnecessary sick-day calls means immediate control over costs, calmer teams, less pressure on colleagues and greater continuity in day-to-day operations.",
@@ -266,7 +266,7 @@ export const ziekteverzuimGevolgen = {
     h1Accent: "kettingreactie",
     intro: {
       eyebrow: "De impact gaat verder dan loondoorbetaling",
-      headline: "De gevolgen van verzuim zijn zowel financieel als organisatorisch groot.",
+      headline: "De gevolgen van verzuim zijn zowel financieel als organisatorisch groot",
       paragraphs: [
         "Ziekteverzuim raakt meer dan alleen uw kosten. Vooral kortdurend verzuim leidt direct tot verstoring van roosters, bezetting en dienstverlening — en zet teams onder onverwachte druk.",
         "Op organisatieniveau ontstaat hierdoor niet alleen financiële schade, maar ook onrust, vertraging en verminderde motivatie.",
@@ -276,7 +276,7 @@ export const ziekteverzuimGevolgen = {
       {
         type: "two-col" as const,
         eyebrow: "De gevolgen op een rij",
-        heading: "Twee soorten impact, beide te voorkomen met de juiste innovatie.",
+        heading: "Twee soorten impact, beide te voorkomen met de juiste innovatie",
         headingAccent: "te voorkomen",
         leftTitle: "Geldelijke gevolgen",
         leftItems: [
@@ -305,7 +305,7 @@ export const ziekteverzuimGevolgen = {
       {
         type: "text" as const,
         eyebrow: "Waarom de impact onderschat wordt",
-        heading: "Verzuim is meer dan loondoorbetaling — het zijn de indirecte kosten die echt schade doen.",
+        heading: "Verzuim is meer dan loondoorbetaling — het zijn de indirecte kosten die echt schade doen",
         headingAccent: "indirecte kosten",
         paragraphs: [
           "Voor organisaties blijven de kosten van verzuim niet beperkt tot loondoorbetaling alleen. Vervanging, productiviteitsverlies, administratieve lasten en verstoring van de dagelijkse operatie zorgen ervoor dat de werkelijke impact vaak veel groter is dan zichtbaar op papier.",
@@ -330,7 +330,7 @@ export const ziekteverzuimGevolgen = {
     h1Accent: "chain reaction",
     intro: {
       eyebrow: "The impact goes beyond continued pay",
-      headline: "The consequences of absenteeism are both financially and organisationally significant.",
+      headline: "The consequences of absenteeism are both financially and organisationally significant",
       paragraphs: [
         "Sick leave affects more than just your costs. Short-term absenteeism in particular leads directly to disruption of rosters, staffing and service delivery, putting teams under unexpected pressure.",
         "At an organisational level this creates not only financial damage but also unrest, delays and reduced motivation.",
@@ -340,7 +340,7 @@ export const ziekteverzuimGevolgen = {
       {
         type: "two-col" as const,
         eyebrow: "Consequences at a glance",
-        heading: "Two types of impact, both preventable with the right innovation.",
+        heading: "Two types of impact, both preventable with the right innovation",
         headingAccent: "both preventable",
         leftTitle: "Financial consequences",
         leftItems: [
@@ -369,7 +369,7 @@ export const ziekteverzuimGevolgen = {
       {
         type: "text" as const,
         eyebrow: "Why the impact is underestimated",
-        heading: "Absenteeism is more than continued pay — it is the indirect costs that do real damage.",
+        heading: "Absenteeism is more than continued pay — it is the indirect costs that do real damage",
         headingAccent: "indirect costs",
         paragraphs: [
           "For organisations, the costs of absenteeism are not limited to continued pay alone. Replacement, productivity loss, administrative burden and disruption to daily operations mean the real impact is often much larger than what appears on paper.",

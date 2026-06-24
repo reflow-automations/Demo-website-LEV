@@ -5,14 +5,14 @@ export const talentBehouden = {
   nl: {
     hero: {
       chapter: "Talent behouden",
-      h1: "Behouden is de nieuwe succesfactor.",
+      h1: "Behouden is de nieuwe succesfactor",
       h1Accent: "nieuwe",
       imageAlt: "Drie collega's juichend bij een resultaat-dashboard",
     },
     intro: {
       eyebrow: "Het vraagstuk",
       heading:
-        "De tijd dat medewerkers jarenlang vanzelfsprekend blijven, ligt achter ons.",
+        "De tijd dat medewerkers jarenlang vanzelfsprekend blijven, ligt achter ons",
       paragraphs: [
         "Medewerkers bepalen in grote mate het succes van een organisatie. Het is daarom niet alleen belangrijk om goede mensen aan te trekken, maar minstens zo belangrijk om hen ook te behouden. Talent behouden is uitgegroeid tot een strategische succesfactor.",
         "Juist op het moment dat een medewerker volledig is ingewerkt, kennis heeft opgebouwd en maximale waarde toevoegt, gebeurt het regelmatig dat deze overstapt, naar een andere werkgever of zelfs een concurrent.",
@@ -28,7 +28,7 @@ export const talentBehouden = {
     },
     innovation: {
       chapter: "De innovatie",
-      heading: "Maatwerk in arbeidsvoorwaarden, eindelijk betaalbaar.",
+      heading: "Maatwerk in arbeidsvoorwaarden, eindelijk betaalbaar",
       headingAccent: "betaalbaar",
       lead: "Wanneer medewerkers de ruimte krijgen om hun arbeidsvoorwaarden zelf samen te stellen, ontstaat er echte betrokkenheid. Mensen kiezen wat bij hen past en voelen zich gezien. Dat vertaalt zich direct in loyaliteit.",
       cta: "Ontdek de innovatie",
@@ -41,7 +41,7 @@ export const talentBehouden = {
     },
     costs: {
       chapter: "Waar bestaan vervangingskosten uit?",
-      heading: "Eén vertrek, tien soorten kosten.",
+      heading: "Eén vertrek, tien soorten kosten",
       intro:
         "De grootste kostenposten van een vertrekkende medewerker zijn vaak onzichtbaar. Onderzoek laat zien dat de werkelijke kosten kunnen oplopen van 40% tot 200% van het bruto jaarsalaris.",
       source:
@@ -99,14 +99,14 @@ export const talentBehouden = {
   en: {
     hero: {
       chapter: "Retaining talent",
-      h1: "Retention is the new success factor.",
+      h1: "Retention is the new success factor",
       h1Accent: "new",
       imageAlt: "Three colleagues celebrating at a results dashboard",
     },
     intro: {
       eyebrow: "The challenge",
       heading:
-        "The days when employees stayed for years as a matter of course are behind us.",
+        "The days when employees stayed for years as a matter of course are behind us",
       paragraphs: [
         "Employees largely determine an organisation's success. So it is not only important to attract good people, but at least as important to retain them. Retaining talent has grown into a strategic success factor.",
         "Precisely when an employee is fully up to speed, has built up knowledge and adds maximum value, they often move on, to another employer or even a competitor.",
@@ -122,7 +122,7 @@ export const talentBehouden = {
     },
     innovation: {
       chapter: "The innovation",
-      heading: "Tailored employment terms, finally affordable.",
+      heading: "Tailored employment terms, finally affordable",
       headingAccent: "affordable",
       lead: "When employees are given the room to put together their own employment terms, real engagement follows. People choose what suits them and feel seen. That translates directly into loyalty.",
       cta: "Discover the innovation",
@@ -135,7 +135,7 @@ export const talentBehouden = {
     },
     costs: {
       chapter: "What do replacement costs consist of?",
-      heading: "One departure, ten types of cost.",
+      heading: "One departure, ten types of cost",
       intro:
         "The largest cost items of a departing employee are often invisible. Research shows that the real costs can run from 40% to 200% of gross annual salary.",
       source:
@@ -201,7 +201,7 @@ export const talentBehoudenBereken = {
     h1Post: " precies?",
     intro: {
       eyebrow: "Vervangingskosten op basis van bruto salaris",
-      heading: "Vul uw eigen situatie in en zie direct het besparingspotentieel.",
+      heading: "Vul uw eigen situatie in en zie direct het besparingspotentieel",
       paragraphs: [
         "De vervangingskosten van een vrijwillig vertrekkende medewerker kunnen oplopen van 40% tot 200% van het bruto jaarsalaris, afhankelijk van het type functie. Gallup noemt als vuistregel ongeveer 40% voor frontline-medewerkers, 80% voor technische en professionele functies en tot 200% voor leiders en managers.",
         "In Nederland bedraagt het bruto modaal inkomen in 2026 €48.000 per jaar. Onderstaande calculator combineert deze cijfers zodat u direct ziet wat verloop uw organisatie kost — en hoeveel u kunt besparen door talent langer te behouden.",
@@ -210,12 +210,12 @@ export const talentBehoudenBereken = {
     },
     calculator: {
       chapterLabel: "Interactieve berekening",
-      heading: "Sleep de schuifregelaars — de cijfers passen zich direct aan.",
+      heading: "Sleep de schuifregelaars — de cijfers passen zich direct aan",
       source: "Berekening volgens Gallup-vuistregels (40%/80%/200% van bruto jaarsalaris). Modaal NL: €48.000 (CPB 2026).",
     },
     conclusion: {
       eyebrow: "Conclusie",
-      heading: "Hoe hoger het salaris, hoe groter de financiële impact van vertrek.",
+      heading: "Hoe hoger het salaris, hoe groter de financiële impact van vertrek",
       body: "Minimale vervangingskosten lopen al snel fors op, zelfs bij meer gangbare salarissen. Juist daarom loont het voor organisaties om talentvolle medewerkers zo lang mogelijk te behouden.",
       cta: "Bekijk onze behoud-innovatie",
     },
@@ -235,7 +235,7 @@ export const talentBehoudenBereken = {
     h1Post: "?",
     intro: {
       eyebrow: "Replacement costs based on gross salary",
-      heading: "Enter your own situation and instantly see the savings potential.",
+      heading: "Enter your own situation and instantly see the savings potential",
       paragraphs: [
         "The replacement costs of a voluntarily departing employee can run from 40% to 200% of gross annual salary, depending on the role. Gallup's rules of thumb are roughly 40% for frontline employees, 80% for technical and professional roles, and up to 200% for leaders and managers.",
         "In the Netherlands, the average gross income in 2026 is €48,000 per year. The calculator below combines these figures so you can instantly see what turnover costs your organisation, and how much you can save by retaining talent longer.",
@@ -244,12 +244,12 @@ export const talentBehoudenBereken = {
     },
     calculator: {
       chapterLabel: "Interactive calculation",
-      heading: "Drag the sliders — the figures update instantly.",
+      heading: "Drag the sliders — the figures update instantly",
       source: "Calculated using Gallup rules of thumb (40%/80%/200% of gross annual salary). Average NL income: €48,000 (CPB 2026).",
     },
     conclusion: {
       eyebrow: "Conclusion",
-      heading: "The higher the salary, the greater the financial impact of departure.",
+      heading: "The higher the salary, the greater the financial impact of departure",
       body: "Minimum replacement costs add up quickly, even at more common salary levels. That is precisely why it pays for organisations to retain talented employees for as long as possible.",
       cta: "See our retention innovation",
     },
@@ -273,7 +273,7 @@ export const talentBehoudenInnovatie = {
     h1Accent: "beter aansluit",
     intro: {
       eyebrow: "Onze innovatie",
-      headline: "Niet langer een vast pakket — maar een flexibel instrument dat meebeweegt met uw mensen.",
+      headline: "Niet langer een vast pakket — maar een flexibel instrument dat meebeweegt met uw mensen",
       paragraphs: [
         "Organisaties die talent willen behouden, moeten anders kijken naar arbeidsvoorwaarden. Niet als een vaststaand pakket, maar als een flexibel instrument dat meebeweegt met de behoeften van medewerkers.",
         "Wanneer medewerkers de ruimte krijgen om hun arbeidsvoorwaarden zelf samen te stellen, ontstaat er echte betrokkenheid. Mensen kiezen wat bij hen past en voelen zich daardoor meer gezien en gewaardeerd. Dat vertaalt zich direct naar loyaliteit.",
@@ -284,7 +284,7 @@ export const talentBehoudenInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Maatwerk duur? Dat was zo.",
-        heading: "Persoonlijke keuzevrijheid is normaal gesproken ondenkbaar en onbetaalbaar.",
+        heading: "Persoonlijke keuzevrijheid is normaal gesproken ondenkbaar en onbetaalbaar",
         headingAccent: "onbetaalbaar",
         paragraphs: [
           "Voor veel organisaties voelt maatwerk in arbeidsvoorwaarden als iets dat in theorie aantrekkelijk is, maar in de praktijk onhaalbaar. De eerste gedachte is vaak: te complex, te duur en moeilijk te organiseren voor iedere individuele medewerker.",
@@ -299,7 +299,7 @@ export const talentBehoudenInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Twee vliegen, één klap",
-        heading: "Meer loyaliteit én lagere kosten.",
+        heading: "Meer loyaliteit én lagere kosten",
         headingAccent: "lagere kosten",
         paragraphs: [
           "Medewerkers krijgen de vrijheid om te kiezen wat bij hen past. Daardoor voelen zij zich meer betrokken en gewaardeerd, wat direct leidt tot een hogere loyaliteit en een sterkere binding met de organisatie.",
@@ -309,7 +309,7 @@ export const talentBehoudenInnovatie = {
       },
     ],
     closing: {
-      headline: "Ontdek hoe onze innovatie u helpt talent te behouden en vervangingskosten te verlagen.",
+      headline: "Ontdek hoe onze innovatie u helpt talent te behouden en vervangingskosten te verlagen",
       headlineAccent: "talent te behouden",
       ctaLabel: "Plan een vrijblijvend gesprek",
     },
@@ -324,7 +324,7 @@ export const talentBehoudenInnovatie = {
     h1Accent: "better you connect",
     intro: {
       eyebrow: "Our innovation",
-      headline: "No longer a fixed package, but a flexible tool that moves with your people.",
+      headline: "No longer a fixed package, but a flexible tool that moves with your people",
       paragraphs: [
         "Organisations that want to retain talent need to think differently about employment terms. Not as a fixed package, but as a flexible tool that moves with the needs of employees.",
         "When employees are given the room to put together their own employment terms, real engagement follows. People choose what suits them and feel more seen and appreciated as a result. That translates directly into loyalty.",
@@ -335,7 +335,7 @@ export const talentBehoudenInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Tailored terms expensive? That was true.",
-        heading: "Personal freedom of choice is normally unthinkable and unaffordable.",
+        heading: "Personal freedom of choice is normally unthinkable and unaffordable",
         headingAccent: "unaffordable",
         paragraphs: [
           "For many organisations, tailored employment terms feel like something that sounds attractive in theory but is unworkable in practice. The first thought is often: too complex, too expensive and hard to organise for every individual employee.",
@@ -350,7 +350,7 @@ export const talentBehoudenInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Two birds, one stone",
-        heading: "More loyalty and lower costs.",
+        heading: "More loyalty and lower costs",
         headingAccent: "lower costs",
         paragraphs: [
           "Employees get the freedom to choose what suits them. That makes them feel more engaged and appreciated, which directly leads to higher loyalty and a stronger bond with the organisation.",
@@ -360,7 +360,7 @@ export const talentBehoudenInnovatie = {
       },
     ],
     closing: {
-      headline: "Discover how our innovation helps you retain talent and reduce replacement costs.",
+      headline: "Discover how our innovation helps you retain talent and reduce replacement costs",
       headlineAccent: "retain talent",
       ctaLabel: "Book a no-obligation call",
     },
@@ -378,7 +378,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
     h1Accent: "voorbij",
     intro: {
       eyebrow: "De arbeidsmarkt verandert",
-      headline: "Eén generiek pakket past simpelweg niet meer bij een diverse generatie medewerkers.",
+      headline: "Eén generiek pakket past simpelweg niet meer bij een diverse generatie medewerkers",
       paragraphs: [
         "De arbeidsmarkt is veranderd. De bestaande en traditionele arbeidsvoorwaarden werken steeds minder effectief, omdat zij weinig differentiatie bieden. Medewerkers verwachten geen standaardpakket meer, maar arbeidsvoorwaarden die aansluiten bij wie zij zijn, afgestemd op hun situatie, hun levensfase en wat zij belangrijk vinden.",
         "Waar de één behoefte heeft aan flexibiliteit en balans, kiest de ander voor avontuur, mobiliteit, gezondheid of financiële ruimte. Wat medewerkers zoeken, is iets dat persoonlijk relevant voelt en hen daadwerkelijk motiveert.",
@@ -388,7 +388,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
       {
         type: "text" as const,
         eyebrow: "Het uitvoeringsprobleem",
-        heading: "Veel organisaties herkennen dit, maar lopen vast op de uitvoering.",
+        heading: "Veel organisaties herkennen dit, maar lopen vast op de uitvoering",
         headingAccent: "uitvoering",
         paragraphs: [
           "Hoe biedt u maatwerk aan zonder dat het complex, tijdrovend en kostbaar wordt? Dat is precies waar wij het verschil maken.",
@@ -402,7 +402,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
       {
         type: "text" as const,
         eyebrow: "Maatwerk dat wél schaalbaar is",
-        heading: "Het resultaat is direct merkbaar.",
+        heading: "Het resultaat is direct merkbaar",
         headingAccent: "direct merkbaar",
         paragraphs: [
           "Medewerkers ervaren meer regie, voelen zich gezien en kiezen bewust voor wat hen motiveert. Dat vergroot niet alleen de betrokkenheid, maar ook de loyaliteit. Deze innovatie maakt van werken iets tastbaars. En juist daar zit de echte waarde.",
@@ -419,7 +419,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
       {
         type: "text" as const,
         eyebrow: "Een nieuwe balans",
-        heading: "Vrijheid voor uw mensen, grip op uw kosten.",
+        heading: "Vrijheid voor uw mensen, grip op uw kosten",
         headingAccent: "Vrijheid voor uw mensen",
         paragraphs: [
           "Zo ontstaat een nieuwe balans in werkgeverschap: meer vrijheid en motivatie voor medewerkers, gecombineerd met flexibiliteit, controle en kostenbeheersing voor de organisatie.",
@@ -444,7 +444,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
     h1Accent: "over",
     intro: {
       eyebrow: "The labour market is changing",
-      headline: "A single generic package simply no longer fits a diverse generation of employees.",
+      headline: "A single generic package simply no longer fits a diverse generation of employees",
       paragraphs: [
         "The labour market has changed. Existing and traditional employment terms are becoming less effective because they offer little differentiation. Employees no longer expect a standard package, but terms that fit who they are, tailored to their situation, life stage and what they value.",
         "Where one person needs flexibility and balance, another chooses adventure, mobility, health or financial room. What employees are looking for is something that feels personally relevant and genuinely motivates them.",
@@ -454,7 +454,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
       {
         type: "text" as const,
         eyebrow: "The execution problem",
-        heading: "Many organisations recognise this, but get stuck on execution.",
+        heading: "Many organisations recognise this, but get stuck on execution",
         headingAccent: "execution",
         paragraphs: [
           "How do you offer tailored terms without it becoming complex, time-consuming and expensive? That is exactly where we make the difference.",
@@ -468,7 +468,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
       {
         type: "text" as const,
         eyebrow: "Tailored terms that scale",
-        heading: "The result is immediately noticeable.",
+        heading: "The result is immediately noticeable",
         headingAccent: "immediately noticeable",
         paragraphs: [
           "Employees experience more control, feel seen and consciously choose what motivates them. That increases not only engagement but also loyalty. This innovation makes work tangible. And that is where the real value lies.",
@@ -485,7 +485,7 @@ export const talentBehoudenArbeidsvoorwaarden = {
       {
         type: "text" as const,
         eyebrow: "A new balance",
-        heading: "Freedom for your people, control over your costs.",
+        heading: "Freedom for your people, control over your costs",
         headingAccent: "Freedom for your people",
         paragraphs: [
           "That creates a new balance in employment: more freedom and motivation for employees, combined with flexibility, control and cost management for the organisation.",
@@ -513,7 +513,7 @@ export const talentBehoudenVervangingskosten = {
     h1Accent: "tien soorten kosten",
     intro: {
       eyebrow: "Het verborgen prijskaartje",
-      headline: "Het vervangen van een medewerker kost vaak veel meer dan organisaties denken.",
+      headline: "Het vervangen van een medewerker kost vaak veel meer dan organisaties denken",
       paragraphs: [
         "Wanneer een medewerker vertrekt, kijken veel organisaties in eerste instantie vooral naar de zichtbare kosten van werving en selectie. Maar in werkelijkheid bestaat vervanging uit veel meer dan alleen een vacature plaatsen of een recruiter inschakelen.",
         "Juist de combinatie van directe én indirecte kosten zorgt ervoor dat vervangingskosten snel oplopen. Onderzoek laat zien dat de kosten van personeelsverloop kunnen oplopen van 40% tot 200% van het bruto jaarsalaris, afhankelijk van het type functie.",
@@ -524,7 +524,7 @@ export const talentBehoudenVervangingskosten = {
       {
         type: "numbered-list" as const,
         eyebrow: "Waaruit bestaan die vervangingskosten?",
-        heading: "Tien kostenposten — vaak onzichtbaar.",
+        heading: "Tien kostenposten — vaak onzichtbaar",
         intro: "De grootste kostenposten van een vertrekkende medewerker zijn vaak onzichtbaar. Inzicht is de eerste stap naar besparing.",
         items: [
           { n: "01", title: "Vacature- en advertentiekosten", text: "Vacatureplaatsingen, jobboards, social advertising, employer branding. Vaak de eerste zichtbare kosten — zeker niet de enige." },
@@ -550,7 +550,7 @@ export const talentBehoudenVervangingskosten = {
       {
         type: "text" as const,
         eyebrow: "Waarom inzicht loont",
-        heading: "Vervangingskosten lopen op tot 40% tot 200% van het bruto jaarsalaris.",
+        heading: "Vervangingskosten lopen op tot 40% tot 200% van het bruto jaarsalaris",
         headingAccent: "40% tot 200%",
         paragraphs: [
           "Veel organisaties zien vooral de directe kosten van vertrek, maar juist de indirecte kosten maken personeelsverloop duur. Daarom is het goed verklaarbaar dat vervangingskosten kunnen oplopen van 40% tot 200% van het bruto jaarsalaris, afhankelijk van de functie en de complexiteit van de vervanging.",
@@ -574,7 +574,7 @@ export const talentBehoudenVervangingskosten = {
     h1Accent: "ten types of cost",
     intro: {
       eyebrow: "The hidden price tag",
-      headline: "Replacing an employee often costs far more than organisations realise.",
+      headline: "Replacing an employee often costs far more than organisations realise",
       paragraphs: [
         "When an employee leaves, many organisations initially focus mainly on the visible costs of recruitment and selection. But in reality, replacement involves far more than just posting a vacancy or hiring a recruiter.",
         "It is precisely the combination of direct and indirect costs that makes replacement costs add up quickly. Research shows that the cost of staff turnover can run from 40% to 200% of gross annual salary, depending on the role.",
@@ -585,7 +585,7 @@ export const talentBehoudenVervangingskosten = {
       {
         type: "numbered-list" as const,
         eyebrow: "What do those replacement costs consist of?",
-        heading: "Ten cost items, often invisible.",
+        heading: "Ten cost items, often invisible",
         intro: "The largest cost items of a departing employee are often invisible. Insight is the first step towards saving.",
         items: [
           { n: "01", title: "Vacancy and advertising costs", text: "Job postings, job boards, social advertising, employer branding. Often the first visible costs, certainly not the only ones." },
@@ -611,7 +611,7 @@ export const talentBehoudenVervangingskosten = {
       {
         type: "text" as const,
         eyebrow: "Why insight pays",
-        heading: "Replacement costs run from 40% to 200% of gross annual salary.",
+        heading: "Replacement costs run from 40% to 200% of gross annual salary",
         headingAccent: "40% to 200%",
         paragraphs: [
           "Many organisations see mainly the direct costs of departure, but it is precisely the indirect costs that make staff turnover expensive. That is why it is entirely understandable that replacement costs can run from 40% to 200% of gross annual salary, depending on the role and the complexity of the replacement.",

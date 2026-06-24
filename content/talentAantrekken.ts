@@ -5,14 +5,14 @@ export const talentAantrekken = {
   nl: {
     hero: {
       chapter: "Talent aantrekken",
-      h1: "Wie talent begrijpt wordt gekozen.",
+      h1: "Wie talent begrijpt wordt gekozen",
       h1Accent: "wordt gekozen",
       imageAlt:
         "Stel bekijkt DOOH-billboard Erasmus MC werken-bij campagne",
     },
     intro: {
       eyebrow: "De arbeidsmarkt",
-      heading: "Werkgevers op het netvlies van talent.",
+      heading: "Werkgevers op het netvlies van talent",
       paragraphs: [
         "Steeds meer werkgevers benaderen ons met dezelfde vraag: hoe trekken wij in deze krappe arbeidsmarkt de juiste mensen aan? Kandidaten hebben veel te kiezen en vergelijken werkgevers allang niet meer alleen op salaris of secundaire arbeidsvoorwaarden.",
         "Steeds vaker kijken zij of een organisatie, cultuur en arbeidsvoorwaarden passen bij hun identiteit, leefstijl, waarden en toekomstbeeld.",
@@ -22,7 +22,7 @@ export const talentAantrekken = {
     },
     innovation: {
       chapter: "De innovatie",
-      heading: "Talent in het hart raken, online én offline.",
+      heading: "Talent in het hart raken, online én offline",
       headingAccent: "én offline",
       lead: "Wij helpen werkgevers met grensverleggende digitale innovaties om op het juiste moment in beeld te komen bij de juiste doelgroep. Dankzij onze ervaring in marketing en communicatie weten wij waar talent zich bevindt en hoe organisaties deze doelgroep online én offline kunnen bereiken.",
       quote:
@@ -36,7 +36,7 @@ export const talentAantrekken = {
       "DOOH-billboard in stadsplein met meerdere werkgevers",
     dooh: {
       chapter: "Waarom DOOH effectief is",
-      heading: "Zichtbaar waar het écht telt: in de echte wereld.",
+      heading: "Zichtbaar waar het écht telt: in de echte wereld",
       intro:
         "Acht redenen waarom Digital Out of Home werkgevers onderscheidend en relevant maakt voor talentvolle kandidaten.",
       source: "Bronnen: DCF onderzoek · NL DOOH-netwerk",
@@ -67,14 +67,14 @@ export const talentAantrekken = {
   en: {
     hero: {
       chapter: "Attracting talent",
-      h1: "Whoever understands talent gets chosen.",
+      h1: "Whoever understands talent gets chosen",
       h1Accent: "gets chosen",
       imageAlt:
         "Couple looking at a DOOH billboard for an Erasmus MC recruitment campaign",
     },
     intro: {
       eyebrow: "The labour market",
-      heading: "Employers on talent's radar.",
+      heading: "Employers on talent's radar",
       paragraphs: [
         "More and more employers come to us with the same question: how do we attract the right people in this tight labour market? Candidates have plenty of choice and stopped comparing employers on salary or benefits alone long ago.",
         "Increasingly, they look at whether an organisation, culture and employment terms fit their identity, lifestyle, values and vision of the future.",
@@ -84,7 +84,7 @@ export const talentAantrekken = {
     },
     innovation: {
       chapter: "The innovation",
-      heading: "Reaching talent at heart, online and offline.",
+      heading: "Reaching talent at heart, online and offline",
       headingAccent: "and offline",
       lead: "We help employers with boundary-pushing digital innovations to appear at the right moment in front of the right audience. Thanks to our experience in marketing and communication, we know where talent is and how organisations can reach this audience online and offline.",
       quote:
@@ -98,7 +98,7 @@ export const talentAantrekken = {
       "DOOH billboard in a city square featuring several employers",
     dooh: {
       chapter: "Why DOOH works",
-      heading: "Visible where it really counts: in the real world.",
+      heading: "Visible where it really counts: in the real world",
       intro:
         "Eight reasons why Digital Out of Home makes employers distinctive and relevant to talented candidates.",
       source: "Sources: DCF research · NL DOOH network",
@@ -138,7 +138,7 @@ export const talentAantrekkenInnovatie = {
     h1Accent: "raken",
     intro: {
       eyebrow: "Onze innovatie",
-      headline: "Op het juiste moment in beeld komen bij de juiste doelgroep — online én offline.",
+      headline: "Op het juiste moment in beeld komen bij de juiste doelgroep — online én offline",
       paragraphs: [
         "Wij helpen werkgevers met grensverleggende digitale innovaties om op het juiste moment in beeld te komen bij de juiste doelgroep. Dankzij onze ervaring in marketing en communicatie weten wij waar talent zich bevindt en hoe organisaties deze doelgroep online én offline kunnen bereiken.",
         "Zo zorgen wij ervoor dat werkgevers niet alleen zichtbaar zijn, maar ook echt raken.",
@@ -148,7 +148,7 @@ export const talentAantrekkenInnovatie = {
       {
         type: "text" as const,
         eyebrow: "Wat dit organisaties oplevert",
-        heading: "Sneller in contact, sterker neergezet, meer kwalitatieve instroom.",
+        heading: "Sneller in contact, sterker neergezet, meer kwalitatieve instroom",
         headingAccent: "Sneller",
         paragraphs: [
           "Met deze aanpak helpen wij organisaties om sneller in contact te komen met geschikte kandidaten, hun werkgeversverhaal krachtiger neer te zetten en meer kwalitatieve instroom te realiseren.",
@@ -176,7 +176,7 @@ export const talentAantrekkenInnovatie = {
     h1Accent: "at heart",
     intro: {
       eyebrow: "Our innovation",
-      headline: "Appearing at the right moment in front of the right audience — online and offline.",
+      headline: "Appearing at the right moment in front of the right audience — online and offline",
       paragraphs: [
         "We help employers with boundary-pushing digital innovations to appear at the right moment in front of the right audience. Thanks to our experience in marketing and communication, we know where talent is and how organisations can reach this audience online and offline.",
         "That is how we ensure employers are not only visible, but truly connect.",
@@ -186,7 +186,7 @@ export const talentAantrekkenInnovatie = {
       {
         type: "text" as const,
         eyebrow: "What this delivers for organisations",
-        heading: "Faster contact, stronger positioning, higher-quality inflow.",
+        heading: "Faster contact, stronger positioning, higher-quality inflow",
         headingAccent: "Faster",
         paragraphs: [
           "With this approach we help organisations connect with suitable candidates faster, position their employer story more powerfully and achieve higher-quality inflow.",
@@ -217,7 +217,7 @@ export const talentAantrekkenEmployerBranding = {
     h1Accent: "juiste moment",
     intro: {
       eyebrow: "Waarom Employer Branding?",
-      headline: "Een sterk werkgeversmerk is vandaag de dag onmisbaar — voor aantrekken én behouden.",
+      headline: "Een sterk werkgeversmerk is vandaag de dag onmisbaar — voor aantrekken én behouden",
       paragraphs: [
         "Onderzoek laat zien dat werkgevers met een positieve reputatie aanzienlijk meer sollicitanten aantrekken dan organisaties met een zwakker of minder zichtbaar werkgeversimago. Employer Branding is daarom niet alleen belangrijk om talent aan te trekken, maar ook om talent duurzaam aan uw organisatie te binden.",
         "Steeds meer organisaties erkennen dat een sterke positie op de arbeidsmarkt niet vanzelf ontstaat. Daar moet structureel aan worden gebouwd. Een krachtig en onderscheidend werkgeversverhaal maakt het verschil.",
@@ -227,7 +227,7 @@ export const talentAantrekkenEmployerBranding = {
       {
         type: "text" as const,
         eyebrow: "Wat kunnen wij voor u betekenen?",
-        heading: "Recruitment en marketing raken steeds meer met elkaar verweven.",
+        heading: "Recruitment en marketing raken steeds meer met elkaar verweven",
         headingAccent: "verweven",
         paragraphs: [
           "Wij helpen werkgevers om met een onderscheidende Employer Branding-campagne een sterke voorkeurspositie op de arbeidsmarkt op te bouwen. Dat doen wij door uw werkgeversboodschap zichtbaar te maken op de plekken waar uw doelgroep zich daadwerkelijk bevindt — zowel online als offline.",
@@ -237,7 +237,7 @@ export const talentAantrekkenEmployerBranding = {
       {
         type: "numbered-list" as const,
         eyebrow: "Waarom onze aanpak onderscheidend is",
-        heading: "Drie principes die elke campagne krachtiger maken.",
+        heading: "Drie principes die elke campagne krachtiger maken",
         items: [
           { n: "01", title: "Online én offline zichtbaar bij de juiste doelgroep", text: "Uw werkgeversboodschap is niet alleen online zichtbaar, maar ook op locaties waar uw doelgroep dagelijks komt. LinkedIn en andere relevante online kanalen, gecombineerd met aanwezigheid in de fysieke leefwereld van kandidaten." },
           { n: "02", title: "Slimme inzet van eigen mediakanalen en retargeting", text: "Wij beschikken over een krachtig Digital Out of Home netwerk waarmee wij maandelijks een grote groep potentiële kandidaten bereiken. Door deze zichtbaarheid te combineren met online retargeting, versterken wij niet alleen uw werkgeversmerk, maar vergroten wij ook de kans op concrete conversie." },
@@ -247,7 +247,7 @@ export const talentAantrekkenEmployerBranding = {
       {
         type: "text" as const,
         eyebrow: "Wat dit u oplevert",
-        heading: "Sterkere zichtbaarheid, hogere aantrekkingskracht, betere positie op de arbeidsmarkt.",
+        heading: "Sterkere zichtbaarheid, hogere aantrekkingskracht, betere positie op de arbeidsmarkt",
         headingAccent: "Sterkere zichtbaarheid",
         paragraphs: [
           "Met onze Employer Branding-aanpak versterken werkgevers hun zichtbaarheid, aantrekkingskracht en positie op de arbeidsmarkt. Zo wordt uw organisatie herkenbaarder voor de juiste doelgroep en neemt de kans toe dat talent voor uw organisatie kiest.",
@@ -270,7 +270,7 @@ export const talentAantrekkenEmployerBranding = {
     h1Accent: "right moment",
     intro: {
       eyebrow: "Why employer branding?",
-      headline: "A strong employer brand is indispensable today — for attracting and retaining.",
+      headline: "A strong employer brand is indispensable today — for attracting and retaining",
       paragraphs: [
         "Research shows that employers with a positive reputation attract significantly more applicants than organisations with a weaker or less visible employer image. Employer branding is therefore not only important for attracting talent, but also for binding talent durably to your organisation.",
         "More and more organisations recognise that a strong position on the labour market does not arise by itself. It must be built structurally. A powerful and distinctive employer story makes the difference.",
@@ -280,7 +280,7 @@ export const talentAantrekkenEmployerBranding = {
       {
         type: "text" as const,
         eyebrow: "How we can help you",
-        heading: "Recruitment and marketing are becoming more intertwined.",
+        heading: "Recruitment and marketing are becoming more intertwined",
         headingAccent: "intertwined",
         paragraphs: [
           "We help employers build a strong preferred position on the labour market with a distinctive employer branding campaign. We do this by making your employer message visible in the places where your audience actually is, both online and offline.",
@@ -290,7 +290,7 @@ export const talentAantrekkenEmployerBranding = {
       {
         type: "numbered-list" as const,
         eyebrow: "Why our approach is distinctive",
-        heading: "Three principles that make every campaign stronger.",
+        heading: "Three principles that make every campaign stronger",
         items: [
           { n: "01", title: "Visible online and offline to the right audience", text: "Your employer message is not only visible online, but also at locations where your audience comes every day. LinkedIn and other relevant online channels, combined with presence in the physical world of candidates." },
           { n: "02", title: "Smart use of own media channels and retargeting", text: "We have a powerful Digital Out of Home network that reaches a large group of potential candidates every month. By combining this visibility with online retargeting, we not only strengthen your employer brand but also increase the chance of concrete conversion." },
@@ -300,7 +300,7 @@ export const talentAantrekkenEmployerBranding = {
       {
         type: "text" as const,
         eyebrow: "What this delivers for you",
-        heading: "Stronger visibility, higher appeal, better position on the labour market.",
+        heading: "Stronger visibility, higher appeal, better position on the labour market",
         headingAccent: "Stronger visibility",
         paragraphs: [
           "With our employer branding approach, employers strengthen their visibility, appeal and position on the labour market. Your organisation becomes more recognisable to the right audience, and the chance that talent chooses your organisation increases.",
@@ -326,7 +326,7 @@ export const talentAantrekkenWaaromWerkgevers = {
     h1Accent: "overal zichtbaar",
     intro: {
       eyebrow: "Onze positionering",
-      headline: "Online zichtbaar is goed. Online én offline zichtbaar is sterker.",
+      headline: "Online zichtbaar is goed. Online én offline zichtbaar is sterker",
       paragraphs: [
         "Wij geloven in de kracht van online zichtbaarheid, maar óók in de kracht van aanwezigheid in de echte wereld. Veel werkgevers richten zich vandaag de dag uitsluitend op online campagnes. Daarmee lopen zij het risico op te gaan in de online massa en onvoldoende op te vallen bij de kandidaten die zij juist willen bereiken.",
         "Wij kiezen daarom bewust voor een andere aanpak. Wij combineren online campagnes met krachtige offline zichtbaarheid via Digital Out of Home. Juist die combinatie maakt onze Employer Branding-campagnes onderscheidend en zorgt ervoor dat werkgevers beter worden gezien, herkend en onthouden.",
@@ -336,7 +336,7 @@ export const talentAantrekkenWaaromWerkgevers = {
       {
         type: "text" as const,
         eyebrow: "Online én offline op de radar",
-        heading: "Bereik in de echte leefwereld van kandidaten — niet alleen op hun scherm.",
+        heading: "Bereik in de echte leefwereld van kandidaten — niet alleen op hun scherm",
         headingAccent: "echte leefwereld",
         paragraphs: [
           "In tegenstelling tot veel andere partijen richten wij ons niet alleen op online kanalen zoals LinkedIn en andere digitale platformen, maar ook op de fysieke leefwereld van kandidaten. Met behulp van ultra moderne Digital Out of Home-schermen brengen wij de werkgeversboodschap zichtbaar onder de aandacht op strategische locaties waar studenten, young professionals en ervaren medewerkers dagelijks komen.",
@@ -351,7 +351,7 @@ export const talentAantrekkenWaaromWerkgevers = {
       {
         type: "text" as const,
         eyebrow: "Slimme retargeting zorgt voor conversie",
-        heading: "Van merkbeleving naar concrete actie — exact op het juiste moment.",
+        heading: "Van merkbeleving naar concrete actie — exact op het juiste moment",
         headingAccent: "concrete actie",
         paragraphs: [
           "Onze kracht zit niet alleen in zichtbaarheid, maar ook in slimme opvolging. De inzet van DOOH-schermen is bij uitstek geschikt voor branding en influencing. Werkgevers brengen offline hun boodschap onder de aandacht, bouwen herkenning op en blijven hangen in het geheugen van de doelgroep.",
@@ -361,7 +361,7 @@ export const talentAantrekkenWaaromWerkgevers = {
       {
         type: "text" as const,
         eyebrow: "Waarom werkgevers voor ons kiezen",
-        heading: "In Nederland onderscheidend, voor talent top-of-mind.",
+        heading: "In Nederland onderscheidend, voor talent top-of-mind",
         headingAccent: "top-of-mind",
         paragraphs: [
           "Werkgevers kiezen voor de Digital Concepts Factory omdat onze campagnes verder gaan dan standaard online zichtbaarheid. Wij combineren online en offline op een manier die in Nederland onderscheidend is en zorgen ervoor dat werkgevers niet alleen zichtbaar zijn, maar ook daadwerkelijk top-of-mind worden bij talentvolle kandidaten.",
@@ -385,7 +385,7 @@ export const talentAantrekkenWaaromWerkgevers = {
     h1Accent: "visible everywhere",
     intro: {
       eyebrow: "Our positioning",
-      headline: "Being visible online is good. Being visible online and offline is stronger.",
+      headline: "Being visible online is good. Being visible online and offline is stronger",
       paragraphs: [
         "We believe in the power of online visibility, but just as much in the power of presence in the real world. Many employers today focus exclusively on online campaigns. In doing so, they risk disappearing into the online crowd and failing to stand out to the very candidates they want to reach.",
         "That is why we deliberately choose a different approach. We combine online campaigns with powerful offline visibility via Digital Out of Home. That combination is precisely what makes our employer branding campaigns distinctive and ensures employers are better seen, recognised and remembered.",
@@ -395,7 +395,7 @@ export const talentAantrekkenWaaromWerkgevers = {
       {
         type: "text" as const,
         eyebrow: "Online and offline on the radar",
-        heading: "Reach in the real world of candidates, not just on their screen.",
+        heading: "Reach in the real world of candidates, not just on their screen",
         headingAccent: "real world",
         paragraphs: [
           "Unlike many other parties, we focus not only on online channels such as LinkedIn and other digital platforms, but also on the physical world of candidates. Using state-of-the-art Digital Out of Home screens, we make the employer message visible at strategic locations where students, young professionals and experienced staff come every day.",
@@ -410,7 +410,7 @@ export const talentAantrekkenWaaromWerkgevers = {
       {
         type: "text" as const,
         eyebrow: "Smart retargeting drives conversion",
-        heading: "From brand experience to concrete action, at exactly the right moment.",
+        heading: "From brand experience to concrete action, at exactly the right moment",
         headingAccent: "concrete action",
         paragraphs: [
           "Our strength lies not only in visibility but also in smart follow-up. DOOH screens are ideally suited for branding and influencing. Employers raise their message offline, build recognition and stay in the minds of their audience.",
@@ -420,7 +420,7 @@ export const talentAantrekkenWaaromWerkgevers = {
       {
         type: "text" as const,
         eyebrow: "Why employers choose us",
-        heading: "Distinctive in the Netherlands, top-of-mind for talent.",
+        heading: "Distinctive in the Netherlands, top-of-mind for talent",
         headingAccent: "top-of-mind",
         paragraphs: [
           "Employers choose Digital Concepts Factory because our campaigns go beyond standard online visibility. We combine online and offline in a way that is distinctive in the Netherlands and ensure that employers are not only visible, but genuinely become top-of-mind for talented candidates.",
@@ -447,7 +447,7 @@ export const talentAantrekkenDoohEffectief = {
     h1Accent: "echte wereld",
     intro: {
       eyebrow: "Digital Out of Home",
-      headline: "Een krachtig middel om werkgevers zichtbaar, onderscheidend en relevant te maken.",
+      headline: "Een krachtig middel om werkgevers zichtbaar, onderscheidend en relevant te maken",
       paragraphs: [
         "Digital Out of Home (DOOH) maakt werkgevers zichtbaar voor talentvolle kandidaten op een manier die online campagnes niet kunnen evenaren. Waar veel organisaties vooral inzetten op online, zorgt DOOH juist voor extra zichtbaarheid in de echte wereld.",
         "Dat maakt deze vorm van arbeidsmarktcommunicatie opvallend, herkenbaar en moeilijk te missen.",
@@ -457,7 +457,7 @@ export const talentAantrekkenDoohEffectief = {
       {
         type: "numbered-list" as const,
         eyebrow: "Acht redenen",
-        heading: "Waarom DOOH werkt — concreet.",
+        heading: "Waarom DOOH werkt — concreet",
         intro: "Van bereik tot conversie: waarom DOOH meer is dan alleen een scherm met een boodschap.",
         items: [
           { n: "01", title: "Exclusieve zichtbaarheid bij grote groepen kandidaten", text: "Afhankelijk van locaties en campagne-opzet 250.000 tot 2 miljoen kandidaten per maand. Het grootste bereik ligt in de Randstad." },
@@ -473,7 +473,7 @@ export const talentAantrekkenDoohEffectief = {
       },
     ],
     closing: {
-      headline: "Ontdek hoe DOOH uw organisatie zichtbaar en aantrekkelijk maakt.",
+      headline: "Ontdek hoe DOOH uw organisatie zichtbaar en aantrekkelijk maakt",
       headlineAccent: "aantrekkelijk",
       ctaLabel: "Plan een vrijblijvend gesprek",
     },
@@ -488,7 +488,7 @@ export const talentAantrekkenDoohEffectief = {
     h1Accent: "real world",
     intro: {
       eyebrow: "Digital Out of Home",
-      headline: "A powerful way to make employers visible, distinctive and relevant.",
+      headline: "A powerful way to make employers visible, distinctive and relevant",
       paragraphs: [
         "Digital Out of Home (DOOH) makes employers visible to talented candidates in a way that online campaigns cannot match. Where many organisations focus mainly on online, DOOH provides extra visibility in the real world.",
         "That makes this form of labour-market communication striking, recognisable and hard to miss.",
@@ -498,7 +498,7 @@ export const talentAantrekkenDoohEffectief = {
       {
         type: "numbered-list" as const,
         eyebrow: "Eight reasons",
-        heading: "Why DOOH works — concretely.",
+        heading: "Why DOOH works — concretely",
         intro: "From reach to conversion: why DOOH is more than just a screen with a message.",
         items: [
           { n: "01", title: "Exclusive visibility to large groups of candidates", text: "Depending on locations and campaign setup: 250,000 to 2 million candidates per month. The largest reach is in the Randstad region." },
@@ -514,7 +514,7 @@ export const talentAantrekkenDoohEffectief = {
       },
     ],
     closing: {
-      headline: "Discover how DOOH makes your organisation visible and appealing.",
+      headline: "Discover how DOOH makes your organisation visible and appealing",
       headlineAccent: "appealing",
       ctaLabel: "Book a no-obligation call",
     },

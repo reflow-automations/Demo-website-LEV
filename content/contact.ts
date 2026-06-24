@@ -4,7 +4,7 @@ export const contact = {
   nl: {
     hero: {
       chapter: "Contact",
-      h1: "Een vrijblijvend gesprek begint hier.",
+      h1: "Een vrijblijvend gesprek begint hier",
       h1Accent: "gesprek",
     },
     divider: "Of laat een bericht achter",
@@ -38,7 +38,7 @@ export const contact = {
   en: {
     hero: {
       chapter: "Contact",
-      h1: "A no-obligation conversation starts here.",
+      h1: "A no-obligation conversation starts here",
       h1Accent: "conversation",
     },
     divider: "Or leave a message",
