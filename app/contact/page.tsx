@@ -252,46 +252,71 @@ export default function ContactPage() {
                     <ReCaptcha onToken={setCaptchaToken} />
                   </div>
 
-                  {status === "error" && (
-                    <p className="text-[13px] text-cobalt bg-cobalt/[0.08] border border-cobalt/30 px-4 py-3">
-                      {errorMsg}
-                    </p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={
-                      status === "submitting" ||
-                      status === "success" ||
-                      !captchaToken
-                    }
-                    className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {status === "success"
-                      ? t.form.success
-                      : status === "submitting"
-                        ? t.form.submitting
-                        : !captchaToken
-                          ? t.form.captcha
-                          : t.form.submit}
-                    {status === "idle" && captchaToken && (
+                  {status === "success" ? (
+                    <div className="flex items-start gap-4 bg-cobalt text-paper px-6 py-5 rounded-xl">
                       <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        className="transition-transform duration-300 group-hover:translate-x-1"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
                         aria-hidden
+                        className="shrink-0 mt-0.5"
                       >
                         <path
-                          d="M1 9h16M11 3l6 6-6 6"
+                          d="M5 13l4 4L19 7"
                           stroke="currentColor"
-                          strokeWidth="1.4"
+                          strokeWidth="2.4"
                           fill="none"
-                          strokeLinecap="square"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
-                    )}
-                  </button>
+                      <div>
+                        <p className="text-[16px] font-semibold leading-tight">
+                          {t.form.successTitle}
+                        </p>
+                        <p className="text-[13px] text-paper/85 mt-1.5">
+                          {t.form.success}
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      {status === "error" && (
+                        <p className="text-[13px] text-cobalt bg-cobalt/[0.08] border border-cobalt/30 px-4 py-3">
+                          {errorMsg}
+                        </p>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={status === "submitting" || !captchaToken}
+                        className="group inline-flex items-center gap-4 px-8 py-5 bg-cobalt text-paper text-[14px] tracking-tight hover:bg-cobalt-bright transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {status === "submitting"
+                          ? t.form.submitting
+                          : !captchaToken
+                            ? t.form.captcha
+                            : t.form.submit}
+                        {status === "idle" && captchaToken && (
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                            aria-hidden
+                          >
+                            <path
+                              d="M1 9h16M11 3l6 6-6 6"
+                              stroke="currentColor"
+                              strokeWidth="1.4"
+                              fill="none"
+                              strokeLinecap="square"
+                            />
+                          </svg>
+                        )}
+                      </button>
+                    </>
+                  )}
                 </form>
               </Reveal>
             </div>
