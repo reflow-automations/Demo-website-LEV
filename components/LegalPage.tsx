@@ -1,11 +1,9 @@
-/**
- * LegalPage — server-component renderer voor de juridische documenten
- * (privacy, disclaimer, algemene voorwaarden). Geen "use client": de tekst is
- * statisch en NL-only, dus volledig server-gerenderd en indexeerbaar, zonder
- * JS-afhankelijkheid. Voedt zich met een `LegalDoc` uit content/legal.ts.
- */
+"use client";
 
-import type { LegalDoc, LegalBlock } from "@/content/legal";
+import type { BilingualLegalDoc, LegalBlock } from "@/content/legal";
+import { useLang } from "@/lib/i18n/provider";
+
+const EYEBROW = { nl: "Juridisch", en: "Legal" };
 
 function Block({ block }: { block: LegalBlock }) {
   switch (block.type) {
@@ -51,12 +49,15 @@ function Block({ block }: { block: LegalBlock }) {
   }
 }
 
-export default function LegalPage({ doc }: { doc: LegalDoc }) {
+export default function LegalPage({ docs }: { docs: BilingualLegalDoc }) {
+  const lang = useLang();
+  const doc = docs[lang];
+
   return (
     <>
       <section className="relative pt-10 pb-8 lg:pt-12 lg:pb-10">
         <div className="mx-auto max-w-3xl px-6">
-          <p className="eyebrow text-muted mb-4">Juridisch</p>
+          <p className="eyebrow text-muted mb-4">{EYEBROW[lang]}</p>
           <h1 className="display-hero text-ink text-[clamp(2.25rem,5vw,3.5rem)]">
             {doc.title}
           </h1>

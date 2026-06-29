@@ -3,7 +3,7 @@ import { metaFor } from "@/lib/seo/meta";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbFor } from "@/lib/seo/schema";
 import LegalPage from "@/components/LegalPage";
-import { privacyDoc } from "@/content/legal";
+import { privacyDocs } from "@/content/legal";
 
 const PATH = "/privacy";
 
@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <JsonLd schema={[breadcrumbFor(PATH)]} />
-      <LegalPage doc={privacyDoc} />
+      <LegalPage docs={privacyDocs} />
     </>
   );
 }
